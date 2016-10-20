@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 2.Nested Lists</title>
+</head>
+
+<body>
+    <div class="problem_02">
+        <p>Preceding Text</p>
+        <section>
+            <!--ol[type="I"]>(li>(ol[type="a"]>li+li))+(li>(ol[type="1"]>li+(li>ul[type="circle"]>li+li>(ul[type="disc"]>li+li)+li)+li)+(li>ul[type="disc"]>li+li+li))-->
+            <h1 hidden="hidden">Long List</h1>
+            <!-- semanticly correct:
+          1st: "section" needs a heading element to be semanticly correct
+          2nd: we use "section", because is semanticly correct, because of the preceding text
+          3th: we hide it because it is out of the realisation target for our project -->
+            <ol type="I">
+                <li>List Item 1
+                    <ol type="a">
+                        <li>Nested Item 1.1</li>
+                        <li>Nested Item 1.2</li>
+                    </ol>
+                </li>
+                <li>List Item 2
+                    <ol type="1">
+                        <li>Nested Item 2.1</li>
+                        <li>Nested Item 2.2
+                            <ul type="circle">
+                                <li>Nested Item 2.2.1</li>
+                                <li>Nested Item 2.2.2</li>
+                                <li style="list-style: none; display: inline">
+                                    <ul type="square">
+                                        <li>Nested Item 2.2.2.1</li>
+                                        <li>Nested Item 2.2.2.2</li>
+                                    </ul>
+                                </li>
+                                <li>Nested Item 2.2.3</li>
+                            </ul>
+                        </li>
+                        <li>Nested Item 2.3</li>
+                    </ol>
+                </li>
+                <li>List Item 3
+                    <ul type="disc">
+                        <li>Nested Item 3.1</li>
+                        <li>Nested Item 3.1</li>
+                        <li>Nested Item 3.1</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+    </div>
+</body>
+
+</html>
+<!-- footnote:
+TODO:Use CSS instead of type properties and for the selection assign appropiate classes
+TODO: add w3c markup validation or manually validate your code (HTML, CSS) [validator.w3.org]
+Note: This is simple example and a walk-through the logic of creating a consistent semantic structure-->
