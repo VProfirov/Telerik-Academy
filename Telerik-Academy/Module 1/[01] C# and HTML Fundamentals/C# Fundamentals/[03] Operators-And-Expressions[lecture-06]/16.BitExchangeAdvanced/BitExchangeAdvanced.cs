@@ -21,6 +21,7 @@ namespace BitExchangeAdvanced
     {
         static void Main()
         {
+            // TODO: Check the previous task. It is practically the same, but takes outside parameters
             Console.Write("n = ");
             long n = long.Parse(Console.ReadLine());
             Console.Write("p = ");
@@ -32,6 +33,7 @@ namespace BitExchangeAdvanced
  
             Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));
  
+            // First two if-else if, are validation
             if (p + k >= 32)
             {
                 Console.WriteLine("Out of range");
@@ -42,6 +44,7 @@ namespace BitExchangeAdvanced
             }
             else
             {
+                // Solution part (check the previous task):
                 for (int i = 0; i < k; i++)
                 {
                     int maskOne = (int)(n & (1 << p)) >> p;

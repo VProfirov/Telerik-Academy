@@ -19,6 +19,7 @@ namespace ExtractBitFromInteger
     {
         static void Main()
         {
+            // p - position ; n - number
             int p;
             uint n;
             Console.Write("Please enter number for bit extraction: ");

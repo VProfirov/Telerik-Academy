@@ -22,8 +22,15 @@ namespace PrimeNumberCheck
 
     class PrimeNumberCheck
     {
+        /// <summary>
+        /// Every number divisible by 1 and itself is a prime. 1 is not considered a prime
+        /// </summary>
         static void Main()
         {
+            ///<summary>
+            ///Every number divisible by 1 and itself is a prime
+            ///</summary>
+           
             Console.Write("Please enter positive integer number n (n <= 100) : ");
 
             int number = int.Parse(Console.ReadLine());
@@ -35,6 +42,8 @@ namespace PrimeNumberCheck
             // int number = 14; //positive NOT Prime integer n (n ≤ 100)
             int counter = 0;
 
+            // Drawback : it goes through all the numbers from 1 to number - more computation then needed
+            // NB! starting from i=2 because a check for 1 will be pointless - 1 is not a prime
             for (int i = 1; i <= number; i++)
             {
                 if (number % i == 0)
@@ -61,7 +70,7 @@ namespace PrimeNumberCheck
 
 // NOTES :
 
-/* ANOTHER SOLUTION
+/* ANOTHER SOLUTION (performance optimized): 
  
  *          Console.Write("Please enter positive integer number n (n <= 100) : ");
             int number = int.Parse(Console.ReadLine());
@@ -73,6 +82,9 @@ namespace PrimeNumberCheck
                 if (number % divider == 0)
                 {
                     isPrime = false;
+                    // no other computation is need, so we exit the loop using "break"
+                    // optimization condition : doesn't go through all the numbers until it reaches maxDivider
+                    break; 
                 }
             divider++;
             }

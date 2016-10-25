@@ -53,11 +53,11 @@ namespace ExtractBitThree
  *  
  *  number = 5343 -> 00010100 11011111 moved to N-th position (number >> N-th position) - > 00010100 11011 (111) -> 00010100 11011
  *  
- *  NB ! BUT IF COMPARED TO - > 1 -> it will not matter, because 1 is  00000000 00001 so everything compared to 0 with the operand ' & ' will be 0 with the exception of the last simbol which is 1, so
+ *  NB ! BUT IF COMPARED TO - > 1 -> it will not matter, because 1 is  00000000 00001 so everything compared to 0 with the operand ' & ' will be 0 with the exception of the last symbol which is 1, so
  *  -> Conclusion -> the only real comparison will be with the first  (right to left) digit / bit which is 1 and it will compare like this :  ------- ------'digit to compare'
  *                                                                                                                                                                  &
  *                                                                                                                                                                  1
- *                                                                                                                                           And if 'digit to comapre'  is 1 -> 1 & 1 = 1 
+ *                                                                                                                                           And if 'digit to compare'  is 1 -> 1 & 1 = 1 
  *                                                                                                                                                                      is 0 -> 0 & 1 = 0
  *  
  * 

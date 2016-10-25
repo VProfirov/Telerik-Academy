@@ -48,4 +48,42 @@ namespace PointInsideCircleOusideRe
             }
         }
     }
+
+    // Use in Main() : AllCasesForPointInsideCircleOutsideRectangle.Solution();
+    public class AllCasesForPointInsideCircleOutsideRectangle
+    {
+        static void Solution()
+        {
+            double x = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
+            double rr = ((x - 1) * (x - 1)) + ((y - 1) * (y - 1));
+            double r = Math.Sqrt(rr);
+            bool rectangle = ((-1 <= x && x <= 5) && (-1 <= y && y <= 1));
+            bool circle = (r <= 1.5d);
+            if (rectangle == true && circle == true)
+            {
+                Console.WriteLine("inside circle inside rectangle");
+            }
+            else
+            {
+                if (rectangle == false && circle == false)
+                {
+                    Console.WriteLine("outside circle outside rectangle");
+                }
+                else
+                {
+                    if (rectangle == true && circle == false)
+                    {
+                        Console.WriteLine("outside circle inside rectangle");
+                    }
+                    else
+                    {
+                        Console.WriteLine("inside circle outside rectangle");
+                    }
+                }
+            }
+
+            // It is possible to use only 4 single "if" conditions
+        }
+    }
 }

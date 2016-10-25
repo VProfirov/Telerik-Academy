@@ -35,6 +35,7 @@ namespace FourDigitNumber
 
             Console.WriteLine("The sum of the digits is : {0}", (fourthDigit+thirdDigit+secondDigit+firstdigit));
 
+            // not necessary conversion
             string first = firstdigit.ToString();
             string second = secondDigit.ToString();
             string third = thirdDigit.ToString();

@@ -28,8 +28,9 @@ namespace OddOrEven
                 {
                     Console.WriteLine("The number {0} is EVEN. ; n Odd ? -> " + (number % 2 != 0), number);
                 }
-                else
+                else 
                 {
+                    // the only message difference is "ODD"
                     Console.WriteLine("The number {0} is ODD. ; n Odd ? -> " + (number % 2 != 0), number);
                 }
             }

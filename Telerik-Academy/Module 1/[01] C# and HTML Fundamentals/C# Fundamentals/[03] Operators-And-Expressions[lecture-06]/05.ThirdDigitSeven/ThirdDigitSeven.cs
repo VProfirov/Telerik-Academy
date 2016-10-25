@@ -30,11 +30,15 @@ namespace ThirdDigitSeven
             //checking if the 3th position is seven
             if (containerOfThird % 10 == 7)
             {
+                // Note for a case on the C# Fundamentals test
+                // true => in the console => True
                 Console.WriteLine(true);
             }
             else
             {
-                Console.WriteLine(false);
+                // this will make it
+                // false => false, instead of False
+                Console.WriteLine(false.ToString().ToLower());
             }
         }
     }
