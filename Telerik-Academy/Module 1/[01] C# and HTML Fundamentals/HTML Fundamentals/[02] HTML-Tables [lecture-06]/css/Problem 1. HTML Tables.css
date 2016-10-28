@@ -1,0 +1,51 @@
+/*
+	Fresh fruits table
+*/
+
+#fresh-fruits {
+	text-align: center;
+	margin: 5px;
+}
+
+#fresh-fruits thead th {
+	margin: 5px;
+	font-size: 30px;
+}
+
+#fresh-fruits tbody td {
+	text-align: left;
+	font-size: 18px;
+}
+/*
+	Cross Puzzle table - Title goes here
+*/
+
+#cross-puzzle {
+	border: 1px solid grey;
+}
+
+#cross-puzzle td {
+	width: 20px;
+	text-align: center;
+	border: 1px solid grey;
+}
+
+#cross-puzzle th {
+	width: 115px;
+	border: 1px solid grey;
+}
+
+#I {
+	text-align: center;
+}
+
+#J {
+	text-align: right;
+	vertical-align: bottom;
+}
+
+#O {
+	text-align: center;
+}
+
+/*This CSS is not needed but still, yet used to do the job*/

@@ -1,0 +1,40 @@
+table {
+	background: #f3f9fa;
+	border: 1px solid #8df6f4;
+	border-collapse: collapse;
+	text-shadow: 2px 2px 3px #aaa;
+}
+
+th {
+	padding: 10px 20px;
+	text-align: right
+}
+
+td {
+	text-align: center;
+	border: 1px solid #8df6f4;
+}
+
+#result,
+button {
+	display: inline-block;
+	width: 60px;
+	background: #f3f9fa;
+	border: none;
+	font-size: 30px;
+	font-family: Consolas;
+	font-weight: bold;
+	color: #8df6f4;
+	text-shadow: 2px 2px 3px #aaa;
+}
+
+#result {
+	text-align: right;
+}
+
+button {
+	padding: 10px 20px;
+	text-align: center;
+}
+
+ /*type="text" style="display: inline-block; width: 50px; background: #f3f9fa; text-align: right; border: none; font-size: 30px; font-family: Consolas; font-weight: bold; color: #8df6f4; text-shadow: 2px 2px 3px #aaa;" padding: 10px 20px;*/
