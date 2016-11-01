@@ -39,4 +39,25 @@ namespace ExchangeIfGreater
             }
         }
     }
+
+    class ShortSolution
+    {
+        public static void Solution()
+        {
+            double a = double.Parse(Console.ReadLine());
+            double b = double.Parse(Console.ReadLine());
+
+            if (a>b)
+            {
+                Console.WriteLine(b + " " + a);
+            }
+            else
+            {
+                Console.WriteLine(a + " " + b);
+            }
+
+            // To execute the solution exchange the code in the Main(){ ShortSolution.Solution(); }
+        }
+    }
 }
+

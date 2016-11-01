@@ -50,7 +50,7 @@ namespace ModifyBitAtPosition
                       & 011111
                       _________
                         0(modified 1 to 0) => becomes 0 in any case possible ( 1 or 0 )
-                        *0*1....(the rest is the same)
+                       *0*1....(the rest is the same)
                       _________
                         000100
                  */

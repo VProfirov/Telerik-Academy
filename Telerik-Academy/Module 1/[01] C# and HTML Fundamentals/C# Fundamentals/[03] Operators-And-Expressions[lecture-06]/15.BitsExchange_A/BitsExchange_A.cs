@@ -34,7 +34,8 @@ namespace BitsExchange_A
 
             for (int i = 0; i < 3; i++)
             {
-                // TAKES the bit at position using & and 1 (if 0&1 => 0, if 1&1=>1)
+               //TODO:fix expl (check; extract; change)
+               // TAKES the bit at position using & and 1 (if 0&1 => 0, if 1&1=>1)
                 // opposit to CHANGING :
                     // change to 0 =>  & 0 (if 0&0 => 0, if 1&0=>0)
                     // change to 1 =>  | 1 (if 0|1 => 1, if 1|1=>1)
