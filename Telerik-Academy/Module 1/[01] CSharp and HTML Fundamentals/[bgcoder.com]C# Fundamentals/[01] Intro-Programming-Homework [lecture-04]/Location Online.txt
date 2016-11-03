@@ -1,0 +1,7 @@
+- Tasks:
+https://github.com/TelerikAcademy/CSharp-Part-1/blob/master/Topics/01.%20Introduction-to-Programming/homework/README.md
+
+- Solutions:
+http://bgcoder.com/Contests/314/CSharp-Fundamentals-01-Introduction-to-Programming
+
+**Footenote : TODO: fill in with *.cs (only, will be enough)
