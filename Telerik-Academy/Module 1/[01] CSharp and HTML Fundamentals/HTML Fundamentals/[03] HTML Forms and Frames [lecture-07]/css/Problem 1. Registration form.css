@@ -1,0 +1,30 @@
+table {
+	border: 2px solid black;
+	border-collapse: collapse;
+	width: 35%;
+}
+
+td,
+th{
+	border: 1px solid black;
+}
+th:first-child{
+	text-align: right;
+	width: 10em;
+}
+
+/*td:first-child <- is still correct, beacuse only in the foot there is :first-child that is td*/
+tfoot tr td:first-child{
+	text-align: center;
+	background-color: #5DBCD2;
+	padding: 5px;
+}
+
+.country-options{
+	width: 150px;
+}
+
+textarea{
+	/*border-style: none;*/
+	resize: none;
+}

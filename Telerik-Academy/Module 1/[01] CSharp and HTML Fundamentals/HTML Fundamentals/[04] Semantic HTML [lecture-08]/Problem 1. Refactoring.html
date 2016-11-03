@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta content="charset=utf-8">
+	<title>01.Refactoring</title>
+</head>
+
+<body>
+	<header>
+		<h1>The Header</h1>
+		<nav>
+			<ol type="1">
+				<li><a href="#">nav item 1</a>
+				</li>
+				<li><a href="#">nav item 2</a>
+				</li>
+				<!-- NB! All other items are navigation and "navitem 4" are part of semanticly holistic block -->
+				<li><a href="#">nav item 3</a>
+				</li>
+				<!-- !Point! Semantically the group elements should look and function similarly. Thus far <span> is not need, not recommended (even as an empty tag) -->
+				<li><a href="#"><span id="nav4">nav item 4</span></a>
+				</li>
+				<!-- If "nav item 4" has some special function, the <span> will ensure appropriate anchor modification point -->
+			</ol>
+		</nav>
+	</header>
+	<section id="mainBody">
+		<article id="article1">
+			<h2>Post header</h2>
+			<p>
+				<!-- <span id="Donec(1-4)"> {same {if}condition as "nav item 4"} id anchor points for additional styling-->
+				Lorem ipsum dolor sit amet, consectetur adipiscing <strong>elit</strong>. Mauris urna orci, euismod vitae sollicitudin et, varius et velit. Cras et tellus erat. Vestibulum auctor varius purus faucibus posuere. Maecenas et libero et orci bibendum eleifend sit amet ut purus. Sed at lorem in metus tempus pretium. Praesent cursus rhoncus nulla. Nulla condimentum lacus et ligula consectetur eu tristique sem scelerisque. Duis id velit enim, sed sodales nulla. Donec leo erat, posuere vel scelerisque in, rutrum ac magna. <span id="Donec1">Donec</span> <em>elementum nunc molestie nulla semper</em> vitae placerat turpis bibendum. Phasellus egestas lobortis dictum.
+			</p>
+		</article>
+		<article id="article2">
+			<h2>Post header</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing <strong>elit</strong>. Mauris urna orci, euismod vitae sollicitudin et, varius et velit. Cras et tellus erat. Vestibulum auctor varius purus faucibus posuere. Maecenas et libero et orci bibendum eleifend sit amet ut purus. Sed at lorem in metus tempus pretium. Praesent cursus rhoncus nulla. Nulla condimentum lacus et ligula consectetur eu tristique sem scelerisque. Duis id velit enim, sed sodales nulla. Donec leo erat, posuere vel scelerisque in, rutrum ac magna. <span id="Donec2">Donec</span> <em>elementum nunc molestie nulla semper</em> vitae placerat turpis bibendum. Phasellus egestas lobortis dictum.
+			</p>
+		</article>
+		<article id="article3">
+			<h2>Post header</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing <strong>elit</strong>. Mauris urna orci, euismod vitae sollicitudin et, varius et velit. Cras et tellus erat. Vestibulum auctor varius purus faucibus posuere. Maecenas et libero et orci bibendum eleifend sit amet ut purus. Sed at lorem in metus tempus pretium. Praesent cursus rhoncus nulla. Nulla condimentum lacus et ligula consectetur eu tristique sem scelerisque. Duis id velit enim, sed sodales nulla. Donec leo erat, posuere vel scelerisque in, rutrum ac magna. <span id="Donec3">Donec</span> <em>elementum nunc molestie nulla semper</em> vitae placerat turpis bibendum. Phasellus egestas lobortis dictum.
+			</p>
+		</article>
+		<article id="article4">
+			<h2>Post header</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing <strong>elit</strong>. Mauris urna orci, euismod vitae sollicitudin et, varius et velit. Cras et tellus erat. Vestibulum auctor varius purus faucibus posuere. Maecenas et libero et orci bibendum eleifend sit amet ut purus. Sed at lorem in metus tempus pretium. Praesent cursus rhoncus nulla. Nulla condimentum lacus et ligula consectetur eu tristique sem scelerisque. Duis id velit enim, sed sodales nulla. Donec leo erat, posuere vel scelerisque in, rutrum ac magna. <span id="Donec4">Donec</span> <em>elementum nunc molestie nulla semper</em> vitae placerat turpis bibendum. Phasellus egestas lobortis dictum.
+			</p>
+		</article>
+	</section>
+	<footer>
+		<p>and the footer</p>
+	</footer>
+</body>
+
+</html>

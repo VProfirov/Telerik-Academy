@@ -1,0 +1,65 @@
+table#main-table {
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 0px;
+}
+/*border-collapse is breaking the set for a rounded corners(border-radius)*/
+
+table#fieldsets-table {
+	border: 1px solid black;
+	padding: 5px 0px;
+	margin: 5px;
+}
+
+th {
+	border-bottom: 1px solid black;
+	margin: 0px;
+}
+/* if it was in the CSS MODE
+span#words {
+	color: cornflowerblue;
+	text-decoration: underline;
+}
+*/
+
+fieldset {
+	padding: 5px;
+	margin: 2px;
+}
+
+legend {
+	text-align: center;
+	font-size: 20px;
+	font-family: Consolas;
+	padding: 0px 10px;
+}
+
+#img-td {
+	padding: 0;
+}
+
+#price {
+	padding: 0;
+	text-align: center;
+}
+/*
+	possible nested tables for ease,
+	but should work with CSS (just no time)
+*/
+/* if it was in the CSS MODE
+div#stats {
+	position: relative;
+	top: -95px;
+	text-align: right;
+}
+
+figure {
+	position: relative;
+	top: 20px;
+	left: -40px;
+}
+
+figcaption {
+	text-align: center;
+}
+*/

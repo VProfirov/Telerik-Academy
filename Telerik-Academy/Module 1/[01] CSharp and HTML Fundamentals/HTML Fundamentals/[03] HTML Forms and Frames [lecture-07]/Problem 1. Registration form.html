@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="css/Problem 1. Registration form.css">
+</head>
+
+<body>
+    <form action="" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <th class="labels"><label for="ln">Last Name</label></th>
+                    <td colspan="3"><input type="text" size="40" autofocus placeholder="Nakov" name="last-name" id="ln"></td>
+                </tr>
+                <tr>
+                    <th class="labels"><label for="fn">First Name</label></th>
+                    <td colspan="3"><input type="text" size="40" placeholder="Svetlin" name="first-name" id="fn"></td>
+                </tr>
+                <tr>
+                    <th class="labels"><label for="adr">Address</label></th>
+                    <td colspan="3"><textarea placeholder="17 Hristo Botev Str. floor 3, apt. 12" name="adress" rows="8" cols="40"></textarea></td>
+                </tr>
+                <tr>
+                    <th class="labels"><label for="city">City</label></th>
+                    <td><input type="text" size="26" placeholder="Kaspichan" name="city-adress" id="city"></td>
+                    <th class="labels"><label for="state">State</label></th>
+                    <td><input type="text" size="3" name="state-address" id="state"></td>
+                </tr>
+                <tr>
+                    <th class="labels"><label for="postal">Zip/Postal Code</label></th>
+                    <td colspan="3"><input type="text" size="40" placeholder="9325" name="postal-zip-code" id="postal"></td>
+
+                </tr>
+                <tr>
+                    <th><label for="country">Country</label></th>
+                    <td colspan="3">
+                        <select class="country-options" name="cn-op" id="country">
+                          <option value="au">Austria</option>
+                          <option value="bg" selected>Bulgaria</option>
+                          <option value="fu">*Murica</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="labels"><label for="area-code">Phone(country code, area code, number)</label></th>
+                    <td colspan="3" class="phone-input">
+                        (+
+                        <input type="tel" size="2" maxlength="3" placeholder="359" name="area-code" class="phone-number-format" id="area-code"> )
+                        <input type="tel" size="2" maxlength="3" placeholder="88" name="mobile-company-code" class="phone-number-format" id="mob-comp-code"> -
+                        <input type="tel" size="4" maxlength="6" placeholder="8334343" name="phone-number" class="phone-number-format" id="phone-number">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="mail">E-mail</label></th>
+                    <td colspan="3"><input type="email" size="40" placeholder="nakov@kaspichan.org" name="mail" id="mail"></td>
+                </tr>
+                <tr>
+                    <th><label for="month">Birth date</label></th>
+                    <td colspan="3">
+                        <label for="month">Month</label>
+                        <input type="text" size="1" maxlength="2" placeholder="06" name="month" class="bd-format" id="month">
+                        <label for="day">Day</label>
+                        <input type="text" size="1" maxlength="2" placeholder="14" name="day" class="bd-format" id="day">
+                        <label for="year">Year(4 digits)</label>
+                        <input type="text" size="2" maxlength="4" placeholder="1980" name="year" class="bd-format" id="year">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="gender">Gender</label></th>
+                    <td colspan="3">
+                        <select class="gender" name="gender" id="gender">
+                        <option value="it">It</option>
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="alumni">Starting date</label></th>
+                    <td colspan="3">
+                        <input type="radio" name="alumni" value="spring" id="spring">
+                        <label for="spring">Spring 2006</label>
+                        <!-- NB: the same NAME attribute makes sure that only one of the two alumni can be selected as to be send to the server -->
+                        <input type="radio" name="alumni" value="summer" id="summer">
+                        <label for="summer">Summer 2006</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="CaQ">Comments/Questions</label></th>
+                    <td colspan="3"><textarea rows="8" cols="40" name="CaQ" placeholder="Please send me more information."></textarea></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Clear This Form</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</body>
+
+</html>
