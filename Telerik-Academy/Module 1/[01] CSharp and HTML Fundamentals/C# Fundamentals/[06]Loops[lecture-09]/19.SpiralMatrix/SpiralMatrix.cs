@@ -26,6 +26,7 @@ namespace SpiralMatrix
 
             for (int i = 1; i <= maxRotations; i++)
             {
+                ////out of the bounderies check ()&&( ouside || not filled)
                 if (direction == "right" && (col > n - 1 || matrix[row, col] != 0))
                 {
                     direction = "down";
