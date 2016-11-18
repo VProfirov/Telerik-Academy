@@ -1,0 +1,84 @@
+/*THE SIZE IS AUTO-RESPONSIVE ? */
+
+body {
+	margin: 0;
+	padding: 0;
+	/* Null for the pre-def stats*/
+	
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	/* different sizes same font*/
+}
+
+a {
+	text-decoration: none;
+	color: #FFEEAA;
+}
+
+table {
+	background-color: #595959;
+	height: 200px;
+}
+/* And this is why you should not use cols - but for the very basics
+col.left-col {
+	color: pink;
+}
+*/
+/*td.right-side {width: 220px;}*/
+/*td.left side !! -colgroup- */
+
+.label {
+	font-style: italic;
+	color: white;
+}
+/* top the text - object alignment*/
+
+.label #name-label {
+	vertical-align: text-top;
+}
+
+#indicator-circle {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #71B47A;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+th {
+	text-align: left;
+	font-size: 15px;
+	/*weight vs slim*/
+}
+
+th,
+#action,
+#response-time {
+	color: #BBBBBB;
+}
+
+#name,
+#email,
+#link-to-post {
+	color: #FFEEAA;
+}
+
+#support-status {
+	/*font-weight ?? bolder */
+	
+	font-weight: bolder;
+	font-size: 11px;
+	display: table-cell;
+	color: #E5051A;
+}
+
+#status {
+	color: #E56D2A;
+	/*exact color*/
+}
+/*general font-style*/
+/* Sommet Slab Rounded Bold */
+/*font-size*/
+/*NB! background Table Size (right side)*/

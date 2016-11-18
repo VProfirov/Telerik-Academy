@@ -1,0 +1,69 @@
+table,
+td,
+th {
+	border-collapse: collapse;
+	border: 1px solid #c8c6b0;
+	font-family: Arial W01 Light, Arial;
+	font-size: 11px;
+}
+
+table {
+	width: 456px;
+	height: 153px;
+}
+
+th {
+	border-color: #449f05;
+	color: white;
+	height: 22px;
+	font-weight: 100;
+	padding: 2px 5px 5px 5px;
+	/*better way to reposition the text[element] inside*/
+}
+
+td {
+	height: 28px;
+	padding: 2px 5px;
+}
+
+th,
+td {
+	/* some top left padding - lower*/
+	
+	text-align: left;
+}
+
+.c-name {
+	width: 135px;
+}
+
+.city {
+	width: 110px;
+}
+
+.country {
+	width: 125px;
+	text-align: left center;
+}
+
+.isPromoted {
+	width: 80px;
+}
+
+thead tr:nth-child(1) {
+	background-image: linear-gradient(#66cc00, #5abe06)
+	/* background-color: #56b906; */
+}
+
+tr:nth-child(2n) {
+	background-color: #ECECD8;
+}
+
+tr:nth-child(2n+1) {
+	background-color: white;
+}
+
+img {
+	padding: 5px;
+	vertical-align: middle;
+}

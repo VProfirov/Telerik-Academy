@@ -1,0 +1,17 @@
+p {
+	color: #0094ff;
+	font-family: Consolas;
+	/*
+	first letter - font : Edwardian Script ITC 
+	first line
+	*/
+}
+
+p::first-letter {
+	font-family: Edwardian Script ITC;
+	font-size: xx-large;
+}
+
+p::first-line {
+	font-weight: bold;
+}
