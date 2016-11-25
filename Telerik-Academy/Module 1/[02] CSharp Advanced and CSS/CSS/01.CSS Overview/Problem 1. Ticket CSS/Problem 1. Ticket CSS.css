@@ -4,7 +4,7 @@ body {
 	margin: 0;
 	padding: 0;
 	/* Null for the pre-def stats*/
-	
+
 	font-family: Arial, sans-serif;
 	font-size: 11px;
 	/* different sizes same font*/
@@ -67,7 +67,7 @@ th,
 
 #support-status {
 	/*font-weight ?? bolder */
-	
+
 	font-weight: bolder;
 	font-size: 11px;
 	display: table-cell;
