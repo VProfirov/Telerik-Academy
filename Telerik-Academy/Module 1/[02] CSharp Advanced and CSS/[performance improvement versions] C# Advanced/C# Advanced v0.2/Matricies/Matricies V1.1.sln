@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matricies", "Matricies\Matricies.csproj", "{CA98FFBD-678A-4413-9D09-243C1F0976B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceTesting Template", "PerformanceTesting Template\PerformanceTesting Template.csproj", "{7F01745C-7820-4896-8981-DF6B1F8546D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA98FFBD-678A-4413-9D09-243C1F0976B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA98FFBD-678A-4413-9D09-243C1F0976B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA98FFBD-678A-4413-9D09-243C1F0976B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA98FFBD-678A-4413-9D09-243C1F0976B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F01745C-7820-4896-8981-DF6B1F8546D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F01745C-7820-4896-8981-DF6B1F8546D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F01745C-7820-4896-8981-DF6B1F8546D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F01745C-7820-4896-8981-DF6B1F8546D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
