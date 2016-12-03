@@ -4,3 +4,9 @@ div {
 	border: 1px solid #fd0001;
 	border-radius: 100px;
 }
+
+/*
+for less divs (like 18)
+div div{
+    background-color: aqua 
+}*/
