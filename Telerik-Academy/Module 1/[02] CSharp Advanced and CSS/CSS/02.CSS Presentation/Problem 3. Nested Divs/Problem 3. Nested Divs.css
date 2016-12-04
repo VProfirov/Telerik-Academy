@@ -1,12 +1,14 @@
 div {
-	width: 97%;
+	width: 90%;
 	background-color: #000001;
 	border: 1px solid #fd0001;
 	border-radius: 100px;
 }
 
-/*
-for less divs (like 18)
-div div{
-    background-color: aqua 
-}*/
+div div div div div div div div div div div div div div div div div div div *{
+	display: none;
+}
+
+body>div{
+	width:600px;
+}
