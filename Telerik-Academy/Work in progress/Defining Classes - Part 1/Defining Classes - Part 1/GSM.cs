@@ -24,10 +24,12 @@ namespace Defining_Classes___Part_1
             this.Display = display;
         }
 
+        public static string iPhone { get; set; }
 
+        public Call CallHistory { get; set; }
         public string Model { get; private set; }
 
-        #region EncapsulateFields
+        //encapsulation all fields
         public Display Display
         {
             get
@@ -58,10 +60,6 @@ namespace Defining_Classes___Part_1
                 }
             }
         }
-        #endregion
-        public List<Call> CallHistory { get; set; }
-
-        public static string iPhone { get; set; }
 
         public override string ToString()
         {

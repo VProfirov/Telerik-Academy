@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battery.cs" />
-    <Compile Include="Call.cs" />
     <Compile Include="Utility\BatteryType.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="GSM.cs" />

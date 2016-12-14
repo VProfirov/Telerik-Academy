@@ -1,8 +1,1 @@
 Create Develop branch
-
-#Search:
-- private constructors -use- factory pattern ...
-[\/]- static constructors -use- initializing static fields
-
-- accessing internal classes
-
