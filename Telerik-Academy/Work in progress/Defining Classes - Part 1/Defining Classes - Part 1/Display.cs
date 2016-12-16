@@ -34,7 +34,12 @@ namespace Defining_Classes___Part_1
                 return this.numberOfColors;
             }
         }
-
+        /// <summary>
+        /// utility class that has the Validation - check the Exam
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="numberOfColors"></param>
+        /// <returns></returns>
         public object[] Validator(double size,int numberOfColors)
         {
             ////TODO: add validation logic
