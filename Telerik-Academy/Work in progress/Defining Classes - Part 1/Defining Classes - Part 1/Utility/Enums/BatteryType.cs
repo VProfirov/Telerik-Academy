@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Defining_Classes___Part_1
+namespace Defining_Classes___Part_1.Utility.Enums
 {
-    class Program
+    enum BatteryType
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        Li_Ion, NiMH, NiCd
     }
 }

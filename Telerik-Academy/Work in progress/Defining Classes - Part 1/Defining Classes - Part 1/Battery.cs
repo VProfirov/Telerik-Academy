@@ -3,18 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Defining_Classes___Part_1.Utility.Enums;
 namespace Defining_Classes___Part_1
 {
     class Battery
     {
-        public readonly BatteryType type;
+        ////TODO:#4. readonly Enum Types ?
+        private BatteryType type;
 
         private TimeSpan hoursIdle;
 
         private TimeSpan hoursTalk;
 
-        public BatteryType Type { get; set; }
+        public BatteryType Type
+        {
+            get
+            {
+                return this.type;
+            }
+            set
+            {
+                this.type = value;
+            }
+        }
 
         public TimeSpan HoursIdle
         {

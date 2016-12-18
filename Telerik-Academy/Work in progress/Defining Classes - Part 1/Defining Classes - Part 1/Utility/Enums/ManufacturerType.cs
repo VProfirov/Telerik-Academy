@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Defining_Classes___Part_1
+namespace Defining_Classes___Part_1.Utility.Enums
 {
-    enum BatteryType
+    enum ManufacturerType
     {
-        Li_Ion, NiMH, NiCd
+        Apple,Google,Samsung,Xiomi,HTC
     }
 }

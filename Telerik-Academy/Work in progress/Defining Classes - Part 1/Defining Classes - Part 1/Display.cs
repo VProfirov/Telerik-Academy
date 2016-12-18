@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Defining_Classes___Part_1.Utility.Validation;
 namespace Defining_Classes___Part_1
 {
     class Display
@@ -14,9 +14,11 @@ namespace Defining_Classes___Part_1
 
         public Display(double size,int numberOfColors)
         {
-            object[] valid = Validator(size,numberOfColors);
-            this.size = (double)valid[0];
-            this.numberOfColors = (int)valid[1];
+            this.size = size;
+            this.numberOfColors = numberOfColors;
+            this.Validation();
+            ////better posion then to validate at the end... [as in the EXAM - Is it part of the factory pattern?]
+            ////Shouldnt the Validation take the ctor params to check them first ?
         }
         public double Size
         {
@@ -35,16 +37,23 @@ namespace Defining_Classes___Part_1
             }
         }
         /// <summary>
-        /// utility class that has the Validation - check the Exam
+        /// Uses utility class that has the Validation - check the Exam
         /// </summary>
         /// <param name="size"></param>
         /// <param name="numberOfColors"></param>
-        /// <returns></returns>
-        public object[] Validator(double size,int numberOfColors)
+        /// <returns>ArgumentException if Invalid</returns>
+        private void Validation()
         {
-            ////TODO: add validation logic
-            object[] validated = { size, numberOfColors };
-            return validated;
+            ////TODO:#6.Add validation logic in ?one direction? (utity validatio nonly? or + Prop Validation Too)
+            Validator.ValidateDisplaySize(this.size);
+            Validator.ValidateDisplayNumberOfColors(this.numberOfColors);
+            /*
+             * if the Method names was Validator (and the class has the same name)
+             then : 
+                Utility.Validation.Validator.ValidateDisplayNumberOfColors(this.numberOfColors);
+             is needed in order to negate embiguity with the name calling
+             */
+
         }
     }
 }
