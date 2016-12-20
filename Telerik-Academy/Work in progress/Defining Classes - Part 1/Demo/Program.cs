@@ -13,6 +13,14 @@ namespace Demo
             var someF = "Red";
             var f = (Feathers) Enum.Parse(typeof(Feathers), someF, true);
             Console.WriteLine(f);
+
+            Console.WriteLine("______следва ХАКЕРИЯ_______");
+            GSM_Demo wtfGSM = new GSM_Demo();
+            Console.WriteLine(GSM_Demo.SomsSTATICstring);
+            Console.WriteLine(wtfGSM.AssPROP = "ass set");
+            Console.WriteLine(GSM_Demo.SomsSTATICstring);
+            Console.WriteLine(GSM_Demo.AssStaticPROP);
+            Console.WriteLine(GSM_Demo.SomsSTATICstring);
         }
 
         enum Feathers { Red, Green }

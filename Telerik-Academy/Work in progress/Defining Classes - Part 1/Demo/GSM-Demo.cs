@@ -10,6 +10,11 @@ namespace Demo
 
     class GSM_Demo
     {
+        public static string SomsSTATICstring = "WTF";
+
+        public readonly string SomeREADONLYstring = "READONLY wtf";
+
+
         public string Model { get; set; }
         public string Manufacturer { get; set; }
         public int Price { get; set; }
@@ -29,15 +34,42 @@ namespace Demo
             this.Display = display;
         }
 
-        public GSM_Demo(string model, string manufacturer, int price): this(model, manufacturer, price, battery, display)
+        public GSM_Demo(string model, string manufacturer, int price): this(model, manufacturer, price,null,null)
         {
 
         }
 
-        public string Type { get; set; } = "hi";
-        private GSM_Demo(string model)
+        public GSM_Demo()
         {
+            
+        }
 
+        public string Type { get; set; } = "hi";
+      
+
+        public string AssPROP { 
+            get
+            {
+                //this acts as DEFAULT setting - as can be done at the ctor
+                return SomsSTATICstring = "ass";
+            }
+            set
+            {
+                SomsSTATICstring = value;
+            }
+        }
+
+        // example of use setting a "template data" to be used in the class
+        public static string AssStaticPROP
+        {
+            get
+            {
+                return SomsSTATICstring = "ASSPROP :D";
+            }
+            set
+            {
+                SomsSTATICstring = value;
+            }
         }
     }
 }

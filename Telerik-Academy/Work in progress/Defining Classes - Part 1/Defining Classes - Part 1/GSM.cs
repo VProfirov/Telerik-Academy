@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading.Tasks;
 using Defining_Classes___Part_1.Utility.Enums;
+using Defining_Classes___Part_1.Utility.Validation;
 
 namespace Defining_Classes___Part_1
 {
-    using System.Runtime.Remoting.Channels;
-
-    using Defining_Classes___Part_1.Utility.Validation;
+    using System.Runtime.CompilerServices;
 
     class GSM
     {
@@ -20,17 +19,17 @@ namespace Defining_Classes___Part_1
         private readonly ManufacturerType manufacturer;
         private readonly ModelType model;
         //passed as a string and used as a type (ManufacturerType)Enum.Parse(typeof(ManufacturerType),value)
-
+        
             /// <summary>
             /// Using auto implemented Properties instead
             /// </summary>
 //        private decimal price;
 //        private string owner;
 
-        private static string iPone4S;
+        private static GSM iPone4S = new GSM("iPhone","Apple",999);
         
-        //if unknown fill = null
-        public GSM(string model, string manufacturer, decimal price, string owner, Display display, Battery battery)
+        //if unknown fill = null --- decimal?
+        public GSM(string model, string manufacturer, decimal? price, string owner, Display display, Battery battery)
         {
             this.Display = display;
             this.Battery = battery;
@@ -42,9 +41,28 @@ namespace Defining_Classes___Part_1
             this.Price = price;
             this.Owner = owner;
         }
-        ////TODO:#1.SubChain ctors
 
+        public GSM(string model,string manufacturer,decimal? price):this(model,manufacturer,price, null, null,null)
+        {
+              
+        }
+
+        public GSM(string model, string manufacturer):this(model,manufacturer,null,null,null,null)
+        {
+            
+        }
+        ////TODO:[?]1.UPwards vs DOWNwards SubChain ctors {thesis : DOWNWARDS ctors with external abstraction for AN AUTOGENERATOR}
+        ////TODO:/VS/static ctor that initializes it all ?
+        ////TODO:/VS/static Properties to initialize it all on demand (#region Example)? {with a check if it is already init-ed}
+        
         ////prop with expression body
+        public static GSM iPhone4S
+        {
+            get
+            {
+                return iPhone4S;
+            }
+        }
         public ModelType Model => this.model;
 
         public ManufacturerType Manufacturer => this.manufacturer;
@@ -84,33 +102,28 @@ namespace Defining_Classes___Part_1
             }
         }
 
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
         public string Owner { get; set; }
 
         #endregion
+
         ////TODO:#2.Finish Calls and CallHistory
         public List<Call> CallHistory { get; set; }
 
         ////isn't this some kind of loop calling? static field ?cant have properties with setter
         //// TODO:#5.Check the deal of static properties
-        public static string iPhone4S
-        {
-            get
-            {
-                return iPhone4S;
-            }
-            set
-            {
-                iPhone4S = value;
-            }
-        }
 
 
         public override string ToString()
         {
+            var builder = new StringBuilder();
             ////string interpolation expression
-            var message = $"The Model of the GSM is : {this.model}";
+            builder.Append($"{this.Model} from {this.Manufacturer} is currently priced at {this.Price}");
+            builder.Append($"Other characteristics are: {this.Battery} - battery, and {this.Display} - display.");
+            builder.Append($"The Current owner is {this.Owner}");
+            
+            var message = builder.ToString();
             return message;
         }
 
@@ -121,3 +134,4 @@ namespace Defining_Classes___Part_1
         }
     }
 }
+// example : https://msdn.microsoft.com/en-us/library/w86s7x04.aspx
