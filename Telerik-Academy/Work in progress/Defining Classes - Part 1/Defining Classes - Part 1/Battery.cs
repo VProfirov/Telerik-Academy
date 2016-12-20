@@ -8,7 +8,7 @@ namespace Defining_Classes___Part_1
 {
     class Battery
     {
-        ////TODO:#4. readonly Enum Types ?
+        ////TODO:#4.CTORs !! ... readonly Enum Types ?
         private BatteryType type;
 
         private TimeSpan hoursIdle;
@@ -55,9 +55,9 @@ namespace Defining_Classes___Part_1
         {
             StringBuilder message = new StringBuilder();
             message.AppendLine("_____Battery Status_____");
-            message.AppendFormat("Battery type: {0}",this.type);
-            message.AppendFormat("Hours idle: {0}", this.hoursIdle);
-            message.AppendFormat("Hours talked: {0}", this.hoursTalk);
+            message.AppendFormat("Battery type: {0}",this.Type);
+            message.AppendFormat("Hours idle: {0}", this.HoursIdle);
+            message.AppendFormat("Hours talked: {0}", this.HoursTalk);
             message.AppendLine("________________________");
             return base.ToString();
         }

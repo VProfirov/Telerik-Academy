@@ -26,7 +26,7 @@ namespace Defining_Classes___Part_1
 //        private decimal price;
 //        private string owner;
 
-        private static GSM iPone4S = new GSM("iPhone","Apple",999);
+        private static readonly GSM iPhone4S = new GSM("iPhone","Apple",999);
         
         //if unknown fill = null --- decimal?
         public GSM(string model, string manufacturer, decimal? price, string owner, Display display, Battery battery)
@@ -47,16 +47,18 @@ namespace Defining_Classes___Part_1
               
         }
 
-        public GSM(string model, string manufacturer):this(model,manufacturer,null,null,null,null)
+        public GSM(string model, string manufacturer)//:this(model,manufacturer,null,null,null,null) // no null handling at DISPLAY & Battery
         {
-            
+            Validation(model, manufacturer);
+            this.manufacturer = (ManufacturerType) Enum.Parse(typeof(ManufacturerType), manufacturer);
+            this.model = (ModelType) Enum.Parse(typeof(ModelType), model);
         }
         ////TODO:[?]1.UPwards vs DOWNwards SubChain ctors {thesis : DOWNWARDS ctors with external abstraction for AN AUTOGENERATOR}
         ////TODO:/VS/static ctor that initializes it all ?
         ////TODO:/VS/static Properties to initialize it all on demand (#region Example)? {with a check if it is already init-ed}
         
         ////prop with expression body
-        public static GSM iPhone4S
+        public static GSM IPhone4S
         {
             get
             {

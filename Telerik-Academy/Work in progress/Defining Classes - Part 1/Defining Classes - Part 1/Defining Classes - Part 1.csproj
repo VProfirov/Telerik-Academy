@@ -45,10 +45,11 @@
   <ItemGroup>
     <Compile Include="Battery.cs" />
     <Compile Include="Call.cs" />
+    <Compile Include="GSMTest.cs" />
     <Compile Include="Utility\Enums\BatteryType.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="GSM.cs" />
-    <Compile Include="GSMTest.cs" />
+    <Compile Include="Run.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Enums\ManufacturerType.cs" />
     <Compile Include="Utility\Enums\ModelType.cs" />
