@@ -46,8 +46,8 @@ namespace Defining_Classes___Part_1
         {
               
         }
-
-        public GSM(string model, string manufacturer)//:this(model,manufacturer,null,null,null,null) // no null handling at DISPLAY & Battery
+        // no null handling at DISPLAY & Battery
+        public GSM(string model, string manufacturer):this(model,manufacturer,null,null,null,null) 
         {
             Validation(model, manufacturer);
             this.manufacturer = (ManufacturerType) Enum.Parse(typeof(ManufacturerType), manufacturer);
@@ -65,11 +65,18 @@ namespace Defining_Classes___Part_1
                 return iPhone4S;
             }
         }
+
+        ////TODO:#2.Finish Calls and CallHistory
+        public List<Call> CallHistory { get; set; }
+
         public ModelType Model => this.model;
 
         public ManufacturerType Manufacturer => this.manufacturer;
 
-        #region EncapsulatedFields
+        public decimal? Price { get; set; } // TODO validate
+
+        public string Owner { get; set; } // TODO validate
+
         public Display Display
         {
             get
@@ -96,25 +103,47 @@ namespace Defining_Classes___Part_1
             private set
             {
                 //// valid battery types for this GSM Brands
-                if (!(value.Type is BatteryType))
+                if (!(value.BatteryModel is BatteryType))
                 {
-                    throw new ArgumentException($"We don't support {value.Type}");
+                    throw new ArgumentException($"We don't support {value.BatteryModel}");
                 }
                 this.battery = value;
             }
         }
 
-        public decimal? Price { get; set; }
 
-        public string Owner { get; set; }
+        //generator for Call
+        public void AddCall(DateTime now, string number, TimeSpan duration)
+        {
+            Call myCall = new Call(now, number, duration);
+            CallHistory.Add(myCall);
+        }
 
-        #endregion
+        public void DeleteCalls(string number) // by Number /Name / Duration
+        {
+            for (int i = 0; i < CallHistory.Count(); i++)
+            {
+                if (CallHistory[i].DialedNumber == number)
+                {
+                    CallHistory.RemoveAt(i);
+                    i--; // not to jump over the next value when re-indexed
+                }
+            }
+        }
 
-        ////TODO:#2.Finish Calls and CallHistory
-        public List<Call> CallHistory { get; set; }
+        public void ClearCallHistory()
+        {
+            CallHistory.Clear();
+        }
+
+        public static decimal CalculateCallBill()
+        {
+            return 5; // pricepermin is fixed
+        }
+
 
         ////isn't this some kind of loop calling? static field ?cant have properties with setter
-        //// TODO:#5.Check the deal of static properties
+        //// TODO:#5.Check the deal of static properties [DONE-fix comment]
 
 
         public override string ToString()

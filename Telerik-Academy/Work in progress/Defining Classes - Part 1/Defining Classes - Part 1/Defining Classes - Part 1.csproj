@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Battery.cs" />
     <Compile Include="Call.cs" />
+    <Compile Include="GSMCallHistoryTest.cs" />
     <Compile Include="GSMTest.cs" />
     <Compile Include="Utility\Enums\BatteryType.cs" />
     <Compile Include="Display.cs" />
