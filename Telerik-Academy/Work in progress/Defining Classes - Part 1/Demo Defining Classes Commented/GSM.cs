@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
-using Defining_Classes___Part_1.Utility.Enums;
-using Defining_Classes___Part_1.Utility.Validation;
+using Demo_Defining_Classes_Commented.Utility.Enums;
+using Demo_Defining_Classes_Commented.Utility.Validation;
 
-namespace Defining_Classes___Part_1
+namespace Demo_Defining_Classes_Commented
 {
     using System.Runtime.CompilerServices;
 
@@ -15,13 +15,20 @@ namespace Defining_Classes___Part_1
         private Display display;
         private Battery battery;
         private List<Call> callHistory;
-
+        //requires Utility class with static methods for validation
         private readonly ManufacturerType manufacturer;
         private readonly ModelType model;
+        //passed as a string and used as a type (ManufacturerType)Enum.Parse(typeof(ManufacturerType),value)
+        
+            /// <summary>
+            /// Using auto implemented Properties instead
+            /// </summary>
+//        private decimal price;
+//        private string owner;
 
         private static readonly GSM iPhone4S = new GSM("iPhone","Apple",999);
-       
-
+        
+        //if unknown fill = null --- decimal?
         public GSM(string model, string manufacturer, decimal? price, string owner, Display display, Battery battery)
         {
             this.Display = display;
@@ -40,15 +47,16 @@ namespace Defining_Classes___Part_1
               
         }
         // no null handling at DISPLAY & Battery
-        public GSM(string model, string manufacturer):this(model,manufacturer,null,null,null,null)
+        public GSM(string model, string manufacturer)
         {
-           
+            this.manufacturer = (ManufacturerType) Enum.Parse(typeof(ManufacturerType), manufacturer);
+            this.model = (ModelType) Enum.Parse(typeof(ModelType), model);
         }
         ////TODO:[?]1.UPwards vs DOWNwards SubChain ctors {thesis : DOWNWARDS ctors with external abstraction for AN AUTOGENERATOR}
         ////TODO:/VS/static ctor that initializes it all ?
         ////TODO:/VS/static Properties to initialize it all on demand (#region Example)? {with a check if it is already init-ed}
         
-        ////Properties
+        ////prop with expression body
         public static GSM IPhone4S
         {
             get
@@ -58,12 +66,7 @@ namespace Defining_Classes___Part_1
         }
 
         ////TODO:#2.Finish Calls and CallHistory
-        public List<Call> CallHistory {
-            get
-            {
-                return this.callHistory;
-            }
-        }
+        public List<Call> CallHistory { get; set; }
 
         public ModelType Model => this.model;
 
@@ -82,10 +85,10 @@ namespace Defining_Classes___Part_1
             private set
             {
                 ////valid display size supported from the GSM Brands (in inches)
-//                if (!(value.Size >= 7 && value.Size <= 12))
-//                {
-//                    throw new ArgumentException($"We don't support {value.Size}, only 10 to 32 inch");
-//                }
+                if (!(value.Size >= 7 && value.Size <= 12))
+                {
+                    throw new ArgumentException($"We don't support {value.Size}, only 10 to 32 inch");
+                }
                 this.display = value;
             }
         }
@@ -99,15 +102,15 @@ namespace Defining_Classes___Part_1
             private set
             {
                 //// valid battery types for this GSM Brands
-//                if (!(value.BatteryModel is BatteryType))
-//                {
-//                    throw new ArgumentException($"We don't support {value.BatteryModel}");
-//                }
+                if (!(value.BatteryModel is BatteryType))
+                {
+                    throw new ArgumentException($"We don't support {value.BatteryModel}");
+                }
                 this.battery = value;
             }
         }
 
-        //Methods
+        //generator for Call
         public void AddCall(DateTime now, string number, TimeSpan duration)
         {
             Call myCall = new Call(now, number, duration);
@@ -131,14 +134,9 @@ namespace Defining_Classes___Part_1
             CallHistory.Clear();
         }
 
-        public decimal CalculateCallBill()
+        public static decimal CalculateCallBill()
         {
-            decimal callBill = 0;
-            foreach (var call in this.CallHistory)
-            {
-                callBill += call.DurationInSec.Seconds * 0.05M;
-            }
-            return callBill; // pricepermin is fixed
+            return 5; // pricepermin is fixed
         }
 
         public string PrintCallHistory()
@@ -154,6 +152,9 @@ namespace Defining_Classes___Part_1
             var message = callPrint.ToString();
             return message;
         }    
+
+        ////isn't this some kind of loop calling? static field ?cant have properties with setter
+        //// TODO:#5.Check the deal of static properties [DONE-fix comment]
       
         public override string ToString()
         {

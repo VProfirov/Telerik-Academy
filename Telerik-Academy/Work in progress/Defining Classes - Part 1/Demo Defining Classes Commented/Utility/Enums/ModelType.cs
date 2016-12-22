@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Defining_Classes___Part_1.Utility.Enums
+namespace Demo_Defining_Classes_Commented.Utility.Enums
 {
     enum ModelType
     {
@@ -13,6 +12,6 @@ namespace Defining_Classes___Part_1.Utility.Enums
         Nexus,
         Galaxy,
         PlusOne,
-        M7,M8,M9
+        M7,M8,M9,
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Defining_Classes___Part_1.Utility.Enums;
-namespace Defining_Classes___Part_1
+namespace Demo_Defining_Classes_Commented
 {
     class Battery
     {

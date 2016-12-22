@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Defining_Classes___Part_1.Utility.Enums;
+using Demo_Defining_Classes_Commented.Utility.Enums;
 
-namespace Defining_Classes___Part_1.Utility.Validation
+namespace Demo_Defining_Classes_Commented.Utility.Validation
 {
     public static class Validator
     {

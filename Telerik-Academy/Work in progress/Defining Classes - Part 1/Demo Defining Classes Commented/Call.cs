@@ -1,4 +1,4 @@
-﻿namespace Defining_Classes___Part_1
+﻿namespace Demo_Defining_Classes_Commented
 {
     using System;
     using System.Collections.Generic;
