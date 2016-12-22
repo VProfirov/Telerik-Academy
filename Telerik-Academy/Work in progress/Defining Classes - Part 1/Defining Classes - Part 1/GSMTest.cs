@@ -8,7 +8,7 @@ namespace Defining_Classes___Part_1
 {
     class GSMTest
     {
-        public static void TestGenerator()
+        public static void GSMTestGenerator()
         {
             GSM[] someGSMs = new GSM[]
                                  {
@@ -22,6 +22,11 @@ namespace Defining_Classes___Part_1
                 Console.WriteLine(gsm);
             }
             Console.WriteLine(GSM.IPhone4S);
+
+//            foreach (var gsm in someGSMs)
+//            {
+//              gsm.AddCall(DateTime.Now, "0001100",TimeSpan.FromMinutes(5));
+//            }
         }
     }
 }

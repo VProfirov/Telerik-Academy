@@ -16,5 +16,10 @@ Assuming that the price per minute is 0.37 calculate and print the total price o
 Remove the longest call from the history and calculate the total price again.
 Finally clear the call history and print it.
 */
+
+        public static void CallGenerator()
+        {
+
+        }
     }
 }

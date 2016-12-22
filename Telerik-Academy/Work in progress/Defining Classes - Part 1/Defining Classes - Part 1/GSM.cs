@@ -157,6 +157,7 @@ namespace Defining_Classes___Part_1
       
         public override string ToString()
         {
+//            var undef = "UNDEFINEd";
             var builder = new StringBuilder();
             ////string interpolation expression
             builder.AppendLine($"{this.Model} from {this.Manufacturer} is currently priced at {this.Price}");
