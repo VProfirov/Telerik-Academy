@@ -17,6 +17,7 @@ namespace Demo
             Console.WriteLine("______следва ХАКЕРИЯ_______");
             GSM_Demo wtfGSM = new GSM_Demo();
             Console.WriteLine(GSM_Demo.SomsSTATICstring);
+            Console.WriteLine(wtfGSM.AssPROP);
             Console.WriteLine(wtfGSM.AssPROP = "ass set");
             Console.WriteLine(GSM_Demo.SomsSTATICstring);
             Console.WriteLine(GSM_Demo.AssStaticPROP);

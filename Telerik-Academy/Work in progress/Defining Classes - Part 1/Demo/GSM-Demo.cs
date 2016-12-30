@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo_Defining_Classes_Commented
+namespace Demo
 {
     using System.Runtime.CompilerServices;
 

@@ -40,6 +40,8 @@ namespace Demo_Defining_Classes_Commented
 
             this.Price = price;
             this.Owner = owner;
+
+            //TODO when should we check in a ctor/class so that we dont break the Single Responsibility Principle
         }
 
         public GSM(string model,string manufacturer,decimal? price) : this(model, manufacturer, price, null,null, null)
