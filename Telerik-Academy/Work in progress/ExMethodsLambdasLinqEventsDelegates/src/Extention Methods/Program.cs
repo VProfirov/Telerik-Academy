@@ -18,7 +18,7 @@ namespace Extention_Methods
                 };
 
             string[] linqED = strR.Where(x => x.Length > 30).ToArray();
-
+            
             foreach (var lin in linqED)
             {
                 Console.WriteLine(lin);
