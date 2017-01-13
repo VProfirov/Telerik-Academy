@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52DE0A9A-7162-43CC-ADB1-2C62E825F398}</ProjectGuid>
+    <ProjectGuid>{CD98C450-669F-47E3-9F33-E9B1AF45CC58}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Defining_Classes___Part_1</RootNamespace>
-    <AssemblyName>Defining Classes - Part 1</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>Actions</RootNamespace>
+    <AssemblyName>Actions</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -43,23 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Battery.cs" />
-    <Compile Include="Call.cs" />
-    <Compile Include="GSMCallHistoryTest.cs" />
-    <Compile Include="GSMTest.cs" />
-    <Compile Include="Utility\Enums\BatteryType.cs" />
-    <Compile Include="Display.cs" />
-    <Compile Include="GSM.cs" />
-    <Compile Include="Run.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\Enums\ManufacturerType.cs" />
-    <Compile Include="Utility\Enums\ModelType.cs" />
-    <Compile Include="Utility\Validation\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

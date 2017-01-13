@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo
+namespace Funcs
 {
-    class Display
+    class Program
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }

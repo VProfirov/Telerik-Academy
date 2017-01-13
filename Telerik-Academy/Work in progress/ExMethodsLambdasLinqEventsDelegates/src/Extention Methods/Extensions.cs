@@ -7,6 +7,6 @@ namespace Extention_Methods
 {
     public static class Extensions
     {
-        public 
+       
     }
 }
