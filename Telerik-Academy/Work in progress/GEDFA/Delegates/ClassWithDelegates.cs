@@ -8,5 +8,14 @@ namespace Delegates
 {
     class ClassWithDelegates
     {
+        delegate void SomeDelegate();
+
+        public static void SomeM()
+        {
+        }
+
+        public void SomeM2()
+        {
+        }
     }
 }

@@ -26,6 +26,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicEvents", "BasicEvents"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicEvents", "BasicEvents\BasicEvents.csproj", "{D123F241-45B8-4E75-8A84-D02DAAED1376}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class Constructors and Inheritance", "NestedClasses\Class Constructors and Inheritance.csproj", "{F2C25FCD-94B8-4920-960A-2B126A7C6508}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classes Explored", "Classes Explored", "{B6364C43-03CE-4F86-8C57-9F1B66BB22C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Constructors", "Constructors", "{279096E0-8A88-4CCB-AEDA-BDB775BBEBCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,11 +70,17 @@ Global
 		{D123F241-45B8-4E75-8A84-D02DAAED1376}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D123F241-45B8-4E75-8A84-D02DAAED1376}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D123F241-45B8-4E75-8A84-D02DAAED1376}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2C25FCD-94B8-4920-960A-2B126A7C6508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2C25FCD-94B8-4920-960A-2B126A7C6508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2C25FCD-94B8-4920-960A-2B126A7C6508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2C25FCD-94B8-4920-960A-2B126A7C6508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D123F241-45B8-4E75-8A84-D02DAAED1376} = {5A1A3442-B716-44CB-9203-51CC97C57474}
+		{F2C25FCD-94B8-4920-960A-2B126A7C6508} = {279096E0-8A88-4CCB-AEDA-BDB775BBEBCC}
+		{279096E0-8A88-4CCB-AEDA-BDB775BBEBCC} = {B6364C43-03CE-4F86-8C57-9F1B66BB22C2}
 	EndGlobalSection
 EndGlobal
