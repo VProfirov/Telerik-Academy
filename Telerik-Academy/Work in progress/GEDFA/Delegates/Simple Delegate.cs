@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Delegates
 {
-    delegate IEnumerable<string> StackerIEnum();
+    delegate IEnumerable<string> IEnumStringStacker();
 
-    delegate string Stacker();
-
+    delegate string StringStacker();
     class Simple_Delegate
     {
         public IEnumerable<string> QuerryMethod()
@@ -20,17 +19,12 @@ namespace Delegates
         
     }
 
-    static class StaticSimple_Delegate
+    class StaticSimple_Delegate
     {
         public static IEnumerable<string> QM()
         {
             int counter = 0;
             yield return $"QM - {counter++}";
-        }
-
-        public static string QMs()
-        {
-            return "wtf";
         }
     }
 }

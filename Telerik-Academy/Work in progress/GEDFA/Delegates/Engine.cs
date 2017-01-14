@@ -13,9 +13,13 @@ namespace Delegates
     {
         static void Main(string[] args)
         {
-            Simple_Delegate so = new Simple_Delegate();
-//            Stacker stacker = QM
-            Console.WriteLine();
+            Simple_Delegate sd = new Simple_Delegate();
+            sd.QuerryMethod();
+            sd.QuerryMethod();
+
+
+            StaticSimple_Delegate ssd = new StaticSimple_Delegate();
+//            IEnumStringStacker iesStack = sd.QuerryMethod();
         }
     }
 }
