@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/arrayJS.js",
+            "program": "${workspaceRoot}/Array work/Valleys and Hills/Valleys.js",
             "cwd": "${workspaceRoot}"
         },
         {
