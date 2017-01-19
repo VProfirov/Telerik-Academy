@@ -9,6 +9,15 @@ namespace Extention_Methods
     {
         public static void Main(string[] args)
         {
+            char[] ch = new char[1];
+            char c = ch[0];
+            Console.WriteLine((int)c);
+            Console.WriteLine((int)ch[0]);
+            Console.WriteLine($"Def new char[1]: {default(char[])}");
+            Console.WriteLine($"Default char: {default(char)}");
+
+            Console.WriteLine($"Default TimeSpan: {default(TimeSpan)}");
+            Console.WriteLine("{0}",new string('_',50));
             string[] strR =
                 {
                     "Lorem ipsum dolor sit amet,", "consectetur adipiscing elit.",
