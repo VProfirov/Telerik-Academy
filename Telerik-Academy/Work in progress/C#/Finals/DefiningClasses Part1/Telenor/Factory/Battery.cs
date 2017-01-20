@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace Telenor.Factory
 {
+    using System.Diagnostics.Contracts;
+
     using Telenor.Factory.Utils;
     using Telenor.Factory.Utils.Validator;
     class Battery
     {
-        public Battery_Model BatteryModel { get; }
+        public Battery_Model BatteryModel { get; } = Battery_Model.undefined;
 
-        public TimeSpan HoursIdle { get; set; }
+        public TimeSpan HoursIdle { get; set; } = TimeSpan.Zero;
 
-        public TimeSpan HoursTalk { get; set; }
+        public TimeSpan HoursTalk { get; set; } = TimeSpan.Zero;
 
         public Battery()
         {
@@ -23,39 +25,47 @@ namespace Telenor.Factory
             this.HoursTalk = TimeSpan.Zero;
         }
 
+        /// <summary>
+        /// Specific Battery
+        /// </summary>
+        /// <para> ctor arg defaulting : TimeSpan hoursTalkSpan = default(TimeSpan)</para>
+        /// <param name="model"></param>
+        /// <param name="hooursIdleSpan">Probably Used Battery</param>
+        /// <param name="hoursTalkSpan">Probably Used Battery</param>
         public Battery(Battery_Model model, TimeSpan hooursIdleSpan,TimeSpan hoursTalkSpan)
         {
             this.BatteryModel = model;
             this.HoursIdle = hooursIdleSpan;
             this.HoursTalk = hoursTalkSpan;
-            // there should be no hoursIdleSpan & hoursTalkSpan in the ctor - only props
-            //props accessible for the gsm to make a call
-
-            //GSM will affect them - and rethink the validation process
-
         }
-        public Battery(string model, string hooursIdleSpan, string hoursTalkSpan)
+        //TODO: Question Defaulting in the ctor(signiture || body) or property
+        public Battery(string model = "undefined", string hooursIdleSpan = "0", string hoursTalkSpan="0")
         {
             //try-catch-finaly will be better
             ValdiateBattery.Model(model);
             this.BatteryModel = (Battery_Model)Enum.Parse(typeof(Battery_Model), model);
-            ValdiateBattery.HoursIdle(hooursIdleSpan);
+            ValdiateBattery.TimeSpan(hooursIdleSpan);
             this.HoursIdle = TimeSpan.Parse(hooursIdleSpan);
-            ValdiateBattery.HoursTalk(hoursTalkSpan);
+            ValdiateBattery.TimeSpan(hoursTalkSpan);
             this.HoursTalk = TimeSpan.Parse(hoursTalkSpan);
-            //TimeSpan, because can be 1.5 hours
         }
         public override string ToString()
         {
             return base.ToString();// to be implemented
         }
 
+        /// <summary>
+        /// Built-in Generic/String/ Dynamyc
+        /// [if all the parameters are 'optional'=> type name = default] Parsing for A Constructor
+        /// </summary>
+        /// <para> Reflection or/and try-catch-finaly needed to add the *validation*?* and make a dynamic composition possible [use what is valid, init default the rest]</para>
+        /// <param name="model"></param>
+        /// <param name="hoursIdle"></param>
+        /// <param name="hoursTalk"></param>
+        /// <param name="battery"></param>
+        /// <returns></returns>
         public static bool TryParseConstructor(string model, string hoursIdle, string hoursTalk,out Battery battery)
         {
-            //have to be checked against a DataBase
-
-            // reflection || try-catch-finaly needed to add the *validation*?* and make a dynamic composition possible [use what is valid]
-
             throw new NotImplementedException();
         }
         
