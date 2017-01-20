@@ -8,6 +8,10 @@ namespace AutoMemembers
 {
     class Program
     {
+        public static readonly int num = 50;
+
+        public static readonly string str = "string";
+
         static void Main(string[] args)
         {
             Console.WriteLine(Program.I);

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Telenor.Factory.Utils;
 namespace Telenor.Factory.Utils.Validator
 {
-    //consider abastract class with static methods
-    internal static class ValdiateBattery
+    //consider abastract class with static methods || static class [extenion class || constant based class (static)]
+    internal abstract class ValdiateBattery
     {
       
         internal static void Model(string model)
@@ -27,13 +27,17 @@ namespace Telenor.Factory.Utils.Validator
             }
         }
 
-        internal static void HoursIdle(string hoursIdle)
+        internal static void TimeSpan(string timespan)
         {
-        }
-
-        internal static void HoursTalk(string hoursTalk)
-        {
-
+            long span;
+            bool isParsable = long.TryParse(timespan, out span);
+            if (isParsable)
+            {
+                if (span < 0)
+                {
+                    throw new ArgumentException($@"The Time Span ({timespan}) must be 0 or POSITIVE !");
+                }
+            }
         }
     }
 }
