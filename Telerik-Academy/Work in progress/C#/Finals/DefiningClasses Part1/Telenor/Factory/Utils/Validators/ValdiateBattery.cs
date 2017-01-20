@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telenor.Factory.Utils;
-namespace Telenor.Factory.Utils.Validator
+﻿namespace Telenor.Factory.Utils.Validators
 {
+    using System;
+
+    using Telenor.Factory.Utils;
+    using Telenor.Factory.Utils.Enums;
+
     //consider abastract class with static methods || static class [extenion class || constant based class (static)]
     internal abstract class ValdiateBattery
     {
@@ -13,7 +12,7 @@ namespace Telenor.Factory.Utils.Validator
         internal static void Model(string model)
         {
             bool isFound = false;
-            string[] allModels = Enum.GetNames(typeof(Battery_Model));
+            string[] allModels = Enum.GetNames(typeof(Battery_Model_Type));
             foreach (var m in allModels)
             {
                 if (string.Compare(model, m, true) == 0)

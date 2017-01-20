@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Telenor.Factory
 {
-    using System.Diagnostics.Contracts;
-
     using Telenor.Factory.Utils;
-    using Telenor.Factory.Utils.Validator;
+    using Telenor.Factory.Utils.Enums;
+    using Telenor.Factory.Utils.Validators;
+
     class Battery
     {
-        public Battery_Model BatteryModel { get; } = Battery_Model.undefined;
+        public Battery_Model_Type BatteryModelType { get; } = Battery_Model_Type.undefined;
 
         public TimeSpan HoursIdle { get; set; } = TimeSpan.Zero;
 
@@ -20,7 +20,7 @@ namespace Telenor.Factory
 
         public Battery()
         {
-            this.BatteryModel = Battery_Model.undefined;
+            this.BatteryModelType = Battery_Model_Type.undefined;
             this.HoursIdle = TimeSpan.Zero;
             this.HoursTalk = TimeSpan.Zero;
         }
@@ -29,12 +29,12 @@ namespace Telenor.Factory
         /// Specific Battery
         /// </summary>
         /// <para> ctor arg defaulting : TimeSpan hoursTalkSpan = default(TimeSpan)</para>
-        /// <param name="model"></param>
+        /// <param name="modelType"></param>
         /// <param name="hooursIdleSpan">Probably Used Battery</param>
         /// <param name="hoursTalkSpan">Probably Used Battery</param>
-        public Battery(Battery_Model model, TimeSpan hooursIdleSpan,TimeSpan hoursTalkSpan)
+        public Battery(Battery_Model_Type modelType, TimeSpan hooursIdleSpan,TimeSpan hoursTalkSpan)
         {
-            this.BatteryModel = model;
+            this.BatteryModelType = modelType;
             this.HoursIdle = hooursIdleSpan;
             this.HoursTalk = hoursTalkSpan;
         }
@@ -43,7 +43,7 @@ namespace Telenor.Factory
         {
             //try-catch-finaly will be better
             ValdiateBattery.Model(model);
-            this.BatteryModel = (Battery_Model)Enum.Parse(typeof(Battery_Model), model);
+            this.BatteryModelType = (Battery_Model_Type)Enum.Parse(typeof(Battery_Model_Type), model);
             ValdiateBattery.TimeSpan(hooursIdleSpan);
             this.HoursIdle = TimeSpan.Parse(hooursIdleSpan);
             ValdiateBattery.TimeSpan(hoursTalkSpan);
@@ -51,7 +51,15 @@ namespace Telenor.Factory
         }
         public override string ToString()
         {
-            return base.ToString();// to be implemented
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(new string('_', 30));
+            sb.AppendLine($"[Battery Info]");
+            sb.AppendLine($"Battery's Model: ");
+            sb.AppendLine($"Battery's Hours Idle: ");
+            sb.AppendLine($"Battery's Hours Talked:");
+            sb.AppendLine(new string('_', 30));
+            var message = sb.ToString();
+            return message;// to be implemented
         }
 
         /// <summary>
