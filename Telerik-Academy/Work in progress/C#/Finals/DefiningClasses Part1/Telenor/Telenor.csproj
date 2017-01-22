@@ -47,18 +47,19 @@
     <Compile Include="Factory\Battery.cs" />
     <Compile Include="Factory\Display.cs" />
     <Compile Include="Factory\GSM.cs" />
-    <Compile Include="Factory\Utils\Battery_Model.cs" />
-    <Compile Include="Factory\Utils\GSM_Manufacturer.cs" />
-    <Compile Include="Factory\Utils\GSM_Model.cs" />
-    <Compile Include="Factory\Utils\Validator\ValdiateBattery.cs" />
+    <Compile Include="Factory\Utils\Enums\Battery_Model_Type.cs" />
+    <Compile Include="Factory\Utils\Enums\GSM_Manufacturer_Type.cs" />
+    <Compile Include="Factory\Utils\Enums\GSM_Model_Type.cs" />
+    <Compile Include="Factory\Utils\Validators\ValdiateBattery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Factory\Functionality\Call.cs" />
+    <Compile Include="UnitTests\GSMCallHistoryTest.cs" />
+    <Compile Include="UnitTests\GSMTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UnitTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
