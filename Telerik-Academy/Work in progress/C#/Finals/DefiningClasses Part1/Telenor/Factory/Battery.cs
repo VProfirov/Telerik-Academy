@@ -41,7 +41,7 @@ namespace Telenor.Factory
         //TODO: Question Defaulting in the ctor(signiture || body) or property
         public Battery(string model = "undefined", string hooursIdleSpan = "0", string hoursTalkSpan="0")
         {
-            //try-catch-finaly will be better
+            //try-catch-finaly will be better || or delegate validation in the Prop-s [check Display.cs]
             ValdiateBattery.Model(model);
             this.BatteryModelType = (Battery_Model_Type)Enum.Parse(typeof(Battery_Model_Type), model);
             ValdiateBattery.TimeSpan(hooursIdleSpan);

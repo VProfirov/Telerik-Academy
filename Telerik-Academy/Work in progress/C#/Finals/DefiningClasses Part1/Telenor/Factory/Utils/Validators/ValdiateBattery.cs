@@ -8,35 +8,54 @@
     //consider abastract class with static methods || static class [extenion class || constant based class (static)]
     internal abstract class ValdiateBattery
     {
-      
+
         internal static void Model(string model)
         {
-            bool isFound = false;
-            string[] allModels = Enum.GetNames(typeof(Battery_Model_Type));
-            foreach (var m in allModels)
+            if (!string.IsNullOrEmpty(model))
             {
-                if (string.Compare(model, m, true) == 0)
+                bool isFound = false;
+                string[] allModels = Enum.GetNames(typeof(Battery_Model_Type));
+                foreach (var m in allModels)
                 {
-                    isFound = true;
+                    if (string.Compare(model, m, true) == 0)
+                    {
+                        isFound = true;
+                    }
+                }
+                if (!isFound)
+                {
+                    throw new ArgumentException($@"The is no ""{model}""");
                 }
             }
-            if (!isFound)
+            else
             {
-                throw new ArgumentException($@"The is no ""{ model }""");
+                throw new ArgumentException($@"{model} value cant be null or empty");
             }
+
         }
 
         internal static void TimeSpan(string timespan)
         {
-            long span;
-            bool isParsable = long.TryParse(timespan, out span);
-            if (isParsable)
+            try
             {
-                if (span < 0)
+                long span;
+                bool isParsable = long.TryParse(timespan, out span);
+                if (isParsable)
                 {
-                    throw new ArgumentException($@"The Time Span ({timespan}) must be 0 or POSITIVE !");
+                    if (span < 0)
+                    {
+                        throw new ArgumentException($@"The Time Span ({timespan}) must be 0 or POSITIVE !");
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                throw new ArgumentException($@"{timespan} value cant be null or empty");
+            }
+
         }
+
+        // Model of Validation Comparison
     }
 }
