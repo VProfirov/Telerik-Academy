@@ -53,11 +53,13 @@ namespace Telenor.Factory
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(new string('_', 30));
-            sb.AppendLine($"[Battery Info]");
-            sb.AppendLine($"Battery's Model: ");
-            sb.AppendLine($"Battery's Hours Idle: ");
-            sb.AppendLine($"Battery's Hours Talked:");
+            sb.AppendFormat("{0}Battery Info{0}\r\n", new string(' ', 8));
             sb.AppendLine(new string('_', 30));
+
+            sb.AppendLine($"Battery's Model: {this.BatteryModelType}"); // TODO: ToString?
+            sb.AppendLine($"Battery's Hours Idle: {this.HoursIdle}");
+            sb.AppendLine($"Battery's Hours Talked: {this.HoursTalk}");
+
             var message = sb.ToString();
             return message;// to be implemented
         }

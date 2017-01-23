@@ -29,5 +29,19 @@ namespace Telenor.Factory
             this.DisplayInchSize = ValidateDisplay.DisplaySize(displaySize);
             this.NumberOfColors = ValidateDisplay.NumberOfColors(numberOfColors);
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(new string('_', 30));
+            sb.AppendFormat("{0}Display Info{0}\r\n",new string(' ',8));
+            sb.AppendLine(new string('_', 30));
+
+            sb.AppendLine($"Display's size in inches: {this.DisplayInchSize}");
+            sb.AppendLine($"Display's number of colors: {this.NumberOfColors}");
+
+            var message = sb.ToString();
+            return message;// to be implemented
+        }
     }
 }
