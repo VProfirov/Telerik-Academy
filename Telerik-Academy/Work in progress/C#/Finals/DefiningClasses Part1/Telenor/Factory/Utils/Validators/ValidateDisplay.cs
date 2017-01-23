@@ -11,7 +11,7 @@ namespace Telenor.Factory.Utils.Validators
         public static double DisplaySize(string size)
         {
             double result;
-            if (double.TryParse(size,out result))
+            if (double.TryParse(size,out result) && (result>=0))
             {
                 return result;
             }
@@ -24,7 +24,7 @@ namespace Telenor.Factory.Utils.Validators
         public static int NumberOfColors(string numberOfColors)
         {
             int result;
-            if (int.TryParse(numberOfColors, out result))
+            if (int.TryParse(numberOfColors, out result) && (result >= 0))
             {
                 return result;
             }
