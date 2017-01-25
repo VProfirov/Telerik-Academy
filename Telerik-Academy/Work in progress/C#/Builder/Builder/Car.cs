@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Builder
 {
-    class Program
+    class Car
     {
-        static void Main(string[] args)
+        private string _model = "Tesla";
+        public string Model { get; set; }
+
+        public Car(string model)
         {
-            Car c = new Car("BMW");
-            Console.WriteLine(c.Model);
+            
         }
     }
 }

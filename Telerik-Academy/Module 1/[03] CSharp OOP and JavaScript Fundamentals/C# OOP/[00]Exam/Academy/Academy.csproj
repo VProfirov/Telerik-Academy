@@ -57,6 +57,15 @@
     <Compile Include="Commands\Listing\ListCoursesInSeasonCommand.cs" />
     <Compile Include="Commands\Listing\ListUsersCommand.cs" />
     <Compile Include="Commands\Listing\ListUsersInSeasonCommand.cs" />
+    <Compile Include="Models\Resource\Validation\ValidateResource.cs" />
+    <Compile Include="Models\Syllabus\CourseResult.cs" />
+    <Compile Include="Models\Syllabus\Lecture.cs" />
+    <Compile Include="Models\Syllabus\Course.cs" />
+    <Compile Include="Models\Resource\PresentationResource.cs" />
+    <Compile Include="Models\Resource\DemoResource.cs" />
+    <Compile Include="Models\Resource\HomeworkResource.cs" />
+    <Compile Include="Models\Academy Staff\Student.cs" />
+    <Compile Include="Models\Academy Staff\Trainer.cs" />
     <Compile Include="Core\Providers\DateTimeProvider.cs" />
     <Compile Include="Core\Factories\AcademyFactory.cs" />
     <Compile Include="Core\Factories\IAcademyFactory.cs" />
@@ -77,8 +86,11 @@
     <Compile Include="Models\Enums\Grade.cs" />
     <Compile Include="Models\Enums\Initiative.cs" />
     <Compile Include="Models\Season.cs" />
+    <Compile Include="Models\Syllabus\Track.cs" />
+    <Compile Include="Models\Syllabus\Util\ITrack.cs" />
     <Compile Include="Models\Utils\Contracts\ICourseResult.cs" />
     <Compile Include="Models\Utils\Contracts\ILectureResouce.cs" />
+    <Compile Include="Models\Resource\VideoResource.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
