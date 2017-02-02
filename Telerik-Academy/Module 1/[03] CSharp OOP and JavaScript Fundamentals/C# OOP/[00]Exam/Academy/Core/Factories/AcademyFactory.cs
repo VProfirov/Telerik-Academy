@@ -64,15 +64,33 @@
         {
             // Use this instead of DateTime.Now if you want any points in BGCoder!!
             var currentDate = DateTimeProvider.Now;
+            ILectureResouce Resource;
 
             switch (type)
             {
-                case "video": return new VideoResource(name, url, currentDate);
-                case "presentation": return new PresentationResource(name, url);
-                case "demo": return new DemoResource(name, url);
-                case "homework": return new HomeworkResource(name, url, currentDate);
+                case "video":
+                    Resource = new VideoResource(name, url, currentDate);
+                    break;
+                case "presentation":
+                    Resource = new PresentationResource(name, url);
+                    break;
+                case "demo":
+                    Resource = new DemoResource(name, url);
+                    break;
+                case "homework":
+                    Resource = new HomeworkResource(name, url, currentDate);
+                    break;
                 default: throw new ArgumentException("Invalid lecture resource type");
             }
+            return Resource;
+            //            switch (type)
+            //            {
+            //                case "video": return new VideoResource(name, url, currentDate);
+            //                case "presentation": return new PresentationResource(name, url);
+            //                case "demo": return new DemoResource(name, url);
+            //                case "homework": return new HomeworkResource(name, url, currentDate);
+            //                default: throw new ArgumentException("Invalid lecture resource type");
+            //            }
         }
 
         public ICourseResult CreateCourseResult(ICourse course, string examPoints, string coursePoints)

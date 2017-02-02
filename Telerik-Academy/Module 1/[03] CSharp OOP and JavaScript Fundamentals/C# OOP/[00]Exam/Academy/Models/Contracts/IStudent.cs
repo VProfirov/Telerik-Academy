@@ -1,7 +1,7 @@
 ﻿using Academy.Models.Utils.Contracts;
 using System.Collections.Generic;
 using Academy.Models.Syllabus;
-//[the moron WIN !] not type Track type but string
+using Academy.Models.Syllabus.Util.Enums;
 
 namespace Academy.Models.Contracts
 {

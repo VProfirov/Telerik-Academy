@@ -9,13 +9,12 @@
 
     internal class Trainer : ITrainer
     {
-        private IList<string> _technologies;
         private string _username;
 
         public Trainer(string username, string technologies)
         {
             this.Username = username;
-            this.Technologies = technologies.Split(',');
+            this.Technologies = technologies.Split(',').Select(x => x.Trim()).ToList();
         }
 
         public string Username
@@ -34,17 +33,7 @@
             }
         }
 
-        public IList<string> Technologies
-        {
-            get
-            {
-                return this._technologies;
-            }
-            set
-            {
-                this._technologies = value;
-            }
-        }
+        public IList<string> Technologies { get; set; }
 
         public override string ToString()
         {
@@ -54,7 +43,7 @@
             sb.Append($" - Technologies:");
             foreach (var technology in this.Technologies)
             {
-                sb.Append($" {technology};");
+                sb.Append(string.Join("; ", technology));
             }
             sb.AppendLine();
 

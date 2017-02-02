@@ -86,8 +86,7 @@
     <Compile Include="Models\Enums\Grade.cs" />
     <Compile Include="Models\Enums\Initiative.cs" />
     <Compile Include="Models\Season.cs" />
-    <Compile Include="Models\Syllabus\Track.cs" />
-    <Compile Include="Models\Syllabus\Util\ITrack.cs" />
+    <Compile Include="Models\Syllabus\Util\Enums\Track.cs" />
     <Compile Include="Models\Utils\Contracts\ICourseResult.cs" />
     <Compile Include="Models\Utils\Contracts\ILectureResouce.cs" />
     <Compile Include="Models\Resource\VideoResource.cs" />

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Academy.Models.Syllabus.Util
+namespace Abstract_Factory.Interfaces
 {
-    public interface ITrack
+    class ILoanAccount
     {
-         string Name { get; set; }
     }
 }

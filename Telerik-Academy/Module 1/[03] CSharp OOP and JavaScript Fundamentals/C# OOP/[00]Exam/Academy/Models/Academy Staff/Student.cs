@@ -8,20 +8,19 @@
     using Academy.Models.Contracts;
     using Academy.Models.Syllabus;
     using Academy.Models.Utils.Contracts;
-
+    using Academy.Models.Syllabus.Util.Enums;
     internal class Student : IStudent
     {
-        private Track _track;
 
         private string _username;
 
         public Student(string username, string track)
         {
             this.Username = username;
-            this.Track = new Track(track);
+            this.Track = (Track)Enum.Parse(typeof(Track),track);
         }
 
-        public IList<ICourseResult> CourseResults { get; set; }
+        public IList<ICourseResult> CourseResults { get; set; } = new List<ICourseResult>();
 
         public Track Track { get; set; }
 

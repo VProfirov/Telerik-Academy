@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Runtime.CompilerServices;
     using System.Text;
 
     using Academy.Models.Contracts;
@@ -58,13 +59,23 @@
 
         public DateTime StartingDate { get; set; }
 
-        public DateTime EndingDate { get; set; }
+        public DateTime EndingDate {
+            get
+            {
+                return this.StartingDate.AddDays(30);
+            }
+            set
+            {
+                // what is mean?
+                //throw new NotImplementedException();
+            }
+        }
 
-        public IList<IStudent> OnsiteStudents { get; }
+        public IList<IStudent> OnsiteStudents { get;} = new List<IStudent>();
 
-        public IList<IStudent> OnlineStudents { get; }
+        public IList<IStudent> OnlineStudents { get;} = new List<IStudent>();
 
-        public IList<ILecture> Lectures { get; }
+        public IList<ILecture> Lectures { get;} = new List<ILecture>();
 
         public override string ToString()
         {
