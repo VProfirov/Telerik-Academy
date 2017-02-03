@@ -10,6 +10,12 @@ namespace Abstract_Factory
     {
         static void Main(string[] args)
         {
+            var provider = new CreditUnionBankProvider();
+            var bank = provider.GetCreditUnionFactory("CitiCreditUnion Bank");
+            var account = bank.GetSavingsAccount();
+
+            Console.WriteLine(account.Balance);
+            Console.WriteLine(account.GetSavingsInterest());
         }
     }
 }

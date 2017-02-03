@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Abstract_Factory
 {
-    class CreditUnionFactoryProfider
+    interface ICreditUnionBank
     {
+         ILoanAccount GetLoanAccount(decimal amount);
+
+         ISavingsAccount GetSavingsAccount();
     }
 }
