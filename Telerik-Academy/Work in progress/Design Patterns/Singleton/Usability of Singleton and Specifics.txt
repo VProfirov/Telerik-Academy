@@ -1,0 +1,7 @@
+﻿https://stackoverflow.com/questions/519520/difference-between-static-class-and-singleton-pattern
+
+SINGLETON VS STATIC CLASS
+1.Singleton object stores in Heap but, static object stores in stack
+2.We can clone the object of Singleton but, we can not clone the static class object
+3.Singleton class follow the OOP(object oriented principles) but not static class
+4.we can implement interface with Singleton class but not with Static class.
