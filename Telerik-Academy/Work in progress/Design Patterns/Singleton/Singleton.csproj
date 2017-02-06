@@ -51,10 +51,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Singleton Policy.cs" />
     <Compile Include="SingletonThinking.cs" />
     <Compile Include="TRUE Singleton.cs" />
-    <Compile Include="UnitTest\TelerikVSUnitTest1.cs" />
+    <Compile Include="UnitTest\VS UnitTest.cs" />
     <Compile Include="UnitTest\UnitTest NUnit.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +66,7 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UnitTest\NOTES.txt" />
     <Content Include="Usability of Singleton and Specifics.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

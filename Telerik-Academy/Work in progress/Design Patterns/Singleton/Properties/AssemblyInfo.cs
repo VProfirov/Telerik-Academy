@@ -36,4 +36,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: InternalsVisibleTo("Singleton.Tests")]
 [assembly: InternalsVisibleTo("Singleton.Explorables")]
+[assembly: InternalsVisibleTo("Singleton.Tests1")]
 

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Singleton
+﻿namespace Singleton
 {
+    using System;
+
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var s = SingletonThinking.GetNewInstanceQuickProp;
             s.SomeNumericData += s.SomeNumericData + 10;
@@ -19,7 +15,7 @@ namespace Singleton
 
             Console.WriteLine(a.SomeNumericData);
 
-            Console.WriteLine(ReferenceEquals(a,s));
+            Console.WriteLine(ReferenceEquals(a, s));
         }
     }
 }
