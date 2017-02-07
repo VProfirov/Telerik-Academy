@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Singelton
+namespace Iterator_Pattern.Aggregate
 {
-    class Singleton
+    using Iterator_Pattern.Iterator;
+
+    interface INewspaper
     {
+        IIterator CreateIterator();
     }
 }
