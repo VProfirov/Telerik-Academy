@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS Unit Testing", "MS Unit Testing\MS Unit Testing.csproj", "{CA6AE833-A77F-4CC2-A7D5-2D0ED199FA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit Test Logger", "NUnit Test Logger\NUnit Test Logger.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{B238D4D5-B139-471E-8D79-E449F309C475}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA6AE833-A77F-4CC2-A7D5-2D0ED199FA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA6AE833-A77F-4CC2-A7D5-2D0ED199FA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA6AE833-A77F-4CC2-A7D5-2D0ED199FA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA6AE833-A77F-4CC2-A7D5-2D0ED199FA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B238D4D5-B139-471E-8D79-E449F309C475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B238D4D5-B139-471E-8D79-E449F309C475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B238D4D5-B139-471E-8D79-E449F309C475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B238D4D5-B139-471E-8D79-E449F309C475}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
