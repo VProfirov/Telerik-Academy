@@ -35,7 +35,8 @@ function solve() {
             description: app.description,
             version: app.version,
             rating: app.rating,
-            apps: app.apps // this is for stores
+            apps: app.apps // this is for stores 
+                /**because the store is an app ! :D */
         };
     }
 
@@ -69,12 +70,8 @@ function solve() {
         }
 
         release(options) {
-            //controler pattern :?: 
-			// if passed as single value, then construct itself as coplex object 
-				//holding that value so it can be hadnled		
-            if (typeof options !== 'object') {//if not an object 
-				//construct itself as an object
-                options = { version: options };//holding that value in a way it can be processed 
+            if (typeof options !== 'object') {
+                options = { version: options };
             }
 
             validateVersion(options.version);
@@ -116,7 +113,7 @@ function solve() {
             if (index >= 0) {
                 this._apps.splice(index, 1);
             }
-            this._apps.push(copyApp(app));
+            this._apps.push(copyApp(app)); // to upload at (the end) a copy => which as copy extends the object's functionality by adding a propery that can serve the unique app - Store (because the Store is an app)
 
             return this;
         }
@@ -175,7 +172,7 @@ function solve() {
             }
 
             this._hostname = hostname;
-            this._apps = apps.map(x => copyApp(x));
+            this._apps = apps.map(x => copyApp(x)); //the store is an app
             this._stores = apps.filter(x => x instanceof Store).map(x => copyApp(x));
         }
 
@@ -184,9 +181,9 @@ function solve() {
         }
 
         get apps() {
-            return this._apps.slice();
-        }
-
+                return this._apps.slice();
+            }
+            //=>
         search(pattern) {
             pattern = pattern.toLowerCase();
 

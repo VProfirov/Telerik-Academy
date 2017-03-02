@@ -13,8 +13,7 @@ Implement functionality for app stores and devices. Implement the given classes.
   - `description` - a string
   - `version` - a positive number
   - `rating` - a number between 1 and 10
-	[***************************************************************************************************]
-- Methods:
+	- Methods:
   - `release(version)`
     - changes the version of the app
 	- **throws** if the new version is not above the old one
@@ -32,7 +31,7 @@ Implement functionality for app stores and devices. Implement the given classes.
 ### `class Store` extends `App`
 - The store is also an app
   - has all `App` properties and methods
-  - has the `App` constructor
+  - has the’ `App` constructor
 - Properties:
   - `apps` - an array of uploaded apps
 - Methods:
