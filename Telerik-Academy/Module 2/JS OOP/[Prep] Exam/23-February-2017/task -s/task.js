@@ -109,10 +109,13 @@ function solve() {
                 throw Error('Not a valid app');
             }
 
+            //find & determine(the index)
             const index = this._apps.findIndex(x => x.name === app.name);
+            //if it is the first or any
             if (index >= 0) {
                 this._apps.splice(index, 1);
             }
+            //if empty or removed => push the new 
             this._apps.push(copyApp(app)); // to upload at (the end) a copy => which as copy extends the object's functionality by adding a propery that can serve the unique app - Store (because the Store is an app)
 
             return this;
@@ -173,7 +176,7 @@ function solve() {
 
             this._hostname = hostname;
             this._apps = apps.map(x => copyApp(x)); //the store is an app
-            this._stores = apps.filter(x => x instanceof Store).map(x => copyApp(x));
+            this._stores = apps.filter(x => x instanceof Store).map(x => copyApp(x)); //copy all the Sub-Stores
         }
 
         get hostname() {

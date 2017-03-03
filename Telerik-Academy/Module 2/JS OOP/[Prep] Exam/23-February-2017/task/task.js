@@ -52,13 +52,13 @@ function solve() {
         }
 
         get name() { return this._name; }
-        set name(name) { this._name = name; } //scalable validation-switch(ctor-prop)
+        // set name(name) { this._name = name; } //scalable validation-switch(ctor-prop) !NB! no settters
 
         get description() { return this._description; }
-        set description(description) { this._description = description; }
+        // set description(description) { this._description = description; }
 
         get version() { return this._version; }
-        set version(version) { this._version = version; }
+        // set version(version) { this._version = version; }
 
         get rating() { return this._rating; }
         set rating(rating) { this._rating = rating; }
@@ -135,10 +135,10 @@ function solve() {
             // throws : if there is an invalid app
 
         get hostname() {}
-        set hostname() {}
+        // set hostname() {}
 
         get apps() {}
-        set apps() {}
+        // set apps() {}
 
         search(pattern) {}
         install(name) {} /**chaining */ //throw :if app `name` is not available in installed stores
