@@ -17,7 +17,7 @@ function solve() {
             }
         },
         validatePositiveNonZeroINTEGER(integer) {
-            if (typeof integer != `integer` || !(number >>> 0 === parseFloat(number))) {
+            if (typeof integer != 'number' || (integer >>> 0 !== parseFloat(integer))) {
                 throw Error(`${integer} is not positive non zero integer`);
             }
         },
@@ -194,11 +194,7 @@ function solve() {
             return this._hasMicrophone;
         }
         set hasMicrophone(hasMicrophone) {
-            if (!hasMicrophone) {
-                throw Error('Non boolean value passed');
-            }
-
-            this._hasMicrophone = hasMicrophone;
+            this._hasMicrophone = !!hasMicrophone;
         }
     }
 
@@ -207,7 +203,7 @@ function solve() {
             this.name = name;
             this.products = []; //arr of ?unique? products 
 
-            this._sold = cash || 0;
+            this._sold = 0;
         }
 
         get name() {
@@ -253,28 +249,39 @@ function solve() {
             }
             return this;
         }
-        search(...options) {
+        search(options) {
             //pattern
-            if (typeof options[0] == 'string') {
+            if (typeof options == 'string') {
+                let pattern = options.toLowerCase;
+                // let foundByModel = this.products.filter(x => x.product.model.match(pattern));
+                // let foundByManufacturer = this.products.filter(x => x.product.manufacturer.match(pattern));
+                // let allFound = foundByModel.concat(foundByManufacturer);
 
+                let allFound = this.products.filter(p => p.product.model.match(pattern) || p.product.manufacturer.match(pattern));
+                return allFound;
             }
             //options
-            else if (typeof options[0] == 'object') {
+            else if (typeof options == 'object') {
+                //complexpattern
 
+                //FIXME:
+                Object.keys(options).forEach(key => {
+                    if (key == 'manufacturerPattern') {}
+
+                });
+                //FIXME:
+                let allFound = this.products.filter(p => {
+                    p.product.manufacturer.match(options.manufacturerPattern);
+                    //TODO: &&
+                });
             }
+
         }
 
         getSold() {
             return this._sold;
         }
     }
-
-
-    console.log(new SmartPhone("HTC", "OneM7", 1000, 5, "Windows 10"));
-    console.log(new Charger("HTC", "OneM7", 1000, 5, 200));
-
-    console.log(new SmartPhone("HTC", "OneM7", 1000, 5, "Windows 10"));
-    console.log(new Charger("HTC", "OneM7", 1000, 15, 2000));
 
     return {
         getSmartPhone(manufacturer, model, price, screenSize, operatingSystem) {
@@ -284,13 +291,13 @@ function solve() {
             return new Charger(manufacturer, model, price, outputVoltage, outputCurrent);
         },
         getRouter(manufacturer, model, price, wifiRange, lanPorts) {
-            // returns Router instance
+            return new Router(manufacturer, model, price, wifiRange, lanPorts);
         },
         getHeadphones(manufacturer, model, price, quality, hasMicrophone) {
-            // returns Headphones instance
+            return new Headphones(manufacturer, model, price, quality, hasMicrophone);
         },
         getHardwareStore(name) {
-            // returns HardwareStore instance
+            return new HardwareStore(name);
         }
     };
 }
@@ -298,4 +305,18 @@ function solve() {
 // Submit the code above this line in bgcoder.com
 module.exports = solve; // DO NOT SUBMIT THIS LINE
 
-solve();
+// const result = solve();
+// let phone = result.getSmartPhone("HTC", "OneM7", 1000, 5, "Windows 10");
+// const headphones = result.getHeadphones('Sennheiser', 'PXC 550 Wireless', 340, 'high', false);
+// const store = result.getHardwareStore('Magazin');
+// let phone2 = result.getSmartPhone("HTC2", "OneM7", 1000, 5, "Windows 10");
+// console.log(phone);
+// console.log(phone2);
+// console.log(result);
+
+
+// console.log(new SmartPhone("HTC", "OneM7", 1000, 5, "Windows 10"));
+// console.log(new Charger("HTC", "OneM7", 1000, 5, 200));
+
+// console.log(new SmartPhone("HTC", "OneM7", 1000, 5, "Windows 10"));
+// console.log(new Charger("HTC", "OneM7", 1000, 15, 2000));
