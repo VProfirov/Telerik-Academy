@@ -262,6 +262,11 @@ function solve() {
             }
             //options
             else if (typeof options == 'object') {
+                //TODO: 1. Determin the props & use universal key (:valueToCheck)
+                //TODO: 2. Determin complex :condition based valuesToCheck <=> minPrice(cond) || maxPrice(condition)
+                //2.2 substore as obj or [] :caseSwitch;valueToCheck
+                //0.0.1 filter ->(*true)->(if check = options.obj.haswOwnProperty(prop) => !check ->|| base.match(prop) <-> lookup returns truthy value)&&(chaining)&& else exit+next()<continue>
+                //TODO: 3. Return a {computed value}.copy <=> valid stated check completed, else continue to next lookup
                 //complexpattern
 
                 //FIXME:

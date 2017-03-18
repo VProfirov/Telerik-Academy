@@ -82,7 +82,7 @@ _Notes:_
 	  - `quantity` - the available quantity of that product
   - `search(options)` - advanced search, same as above
     - options is an object with **optional** keys:
-	  - `manufacturerPattern` - string, should be contained in manufacterures **(case sensitive)**
+	  #- `manufacturerPattern` - string, should be contained in manufacterures **(case sensitive)**
 	  - `modelPattern` - string, should be contained in models **(case sensitive)**
 	  - `type` - string - `SmartPhone`, `Charger`, `Router` or `Headphones` - the product should be of the specified type
 	  - `minPrice` - number - the product should not be cheaper than `minPrice`
