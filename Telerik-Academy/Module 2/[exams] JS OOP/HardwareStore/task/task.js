@@ -258,7 +258,7 @@ function solve() {
                 // let allFound = foundByModel.concat(foundByManufacturer);
 
                 let allFound = this.products.filter(p => p.product.model.match(pattern) || p.product.manufacturer.match(pattern));
-                return allFound;
+                return allFound.slice();//copy of [...allfound]
             }
             //options
             else if (typeof options == 'object') {
@@ -268,12 +268,11 @@ function solve() {
                 //0.0.1 filter ->(*true)->(if check = options.obj.haswOwnProperty(prop) => !check ->|| base.match(prop) <-> lookup returns truthy value)&&(chaining)&& else exit+next()<continue>
                 //TODO: 3. Return a {computed value}.copy <=> valid stated check completed, else continue to next lookup
                 //complexpattern
+//NOTE: I will have only a single object holding patterns, factory pattern will be useless
 
-                //FIXME:
-                Object.keys(options).forEach(key => {
-                    if (key == 'manufacturerPattern') {}
+                //FIXED: && FIXME:- it is a single object with properties holding conditional patterns
+                // (!x||func)&&(!x||func)&&
 
-                });
                 //FIXME:
                 let allFound = this.products.filter(p => {
                     p.product.manufacturer.match(options.manufacturerPattern);
