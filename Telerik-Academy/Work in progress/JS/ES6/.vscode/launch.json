@@ -8,14 +8,41 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${file}"
+            "program": "${file}",
+            "stopOnEntry": false,
+            "args": [
+                
+            ],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"                
+            },
+            "console": "internalConsole",
+            "sourceMaps": false,
+            "outFiles": [
+                
+            ]
         },
         {
             "type": "node",
             "request": "attach",
             "name": "Attach to Process",
             "address": "localhost",
-            "port": 5858
+            "port": 9229,
+            "localRoot": "${workspaceRoot}",
+           
+            "processId": "${command.PickProcess}",
+            "restart":true,            
+            // "sourceMaps":false,
+            "outFiles": [
+                
+            ],
+            "remoteRoot": null            
         }
     ]
 }

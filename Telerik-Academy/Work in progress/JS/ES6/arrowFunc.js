@@ -1,6 +1,7 @@
-let number = 5;
+// let number = 5;
 this.number = 505;
 let invoice = {
+	self:this,	
 	number: 123,
 	process: function () {
 		return () =>console.log(this.number);
@@ -8,11 +9,12 @@ let invoice = {
 	pro(){
 		console.log(this.number);		
 	},
-	arrow:()=>console.log(this.number),
 	ifee(){
 		return (function(){console.log(this.number);}());
-	}
-
+	},
+	arrow:()=>console.log(this.number),	
+	arrowSelf:(self=this)=>console.log(self.number),
+	// func: function(self){return (self)=>console.log(self.number);},
 };
 invoice.process()(); //the 2nd () ... calls the ()=> empty param function
 console.log('process: ' + invoice.process());
@@ -34,3 +36,10 @@ invoice.ifee();
 
 console.log('arrow: ___________');
 invoice.arrow();
+
+console.log('arrowSelf: ___________');
+invoice.arrowSelf();
+
+console.log('func:___________');
+invoice.func();
+console.log('objectss^2');

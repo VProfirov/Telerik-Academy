@@ -270,14 +270,21 @@ function solve() {
                 //complexpattern
 //NOTE: I will have only a single object holding patterns, factory pattern will be useless
 
-                //FIXED: && FIXME:- it is a single object with properties holding conditional patterns
+                //FIXME:- full-sequential: it is a single object with properties holding conditional patterns
+
                 // (!x||func)&&(!x||func)&&
+                //FIXED: :1: - jumper : (options.hasOwnProp...) match() : continue;
+                //FIXED: :2: shorthand jumper - 
+                //!!(.match&&.match&&function&&...
+                // && returns first false or last true
+                // || returns first true or last false
+
 
                 //FIXME:
                 let allFound = this.products.filter(p => {
-                    p.product.manufacturer.match(options.manufacturerPattern);
-                    //TODO: &&
-                });
+                    !!(!options.hasOwnProperty(manufacturerPattern)|| p.manufacturer.match(options.manufacturerPattern)&&
+                    (!options.hasOwnProperty(modelPattern)|| p.model.match(modelPattern)&&)
+                );
             }
 
         }
