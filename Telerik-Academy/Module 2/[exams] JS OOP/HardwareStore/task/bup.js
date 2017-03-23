@@ -225,7 +225,7 @@ function solve() {
 			VALIDATOR.validatePositiveNonZeroINTEGER(quantity);
 
 			let foundIndex = this.products.findIndex(p => p.id === product.id);
-			if (foundIndex >= 0) {
+			if (foundIndex) {
 				this.products[foundIndex].quantity += quantity;
 			} else {
 				this.products.push(util.catalogging(product, quantity));
@@ -237,7 +237,7 @@ function solve() {
 			VALIDATOR.validatePositiveNonZeroINTEGER(quantity);
 
 			let foundIndex = this.products.findIndex(p => p.id === productId);
-			if (foundIndex >= 0) {
+			if (foundIndex) {
 				let productQuantityInStore = this.products[foundIndex].quantity;
 				VALIDATOR.validateSellQuantity(productQuantityInStore, quantity);
 
@@ -249,28 +249,46 @@ function solve() {
 				}
 
                 //$sold
-				this._sold += quantity * this.products[foundIndex].price;
+				this.sold += quantity * this.products[foundIndex].price;
 
                 //[possible]some data cashing
 			}
 			return this;
 		}
 		search(options) {
-           
+            //pattern
 			if (typeof options == 'string') {
-				let pattern = new RegExp(options,'i');
-				let allFound = this.products.filter(p => {
-					let modelMatch = p.product._model.match(/options/i); // check 'options'
-					let manufacturerMatch =  p.product._manufacturer.match(/options/i);
-					let result  = !!(p.product.model.match(pattern) || p.product.manufacturer.match(pattern));
-					return result;
-				});
+				let pattern = options.toLowerCase;
+                // let foundByModel = this.products.filter(x => x.product.model.match(pattern));
+                // let foundByManufacturer = this.products.filter(x => x.product.manufacturer.match(pattern));
+                // let allFound = foundByModel.concat(foundByManufacturer);
+
+				let allFound = this.products.filter(p => p.product.model.match(pattern) || p.product.manufacturer.match(pattern));
 //should use deep copy => hackable
-				allFound.forEach(util.searchShallowExposition);
-				return allFound;
+				let searchResultFormat = allFound.forEach(util.searchShallowExposition);
+				return searchResultFormat;
 			}
             //options
 			else if (typeof options == 'object') {
+                //TODO: 1. Determin the props & use universal key (:valueToCheck)
+                //TODO: 2. Determin complex :condition based valuesToCheck <=> minPrice(cond) || maxPrice(condition)
+                //2.2 substore as obj or [] :caseSwitch;valueToCheck
+                //0.0.1 filter ->(*true)->(if check = options.obj.haswOwnProperty(prop) => !check ->|| base.match(prop) <-> lookup returns truthy value)&&(chaining)&& else exit+next()<continue>
+                //TODO: 3. Return a {computed value}.copy <=> valid stated check completed, else continue to next lookup
+                //complexpattern
+//NOTE: I will have only a single object holding patterns, factory pattern will be useless
+
+                //FIXME:- full-sequential: it is a single object with properties holding conditional patterns
+
+                // (!x||func)&&(!x||func)&&
+                //FIXED: :1: - jumper : (options.hasOwnProp...) match() : continue;
+                //FIXED: :2: shorthand jumper - 
+                //!!(.match&&.match&&function&&...
+                // && returns first false or last true
+                // || returns first true or last false
+
+
+                //FIXME:
 				let allFound = this.products.filter(p => {
 					!!(!options.hasOwnProperty('manufacturerPattern')||
                      p.product.manufacturer.match(options.manufacturerPattern)&&
@@ -284,10 +302,11 @@ function solve() {
                      (!options.hasOwnProperty('maxPrice')||
                      p.price <= options.maxPrice);
 				});
+
 				//[...allFound]; // destruction needed of [...allFound.product]
 
 //should use deep copy => hackable				
-				let searchResultFormat = allFound.map(util.searchShallowExposition);
+				let searchResultFormat = allFound.forEach(util.searchShallowExposition);
 				return searchResultFormat;
 			}
 
@@ -316,51 +335,22 @@ function solve() {
 		}
 	};
 }
-const result = solve();
-
-
-
-const phone = result.getSmartPhone('HTC', 'One', 10, 5, 'Android');
-const charger = result.getCharger('someCharger', 'chargerMan', 20, 15, 1500);
-const router = result.getRouter('someRouter', 'routerMan', 30, 100, 3);
-const headphones = result.getHeadphones('Sennheiser', 'PXC 550 Wireless', 40, 'high', false);
-
-
-const store = result.getHardwareStore('Magazin');
-
-store.stock(phone, 5)
-	.stock(charger, 5)
-	.stock(router, 5)
-    .stock(headphones, 5);
-
-console.log(store);
-
-
-// store.sell(1, 2)
-// 	.sell(2, 2)
-// 	.sell(3, 2)
-// 	.sell(4, 2);
-	
-	
-store.sell(headphones.id,1)
-	.sell(charger.id,1);
-
-console.log(store.getSold());
-console.log(store);
-
-console.log('________SEARCH___________');
-console.log(store.search('Senn'));
-
-console.log(store.search('senn'));
-
-console.log(store.search({type: 'SmartPhone', maxPrice: 1000}));
-
-
-// console.log(store.search({type: 'SmartPhone', maxPrice: 900}));
-
-
-// store.sell(headphones.id, 2);
-// console.log(store.getSold()); // 680
 
 // Submit the code above this line in bgcoder.com
 module.exports = solve; // DO NOT SUBMIT THIS LINE
+
+// const result = solve();
+// let phone = result.getSmartPhone("HTC", "OneM7", 1000, 5, "Windows 10");
+// const headphones = result.getHeadphones('Sennheiser', 'PXC 550 Wireless', 340, 'high', false);
+// const store = result.getHardwareStore('Magazin');
+// let phone2 = result.getSmartPhone("HTC2", "OneM7", 1000, 5, "Windows 10");
+// console.log(phone);
+// console.log(phone2);
+// console.log(result);
+
+
+// console.log(new SmartPhone("HTC", "OneM7", 1000, 5, "Windows 10"));
+// console.log(new Charger("HTC", "OneM7", 1000, 5, 200));
+
+// console.log(new SmartPhone("HTC", "OneM7", 1000, 5, "Windows 10"));
+// console.log(new Charger("HTC", "OneM7", 1000, 15, 2000));
