@@ -259,35 +259,26 @@ function solve() {
            
 			if (typeof options == 'string') {
 				let pattern = new RegExp(options,'i');
-				let allFound = this.products.filter(p => {
-					let modelMatch = p.product._model.match(/options/i); // check 'options'
-					let manufacturerMatch =  p.product._manufacturer.match(/options/i);
-					let result  = !!(p.product.model.match(pattern) || p.product.manufacturer.match(pattern));
-					return result;
+				let allFound = this.products.filter(p => {					
+					return !!(p.product.model.match(pattern) || p.product.manufacturer.match(pattern));
 				});
 //should use deep copy => hackable
-				allFound.forEach(util.searchShallowExposition);
-				return allFound;
+				let searchResultFormat = allFound.map(x=>util.searchShallowExposition(x));
+				return searchResultFormat;
 			}
             //options
 			else if (typeof options == 'object') {
 				let allFound = this.products.filter(p => {
-					!!(!options.hasOwnProperty('manufacturerPattern')||
-                     p.product.manufacturer.match(options.manufacturerPattern)&&
-                    (!options.hasOwnProperty('modelPattern')||
-                     p.product.model.match(options.modelPattern))&&
-                    (!options.hasOwnProperty('type'))||
-                    //  p.product.constructor.name.match(options.type)&&
-                    typeof p.product == options.type)&&
-                     (!options.hasOwnProperty('minPrice')||
-                     p.price >= options.minPrice)&&
-                     (!options.hasOwnProperty('maxPrice')||
-                     p.price <= options.maxPrice);
+					return !!((!options.hasOwnProperty('manufacturerPattern')||p.product.manufacturer.match(options.manufacturerPattern))
+					&&(!options.hasOwnProperty('modelPattern')||p.product.model.match(options.modelPattern))
+					&&(!options.hasOwnProperty('type')||p.product.constructor.name.match(options.type))
+					&&(!options.hasOwnProperty('minPrice')||p.price >= options.minPrice)
+					&&(!options.hasOwnProperty('maxPrice')||p.price <= options.maxPrice));
 				});
 				//[...allFound]; // destruction needed of [...allFound.product]
 
 //should use deep copy => hackable				
-				let searchResultFormat = allFound.map(util.searchShallowExposition);
+				let searchResultFormat = allFound.map(x=>util.searchShallowExposition(x));
 				return searchResultFormat;
 			}
 
@@ -349,14 +340,14 @@ console.log(store.getSold());
 console.log(store);
 
 console.log('________SEARCH___________');
-console.log(store.search('Senn'));
+// console.log(store.search('Senn'));
 
 console.log(store.search('senn'));
 
 console.log(store.search({type: 'SmartPhone', maxPrice: 1000}));
 
 
-// console.log(store.search({type: 'SmartPhone', maxPrice: 900}));
+console.log(store.search({type: 'Charger', maxPrice: 900}));
 
 
 // store.sell(headphones.id, 2);
