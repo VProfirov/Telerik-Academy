@@ -13,7 +13,7 @@ Implement functionality for app stores and devices. Implement the given classes.
   - `description` - a string
   - `version` - a positive number
   - `rating` - a number between 1 and 10
-	- Methods:
+//TODO:	- Methods:
   - `release(version)`
     - changes the version of the app
 	- **throws** if the new version is not above the old one
