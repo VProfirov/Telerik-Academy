@@ -1,7 +1,7 @@
 function solve() {
 	// VALIDATION
 	const util = {
-		validateSSTRING(str){
+		validateSTRING(str){
 			if (str != 'string') {
 				throw Error('Not a STRING');
 			}
@@ -26,6 +26,21 @@ function solve() {
 			if(newversion<=version){
 				throw Error('Invalid version! The new version should be >');
 			}
+		},
+		validateAppINSTANCE(app){
+			if(!(app instanceof App)){
+				throw Error('Invalid instance of App');
+			}
+		},
+
+		appBuild(app){
+			return {
+				description: app.description,
+				name:app.name,
+				version: app.version,
+				rating: app.rating,
+				apps: app.apps
+			};
 		}
 	};
 	class App{
@@ -43,7 +58,7 @@ function solve() {
 
 		get	description(){return this._description;}
 		set	description(description){
-			util.validateSSTRING(description);
+			util.validateSTRING(description);
 			this._description = description;
 		}
 
@@ -60,40 +75,109 @@ function solve() {
 		}
 			
 		release(options){
-			//FIXME: options - version part .... the fallowing is not the full one
-			util.validateVERSION(options,this._version);//?
-			this._version = options;
-
-			//FIXME: start from here --> is incorrect
 			if(typeof options != 'object'){
-				util.validateOPTIONS();
+				util.validateVERSION(options.version,this._version);
+				
+				if(options.hasOwnProperty('description')){
+					util.validateSTRING(options.description);					
+					this._description = options._description;
+				}
+
+				if(options.hasOwnProperty('rating')){
+					util.validateNUMBERinRANGE(options.rating,1,10);					
+					this._rating = options._rating;
+				}				
 			}
 			else{
-				
-			}
+				util.validateVERSION(options,this._version);
+				this._version = options;
+			}			
 		}
 	}
 	class Store extends App{
 		constructor(...props){
 			super(props);
+			this._apps = [];
+		}
+		get apps(){return this._apps;}
+
+		uploadApp(app){
+			util.validateAppINSTANCE(app);
+
+			let foundIndex = this._apps.findIndex(p=> p.name == app.name);
+			util.validateVERSION(app.version,this._apps[foundIndex].version);
+			if(foundIndex>=0){
+				util.validateVERSION(app.version,this._apps[foundIndex.version]);
+				this._apps[foundIndex].version = app.version;
+				this._apps[foundIndex].description = app.description;
+				this._apps[foundIndex].rating = app.rating;				
+			}
+			else{
+				this._apps.push(util.appBuild(app));
+			}
+
+			return this;
+		}
+		takedownApp(name){
+			util.validateSTRING(name);
+			let foundIndex = this._apps.findIndex(app => app.name == name);
+			if(foundIndex<0){
+				throw Error('App with ushc name is not found');
+			}else{
+				this._apps.splice(foundIndex);
+			}
+			return this;
+		}
+		search(pattern){
+			let regex = new RegExp(pattern,'i');
+			let foundApps = this._apps.filter(app => !!app.name.match(regex)); //refactor ?
+			return foundApps.sort();
+		}
+		listMostRecentApps(count = 10){
+			return [...this._apps].reverse().slice(0,count);
+		}
+		listMostPopularApps(count = 10){
+			return this._apps.map((app,index) =>({app,index}))
+							// arr of objs set as: [{app,index},]
+							.sort((app1,app2) =>{
+								//  i2 - i1 => reverse
+								if(app2.rating != app1.rating){
+									return app2.rating - app1.rating;
+								}
+								return app2.index - app1.index;
+							})
+							.slice(0,count)
+							.map(obj => obj.app);
 		}
 	}
 	class Device{
-		constructor(hostname){
+		constructor(hostname,preinstalledApps){
+			util.validateSTRING(hostname);
+			
 			this._hostname = hostname;
-			this._apps = [];
+			this._apps = preinstalledApps;
+		}
+		get hostname(){return this._hostname;}
+		set hostname(hostname){
+			this._hostname = hostname;
+		}
+		get apps(){return this._apps;}
+		set apps(apps){
+			[].forEach(
+
+			)
 		}
 	}
 
 	return {
 		createApp(name, description, version, rating) {
-			// returns a new App object
+			return new App(name, description, version, rating);
 		},
 		createStore(name, description, version, rating) {
-			// returns a new Store object
+			return new Store(name, description, version, rating);			
 		},
 		createDevice(hostname, apps) {
-			// returns a new Device object
+			return new Device(hostname,apps);
 		}
 	};
 }

@@ -13,7 +13,7 @@ Implement functionality for app stores and devices. Implement the given classes.
   - `description` - a string
   - `version` - a positive number
   - `rating` - a number between 1 and 10
-//TODO:	- Methods:
+- Methods:
   - `release(version)`
     - changes the version of the app
 	- **throws** if the new version is not above the old one
@@ -46,7 +46,7 @@ Implement functionality for app stores and devices. Implement the given classes.
   - `takedownApp(name)`
     - removes an app with the given `name` from the store
 	  - **throw** if an app with the given name does not exist in the store
-	- **should provide chaining**
+	- **should provide chaining**	
   - `search(pattern)`
     - performs case-insensitive search in the store
 	- returns an array of apps containing `pattern` in their name
