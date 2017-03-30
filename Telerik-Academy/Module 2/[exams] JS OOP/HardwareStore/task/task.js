@@ -207,7 +207,7 @@ function solve() {
 	class HardwareStore {
 		constructor(name) {
 			this.name = name;
-			this.products = []; //arr of ?unique? products 
+			this.products = []; //arr of *unique*ID* products 
 
 			this._sold = 0;
 		}
@@ -245,7 +245,7 @@ function solve() {
 
 				if (productQuantityInStore === quantity) {
                     //splice if 0
-					this.products.splice(foundIndex);
+					this.products.splice(foundIndex,1);
 				}
 
                 //$sold

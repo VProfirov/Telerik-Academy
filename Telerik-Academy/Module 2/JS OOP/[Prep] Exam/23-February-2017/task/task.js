@@ -45,39 +45,32 @@ function solve() {
 	};
 	class App{
 		constructor(name,description,version,rating){
+			util.validateSTRINGinRANGE(name,1,24);
+			util.validateSTRING(description);
+			util.validatePositiveNonZeroNUMBER(version);
+			util.validateNUMBERinRANGE(rating,1,10);
+			
+			
 			this._name = name;
 			this._description = description;
 			this._version = version;
 			this._rating = rating;			
 		}
 		get name(){return this._name;}
-		set	name(name){
-			util.validateSTRINGinRANGE(name,1,24);
-			this._name = name;
-		}
-
 		get	description(){return this._description;}
-		set	description(description){
-			util.validateSTRING(description);
-			this._description = description;
-		}
-
 		get	version(){return this._version;}
-		set	version(version){
-			util.validatePositiveNonZeroNUMBER(version);
-			this._version = version;
-		}			
-						
 		get	rating(){return this._rating;}
-		set	rating(rating){
-			util.validateNUMBERinRANGE(rating,1,10);
-			this._rating = rating;
-		}
+		
 			
 		release(options){
 			if(typeof options != 'object'){
+				util.validateVERSION(options,this._version);
+				this._version = options;
+			}
+			else{
 				util.validateVERSION(options.version,this._version);
-				
+				this._version = options.version;
+
 				if(options.hasOwnProperty('description')){
 					util.validateSTRING(options.description);					
 					this._description = options._description;
@@ -86,12 +79,9 @@ function solve() {
 				if(options.hasOwnProperty('rating')){
 					util.validateNUMBERinRANGE(options.rating,1,10);					
 					this._rating = options._rating;
-				}				
+				}
 			}
-			else{
-				util.validateVERSION(options,this._version);
-				this._version = options;
-			}			
+			return this;			
 		}
 	}
 	class Store extends App{
