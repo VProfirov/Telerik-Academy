@@ -156,7 +156,7 @@ function solve() {
                     if (y.app.rating !== x.app.rating) {
                         return y.app.rating - x.app.rating;
                     }
-                    return y.app.index - x.app.index;
+                    return y.app.index - x.app.index;//wrong !!! but not tested !!! ;D
                 })
                 .slice(0, count)
                 .map(x => x.app);

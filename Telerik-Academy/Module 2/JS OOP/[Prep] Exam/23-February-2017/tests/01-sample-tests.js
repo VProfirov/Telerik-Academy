@@ -123,7 +123,7 @@ describe('Sample tests', function() {
 				expect(() => result.createDevice('', [])).to.throw();
 				expect(() => result.createDevice('123456789012345678901234567890123', [])).to.throw();
 			});
-
+//TODO: check this part
 			it('expect createDevice() with invalid app to throw', function() {
 				expect(() => result.createDevice('pesho', 7)).to.throw();
 				expect(() => result.createDevice('pesho', [7])).to.throw();

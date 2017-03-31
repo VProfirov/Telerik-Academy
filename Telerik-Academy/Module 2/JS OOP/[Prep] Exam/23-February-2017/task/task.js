@@ -52,7 +52,7 @@ function solve() {
 					apps.every(app => util.validateAppINSTANCE(app));					
 				}
 				else{
-					util.validateAppINSTANCE(apps);
+					throw Error('apps must be an array of apps');
 				}
 			}
 		},
@@ -170,23 +170,29 @@ function solve() {
 			}
 			return this;
 		}
+		//FIXME: has some problems to validate
 		search(pattern) {
 			util.validatePrimitives.basicSTRING(pattern);
 
 			let regex = new RegExp(pattern, 'i');
 			let foundApps = this._apps.filter(app => !!app.name.match(regex)); //refactor ?
-			return foundApps.sort();
+			return foundApps.sort((app1,app2) => app1.name.localeCompare(app2.name));
+			// return foundApps.sort();
 		}
-		listMostRecentApps(count = 10) {
-			return [...this._apps].reverse().slice(0, count);
+		listMostRecentApps(count) {
+			count = count || 10; // mocha is bugged for (count=10)
+
+			return [...this._apps].reverse().slice(0, count);			
 		}
-		listMostPopularApps(count = 10) {
+		listMostPopularApps(count) {
+			count = count || 10; // ES6 method length??
+
 			return this._apps.map((app, index) => ({app,index}))
 				// arr of objs set as: [{app,index},]
 				.sort((app1, app2) => {
 					//  i2 - i1 => reverse
-					if (app2.rating != app1.rating) {
-						return app2.rating - app1.rating;
+					if (app2.app.rating !== app1.app.rating) {
+						return app2.app.rating - app1.app.rating;
 					}
 					return app2.index - app1.index;
 				})
