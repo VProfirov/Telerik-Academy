@@ -76,7 +76,7 @@ Implement functionality for app stores and devices. Implement the given classes.
     - performs case-insensitive search in all stores installed on the device
 	- returns an array of apps containing `pattern` in their name
     - sort apps lexicographically by name
-	- return only latest versions of apps
+#	- return only latest versions of apps
   - `install(name)`
     - installs an app with name: `name`
 	  - find the most recent version of the app in the installed stores
