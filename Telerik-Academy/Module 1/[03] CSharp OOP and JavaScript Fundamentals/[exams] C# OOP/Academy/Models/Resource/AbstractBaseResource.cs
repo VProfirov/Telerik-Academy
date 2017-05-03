@@ -39,7 +39,7 @@ namespace Academy.Models.Resource
 
         public override string ToString()
         {
-            return base.ToString();//TODO Output
+            return base.ToString();//TODO Output AbstractBaseResource
         }
     }
 }

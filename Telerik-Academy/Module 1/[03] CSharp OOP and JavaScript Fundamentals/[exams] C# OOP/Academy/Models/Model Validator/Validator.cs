@@ -29,5 +29,11 @@ namespace Academy.Models.Model_Validator
             if (value.Length < minLength || value.Length > maxLength || string.IsNullOrEmpty(value))
                 throw new ArgumentException(string.Format(errorMessage, minLength, maxLength));
         }
+
+        public static void StringValidation(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                throw new ArgumentException("Empty string - not required exception");
+        }
     }
 }

@@ -15,18 +15,8 @@ namespace Academy.Models.Academy_Constructs
         public Course(string name, string lecturesPerWeek, string startingDate)
         {
             this.Name = name;
-
-            int lw;
-            if (int.TryParse(lecturesPerWeek,out lw))
-            {
-                this.LecturesPerWeek = lw;
-            }
-
-            DateTime sd;
-            if (DateTime.TryParse(startingDate,out sd))
-            {
-                this.StartingDate = sd;
-            }
+            this.LecturesPerWeek = int.Parse(lecturesPerWeek);
+            this.StartingDate = DateTime.Parse(startingDate);
         }
 
         public string Name
