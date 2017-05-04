@@ -1,6 +1,6 @@
 ﻿using Academy.Models.Contracts;
 using Academy.Models.Enums;
-using Academy.Models.Models_Validator;
+using Academy.Models.Validation;
 using Academy.Models.Outputs;
 using Academy.Models.Utils.Contracts;
 

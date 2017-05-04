@@ -11,7 +11,6 @@ namespace Academy.Models.Outputs
 {
     class ConstructsOuput
     {
-        //        public static string CourseOutput(string name, DateTime startingDate, DateTime endingDate, int lecturesPerWeek, IList<ILecture> lectures)
         public static string CourseOutput(ICourse course)
         {
             var sb = new StringBuilder();
@@ -41,7 +40,6 @@ namespace Academy.Models.Outputs
         public static string CourseResultOutput(ICourseResult courseResult)
         {
             var sb = new StringBuilder();
-            sb.AppendLine("WTFF");
             sb.AppendLine($" * {courseResult.Course.Name}: Points - {courseResult.CoursePoints}, Grade - {courseResult.Grade}");
 
             return sb.ToString().TrimEnd();

@@ -3,7 +3,7 @@ using System.Text;
 using Academy.Commands.Contracts;
 using Academy.Core.Contracts;
 using Academy.Models;
-using Academy.Models.Models_Validator;
+using Academy.Models.Validation;
 
 namespace Academy.Commands.Listing
 {

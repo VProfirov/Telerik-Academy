@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Academy.Models.Validation;
 using Academy.Models.Contracts;
-using Academy.Models.Models_Validator;
 using Academy.Models.Outputs;
 
 namespace Academy.Models.Academy_Constructs

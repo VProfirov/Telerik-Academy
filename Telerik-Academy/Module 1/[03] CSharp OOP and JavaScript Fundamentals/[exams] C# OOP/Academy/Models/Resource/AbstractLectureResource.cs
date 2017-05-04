@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Academy.Models.Contracts;
-using Academy.Models.Models_Validator;
 using Academy.Models.Outputs;
+using Academy.Models.Validation;
 
 namespace Academy.Models.Resource
 {

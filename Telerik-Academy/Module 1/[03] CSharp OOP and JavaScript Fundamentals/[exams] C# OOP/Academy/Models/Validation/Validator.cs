@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Academy.Models.Models_Validator
+namespace Academy.Models.Validation
 {
     internal class Validator
     {

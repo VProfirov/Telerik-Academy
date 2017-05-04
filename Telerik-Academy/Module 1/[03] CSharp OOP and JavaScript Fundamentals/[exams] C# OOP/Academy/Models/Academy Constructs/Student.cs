@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Academy.Models.Contracts;
-using Academy.Models.Models_Validator;
+using Academy.Models.Validation;
 using Academy.Models.Outputs;
 using Academy.Models.Utils.Contracts;
 
