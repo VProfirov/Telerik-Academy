@@ -81,7 +81,9 @@
     <Compile Include="Models\Contracts\ITrainer.cs" />
     <Compile Include="Models\Enums\Grade.cs" />
     <Compile Include="Models\Enums\Initiative.cs" />
-    <Compile Include="Models\Resource\AbstractBaseResource.cs" />
+    <Compile Include="Models\Outputs\BaseResourceOutput.cs" />
+    <Compile Include="Models\Outputs\ConstructsOuput.cs" />
+    <Compile Include="Models\Resource\AbstractLectureResource.cs" />
     <Compile Include="Models\Resource\DemoResource.cs" />
     <Compile Include="Models\Resource\HomeworkResource.cs" />
     <Compile Include="Models\Resource\PresentationResource.cs" />
@@ -89,16 +91,14 @@
     <Compile Include="Models\Season.cs" />
     <Compile Include="Models\Utils\Contracts\ICourseResult.cs" />
     <Compile Include="Models\Utils\Contracts\ILectureResouce.cs" />
-    <Compile Include="Models\Model Validator\Validator.cs" />
+    <Compile Include="Models\Validation\Validator.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Output\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

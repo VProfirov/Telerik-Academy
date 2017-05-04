@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Academy.Models.Contracts;
-using Academy.Models.Model_Validator;
+using Academy.Models.Models_Validator;
+using Academy.Models.Outputs;
+
 namespace Academy.Models.Academy_Constructs
 {
     class Course : ICourse
     {
-        private string name;
-        private int lecturesPerWeek;
-        private DateTime endingDate;
+        private string _name;
+        private int _lecturesPerWeek;
+        private DateTime _endingDate;
         public Course(string name, string lecturesPerWeek, string startingDate)
         {
             this.Name = name;
@@ -21,35 +23,35 @@ namespace Academy.Models.Academy_Constructs
 
         public string Name
         {
-            get => this.name;
+            get => this._name;
             set
             {
-                Validator.StringValidation(value,Validator.CourseName_MinLength,Validator.CourseName_MaxLength,Validator.CourseName_ErrorMessage);
-                this.name = value;
+                Validator.StringValidation(value,Validator.CourseNameMinLength,Validator.CourseNameMaxLength,Validator.CourseNameErrorMessage);
+                this._name = value;
             }
         }
 
         public int LecturesPerWeek
         {
-            get => this.lecturesPerWeek;
+            get => this._lecturesPerWeek;
             set
             {
-                Validator.NumberValidation(value,Validator.LecturesPerWeek_Min,Validator.LecturesPerWeek_Max,Validator.LecturesPerWeek_ErrorMessage);
-                this.lecturesPerWeek = value;
+                Validator.NumberValidation(value,Validator.LecturesPerWeekMin,Validator.LecturesPerWeekMax,Validator.LecturesPerWeekErrorMessage);
+                this._lecturesPerWeek = value;
             }
         }
         public DateTime StartingDate { get; set; }
 
         public DateTime EndingDate
         {
-            get => this.endingDate;
+            get => this._endingDate;
             set
             {
-                if ( this.endingDate == default(DateTime))
+                if ( this._endingDate == default(DateTime))
                 {
-                    this.endingDate = this.StartingDate.AddDays(30);
+                    this._endingDate = this.StartingDate.AddDays(30);
                 }
-                this.endingDate = value;
+                this._endingDate = value;
             }
         }
 
@@ -61,7 +63,7 @@ namespace Academy.Models.Academy_Constructs
 
         public override string ToString()
         {
-            return base.ToString();//TODO Output
+            return ConstructsOuput.CourseOutput(this);
         }
     }
 }

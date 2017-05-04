@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Academy.Models.Resource
 {
-    class PresentationResource:AbstractBaseResource
+    class PresentationResource:AbstractLectureResource
     {
         public PresentationResource(string name, string url) : base(name, url)
         {

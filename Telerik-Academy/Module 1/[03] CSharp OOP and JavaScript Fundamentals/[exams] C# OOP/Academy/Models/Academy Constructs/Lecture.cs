@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Academy.Models.Contracts;
-using Academy.Models.Model_Validator;
+using Academy.Models.Models_Validator;
+using Academy.Models.Outputs;
 
 namespace Academy.Models.Academy_Constructs
 {
     class Lecture : ILecture
     {
-        private string name;
+        private string _name;
 
         public Lecture(string name, string date, ITrainer trainer)
         {
@@ -21,11 +22,11 @@ namespace Academy.Models.Academy_Constructs
 
         public string Name
         {
-            get => this.name;
+            get => this._name;
             set
             {
-                Validator.StringValidation(value,Validator.);
-                this.name = value;
+                Validator.StringValidation(value,Validator.LectureNameMinLength,Validator.LectureNameMaxLength,Validator.LectureNameErrorMessage);
+                this._name = value;
             }
         }
         public DateTime Date { get; set; }
@@ -34,7 +35,7 @@ namespace Academy.Models.Academy_Constructs
 
         public override string ToString()
         {
-            return base.ToString();//TODO Output
+            return ConstructsOuput.LectureOutput(this);
         }
     }
 }
