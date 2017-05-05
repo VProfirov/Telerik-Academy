@@ -58,7 +58,7 @@ namespace Academy.Core.Factories
             return new Lecture(name,date,trainer);
         }
 
-        public ILectureResource CreateLectureResource(string type, string name, string url)
+        public ILectureResouce CreateLectureResouce(string type, string name, string url)
         {
             // Use this instead of DateTime.Now if you want any points in BGCoder!!
             var currentDate = DateTimeProvider.Now;

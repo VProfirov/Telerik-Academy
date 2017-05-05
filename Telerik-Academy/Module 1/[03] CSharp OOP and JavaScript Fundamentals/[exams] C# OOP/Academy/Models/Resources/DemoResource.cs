@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Academy.Models.Resource
+namespace Academy.Models.Resources
 {
-    class DemoResource:AbstractLectureResource
+    class DemoResource:LectureResource
     {
         public DemoResource(string name, string url) : base(name, url)
         {

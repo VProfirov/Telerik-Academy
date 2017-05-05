@@ -7,7 +7,7 @@ using Academy.Models.Validation;
 
 namespace Academy.Commands.Listing
 {
-    class ListUsersCommand:ICommand
+    class ListUsersCommand : ICommand
     {
         private readonly IAcademyFactory _factory;
         private readonly IEngine _engine;

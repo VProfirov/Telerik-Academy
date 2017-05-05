@@ -7,9 +7,9 @@ using Academy.Models.Contracts;
 
 namespace Academy.Models.Outputs
 {
-    class BaseResourceOutput
+    class LectureResourceOutput
     {
-        public static string ResourceOutput(ILectureResouce lectureResouce,params DateTime[] date)
+        public static string ResourceOutput(ILectureResouce lectureResouce, params DateTime[] date)
         {
             var sb = new StringBuilder();
             sb.AppendLine("    * Resource: ");
@@ -22,9 +22,11 @@ namespace Academy.Models.Outputs
 
             switch (type)
             {
-                case "Video": sb.AppendLine($"     - Uploaded on: {date}");
+                case "Video":
+                    sb.AppendLine($"     - Uploaded on: {date[0]}");
                     break;
-                case "Homework": sb.AppendLine($"     - Due date: {date}");
+                case "Homework":
+                    sb.AppendLine($"     - Due date: {date[0]}");
                     break;
             }
 

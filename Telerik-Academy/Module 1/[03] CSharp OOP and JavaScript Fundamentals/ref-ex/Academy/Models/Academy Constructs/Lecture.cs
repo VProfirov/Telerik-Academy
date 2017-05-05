@@ -31,7 +31,7 @@ namespace Academy.Models.Academy_Constructs
         }
         public DateTime Date { get; set; }
         public ITrainer Trainer { get; set; }
-        public IList<ILectureResource> Resources { get; } = new List<ILectureResource>(); //TODO: CHECK 
+        public IList<ILectureResouce> Resouces { get; } = new List<ILectureResouce>(); //TODO: CHECK 
 
         public override string ToString()
         {

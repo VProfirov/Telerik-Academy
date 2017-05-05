@@ -7,14 +7,14 @@ using Academy.Models.Contracts;
 using Academy.Models.Outputs;
 using Academy.Models.Validation;
 
-namespace Academy.Models.Resource
+namespace Academy.Models.Resources
 {
-    abstract class AbstractLectureResource:ILectureResouce
+    abstract class LectureResource:ILectureResouce
     {
         private string _name;
         private string _url;
 
-        protected AbstractLectureResource(string name, string url)
+        protected LectureResource(string name, string url)
         {
             this.Name = name;
             this.Url = url;
@@ -25,7 +25,7 @@ namespace Academy.Models.Resource
             get => this._name;
             set
             {
-                Validator.StringValidation(value,Validator.ResourceNameMinLength,Validator.ResourceNameMaxLength,Validator.ResourceNameErrorMessage);
+                Validator.StringValidation(value, Validator.ResourceNameMinLength, Validator.ResourceNameMaxLength, Validator.ResourceNameErrorMessage);
                 this._name = value;
             }
         }
@@ -43,7 +43,7 @@ namespace Academy.Models.Resource
 
         public override string ToString()
         {
-            return BaseResourceOutput.ResourceOutput(this);
+            return LectureResourceOutput.ResourceOutput(this);
 
             //TODO implement date insertion => abstract VS local
         }

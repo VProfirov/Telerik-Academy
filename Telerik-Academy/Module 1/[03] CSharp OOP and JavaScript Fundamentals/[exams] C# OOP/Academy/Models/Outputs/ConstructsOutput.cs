@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Academy.Models.Contracts;
-using Academy.Models.Enums;
 using Academy.Models.Utils.Contracts;
 
 namespace Academy.Models.Outputs
 {
-    class ConstructsOuput
+    class ConstructsOutput
     {
         public static string CourseOutput(ICourse course)
         {
@@ -54,13 +53,13 @@ namespace Academy.Models.Outputs
             sb.AppendLine($"   - Trainer username: {lecture.Trainer.Username}");
             sb.AppendLine("   - Resources:");
 
-            if (lecture.Resouces.Count == 0)
+            if (lecture.Resources.Count == 0)
             {
                 sb.AppendLine("    * There are no resources in this lecture.");
             }
             else
             {
-                foreach (var lectureResource in lecture.Resouces)
+                foreach (var lectureResource in lecture.Resources)
                 {
                     sb.AppendLine(lectureResource.ToString());
                 }
