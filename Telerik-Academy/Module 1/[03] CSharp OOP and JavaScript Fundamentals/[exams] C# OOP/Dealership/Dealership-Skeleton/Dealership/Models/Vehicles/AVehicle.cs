@@ -25,7 +25,7 @@ namespace Dealership.Models.Vehicles
 
             this.Type = (VehicleType)Enum.Parse(typeof(VehicleType), this.GetType().Name);
 
-            //The Wheels Constant for Validation is not used!
+            //TODO: The Wheels Constant for Validation is not used!
             this.Wheels = (int)this.Type;
         }
         public IList<IComment> Comments { get; } = new List<IComment>();
