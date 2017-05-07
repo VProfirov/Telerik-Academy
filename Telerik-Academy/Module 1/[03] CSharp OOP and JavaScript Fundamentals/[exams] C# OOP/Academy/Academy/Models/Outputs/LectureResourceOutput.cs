@@ -17,8 +17,9 @@ namespace Academy.Models.Outputs
             sb.AppendLine($"     - Name: {lectureResource.Name}");
             sb.AppendLine($"     - Url: {lectureResource.Url}");
 
-            string[] typeSequence = lectureResource.GetType().ToString().Split(new char[]{'.'},StringSplitOptions.RemoveEmptyEntries);
-            string type = typeSequence[typeSequence.Length - 1];
+            //            string[] typeSequence = lectureResource.GetType().ToString().Split(new char[]{'.'},StringSplitOptions.RemoveEmptyEntries); 
+            //            string type = typeSequence[typeSequence.Length - 1];
+            string type = lectureResource.GetType().Name;
             string shortType = type.Remove(type.IndexOf("Resource"));
 //            string shortType = type.Replace("Resource","").TrimEnd();
 

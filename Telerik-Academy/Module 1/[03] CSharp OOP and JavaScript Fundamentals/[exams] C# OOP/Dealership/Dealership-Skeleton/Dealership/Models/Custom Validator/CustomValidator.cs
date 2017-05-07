@@ -23,7 +23,7 @@ namespace Dealership.Models.Custom_Validator
         {
             if (value < min || value > max)
             {
-                throw new ArgumentException(message);
+                throw new ArgumentException(string.Format(message,min,max));
             }
         }
 
@@ -31,7 +31,7 @@ namespace Dealership.Models.Custom_Validator
         {
             if (value < min || value > max)
             {
-                throw new ArgumentException(message);
+                throw new ArgumentException(string.Format(message,min,max));
             }
         }
 
@@ -49,7 +49,7 @@ namespace Dealership.Models.Custom_Validator
 
             if (!regex.IsMatch(value))
             {
-                throw new ArgumentException(message);
+                throw new ArgumentException(string.Format(message,value));
             }
         }
     }
