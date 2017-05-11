@@ -40,46 +40,43 @@ namespace Dealership.Models.Vehicles
         public IList<IVehicle> Vehicles { get; } = new List<IVehicle>();
         public void AddVehicle(IVehicle vehicle)
         {
-            //Vehicle Validation
+            CustomValidator.ValidateNull(vehicle, Constants.VehicleCannotBeNull);
+            if (this.Role == Role.Admin)
+            {
+                throw new ArgumentException(Constants.AdminCannotAddVehicles);
+            }
+            else if ((this.Role != Role.VIP) && (this.Vehicles.Count >= Constants.MaxVehiclesToAdd))
+            {
+                throw new ArgumentException(string.Format(Constants.NotAnVipUserVehiclesAdd, Constants.MaxVehiclesToAdd));
 
-
-            /*
-             If the user is admin he cannot add a vehicle
-             If the user is not VIP he cannot add more than 5 vehicles
-             */
+            }
             this.Vehicles.Add(vehicle);
         }
 
         public void RemoveVehicle(IVehicle vehicle)
         {
-            //Vehicle Validation
-
+            CustomValidator.ValidateNull(vehicle,Constants.VehicleCannotBeNull);
             this.Vehicles.Remove(vehicle);
         }
 
         public void AddComment(IComment commentToAdd, IVehicle vehicleToAddComment)
         {
-            //Comment Validation
+
+            CustomValidator.ValidateNull(commentToAdd, Constants.CommentCannotBeNull);
+            CustomValidator.ValidateNull(vehicleToAddComment, Constants.VehicleCannotBeNull);
             
-            /*Just add the comment to the list*/
-
-            //implemented command using it:
-            /*AddComment (content, author, vehicleIndex) - add a comment with the content provided to the vehicle with that index and sets the author*/
-
-
-            //vehicles.Comments add commentToAdd
-            throw new NotImplementedException();
+            vehicleToAddComment.Comments.Add(commentToAdd);
         }
 
         public void RemoveComment(IComment commentToRemove, IVehicle vehicleToRemoveComment)
         {
-            //Comment Validation
-
-            /*If the author of the comment is not the current user he cannot remove it*/
-
-            //implemented command using it:
-            /*RemoveComment (vehicleIndex, commentIndex, username) - removes the comment from the vehicle*/
-            throw new NotImplementedException();
+            CustomValidator.ValidateNull(commentToRemove,Constants.CommentCannotBeNull);
+            CustomValidator.ValidateNull(vehicleToRemoveComment,Constants.VehicleCannotBeNull);
+            if (commentToRemove.Author != this.Username)
+            {
+                throw new ArgumentException(Constants.YouAreNotTheAuthor);
+            }
+            vehicleToRemoveComment.Comments.Remove(commentToRemove);
         }
 
         public string PrintVehicles()
