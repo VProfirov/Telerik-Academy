@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Dealership.Common;
 using Dealership.Common.Enums;
 using Dealership.Contracts;
 using Dealership.Models.Custom_Validator;
 
-namespace Dealership.Models.Vehicles
+namespace Dealership.Models
 {
     class User:IUser
     {
@@ -117,6 +115,29 @@ Username: {Username}, FullName: {FirstName} {LastName}, Role: {Role}
              */
 
             throw new NotImplementedException();
+
+            var builder = new StringBuilder();
+            builder.AppendLine($"--USER {Username}--");
+
+            if (Vehicles.Count == 0)
+            {
+                builder.AppendLine("--NO VEHICLES--");
+                return builder.ToString().TrimEnd();
+            }
+
+            for (int i = 0; i < Vehicles.Count; i++)
+            {
+                builder.AppendLine($@"{i + 1}. {Vehicles[i].Type}:");
+                builder.AppendLine(Vehicles[i].ToString());
+            }
+            return builder.ToString().TrimEnd(); ;
+        }
+
+        public override string ToString()
+        {
+            return string.Format(Constants.UserToString,this.Username,this.FirstName,this.LastName,this.Role);
         }
     }
 }
+
+//"Username: {Username}, FullName: {FirstName} {LastName}, Role: {Role}"

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,8 @@ namespace Dealership.Models.Vehicles
 
             this.Type = (VehicleType)Enum.Parse(typeof(VehicleType), this.GetType().Name);
 
-            //TODO: The Wheels Constant for Validation is not used!
+            //TODO: The Wheels Constant for Validation IS used! But does a redundant or out of place validation.
+            CustomValidator.ValidateIntRange((int)this.Type,Constants.MinWheels,Constants.MaxWheels,Constants.NumberMustBeBetweenMinAndMax);
             this.Wheels = (int)this.Type;
         }
         public IList<IComment> Comments { get; } = new List<IComment>();
@@ -34,5 +36,10 @@ namespace Dealership.Models.Vehicles
         public VehicleType Type { get; }
         public string Make { get; }
         public string Model { get; }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

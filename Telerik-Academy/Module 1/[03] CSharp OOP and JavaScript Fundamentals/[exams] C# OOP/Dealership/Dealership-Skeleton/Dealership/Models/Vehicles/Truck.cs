@@ -17,6 +17,12 @@ namespace Dealership.Models.Vehicles
             this.WeightCapacity = weightCapacity;
         }
 
+
         public int WeightCapacity { get; }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

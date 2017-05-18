@@ -17,5 +17,10 @@ namespace Dealership.Models.Vehicles
             this.Category = category;
         }
         public string Category { get; }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -17,5 +17,10 @@ namespace Dealership.Models.Vehicles
             this.Seats = seats;
         }
         public int Seats { get; }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
