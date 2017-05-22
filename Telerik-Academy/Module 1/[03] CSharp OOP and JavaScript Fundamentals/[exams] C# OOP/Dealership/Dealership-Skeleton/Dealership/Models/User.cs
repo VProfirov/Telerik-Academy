@@ -79,43 +79,6 @@ namespace Dealership.Models
 
         public string PrintVehicles()
         {
-
-            /*
-             User
-Username: {Username}, FullName: {FirstName} {LastName}, Role: {Role}
-             */
-
-
-            //All vehicles of the user
-            /*
---USER {Username}--
-1. {Vehicle type}:
-  Make: {Make}
-  Model: {Model}
-  Wheels: {Wheels}
-  Price: ${Price}
-  Category/Weight capacity/Seats: {Category/Weight capacity/Seats}
-    --COMMENTS--
-    ----------
-    {Content}
-      User: {Comment Username}
-    ----------
-    ----------
-    {Content}
-      User: {Comment username}
-    ----------
-    --COMMENTS--
-2. {Vehicle type}:
-  Make: {Make}
-  Model: {Model}
-  Wheels: {Wheels}
-  Price: ${Price}
-  Category/Weight capacity/Seats: {Category/Weight capacity/Seats}
-    --NO COMMENTS--
-             */
-
-            throw new NotImplementedException();
-
             var builder = new StringBuilder();
             builder.AppendLine($"--USER {Username}--");
 

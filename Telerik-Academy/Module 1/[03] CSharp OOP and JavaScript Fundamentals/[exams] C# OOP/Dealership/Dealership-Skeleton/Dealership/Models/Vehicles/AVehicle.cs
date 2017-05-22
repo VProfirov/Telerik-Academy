@@ -39,7 +39,12 @@ namespace Dealership.Models.Vehicles
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            var sb = new StringBuilder();
+            sb.AppendLine($"  Make: {Make}");
+            sb.AppendLine($"  Model: {Model}");
+            sb.AppendLine($"  Wheels: {Wheels}");
+            sb.AppendLine($"  Price: ${Price}");
+            return sb.ToString().TrimEnd();
         }
     }
 }
