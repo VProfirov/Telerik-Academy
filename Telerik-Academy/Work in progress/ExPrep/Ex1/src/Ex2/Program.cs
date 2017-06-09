@@ -10,38 +10,35 @@ namespace Ex2
         public static void Main(string[] args)
         {
             var pattern = Console.ReadLine();
-            int position = 0;
-            int check = 0;
-            while (true)
+
+            var ind = 0;
+            var msg = "Fell off the dancefloor at {0}!";
+            while (ind >= 0 && ind < pattern.Length)
             {
-                check = int.Parse(pattern[position].ToString());
-                if (check == 0)
-                {
-                    Console.WriteLine("Too drunk to go on after {0}!", position);
-                    break;
-                }
-                else if (check % 2 == 0)
-                {
-                    position += check;
-                }
-                else
-                {
-                    position -= check;
-                }
+                char ch = pattern[ind];
+                int num = ch - '0';
 
-                if (position < 0 || position >= pattern.Length)
+                if (ch == '^')
                 {
-                    Console.WriteLine("Fell off the dancefloor at {0}!", position);
+                    msg = "Jump, Jump, DJ Tomekk kommt at {0}!";
                     break;
                 }
-
-                if (pattern[position] == '^')
+                else if ((ch- '0') == 0)
                 {
-                    Console.WriteLine("Jump, Jump, DJ Tomekk kommt at {0}!", position);
+                    msg = "Too drunk to go on after {0}!";
                     break;
+                }
+                else if ((ch - '0') % 2 == 0)
+                {
+                    ind += num;
+                }
+                else if ((ch - '0') % 2 == 1)
+                {
+                    ind -= num;
                 }
             }
 
+            Console.WriteLine(msg,ind);
         }
     }
 }
