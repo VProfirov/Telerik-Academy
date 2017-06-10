@@ -10,77 +10,55 @@ namespace Ex
     {
         static void Main(string[] args)
         {
-            var msg = Console.ReadLine();
-//            var msg = "Fun exam right";
-            var splitMsg = msg.Split(new char[] {' '},StringSplitOptions.RemoveEmptyEntries);
-            var sb = new StringBuilder();
+            var numLines = int.Parse(Console.ReadLine());
+            var result = new string[numLines];
 
-            bool flag = false;
-            do
+            for (int l = 0; l < numLines; l++)
             {
-                for (int i = 0; i < splitMsg.Length; i++)
-                {
-                    string word = splitMsg[i];
-                    if (word.Length == 0)
-                    {
-                        continue;
-                    }
-                    sb.Append(word[word.Length - 1].ToString());
-                    word = word.Remove(word.Length - 1, 1);
-                    splitMsg[i] = word;
-                }
+                var num = int.Parse(Console.ReadLine());
 
-                foreach (var word in splitMsg)
+                var arrDig = new int[4];
+                arrDig[3] = num % 10;
+                arrDig[2] = (num / 10) % 10;
+                arrDig[1] = (num / 100) % 10;
+                arrDig[0] = (num / 1000) % 10;
+
+                var even = 0;
+                var odd = 0;
+                for (int i = 0; i < arrDig.Length; i++)
                 {
-                    if (word.Length != 0)
+                    if (arrDig[i] % 2 == 0)
                     {
-                        flag = true;
-                        break;
+                        even += arrDig[i];
                     }
                     else
                     {
-                        flag = false;
+                        odd += arrDig[i];
                     }
                 }
-            } while (flag);
-            
 
-            var codeMsg = sb.ToString().Trim();
-
-//            Console.WriteLine(codeMsg);
-
-            // 2nd step
-
-            for (int i = 0; i < codeMsg.Length; i++)
-            {
-                var l = codeMsg[i].ToString();
-
-                char ch = codeMsg[i];
-
-                codeMsg = codeMsg.Remove(i,1);
-//                Console.WriteLine("Removed: " + codeMsg);
-
-                int position = i;
-
-                if (ch >= 'a' && ch <= 'z')
+                if (even > odd)
                 {
-                    position += ch - 'a' + 1;
+                    ////Console.WriteLine("left");
+                    result[l] = "left";
                 }
-                else if (ch >= 'A' && ch <= 'Z') 
+                else if (odd > even)
                 {
-                    position += ch - 'A' + 1;
+                    ////Console.WriteLine("right");
+                    result[l] = "right";
+
                 }
-
-                              
-                position = position % (codeMsg.Length + 1);
-                
-                
-                codeMsg = codeMsg.Insert(position,l);
-
-
+                else
+                {
+                    ////Console.WriteLine("straight");
+                    result[l] = "straight";
+                }
             }
-            Console.WriteLine(codeMsg);
 
+            foreach (var i in result)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }

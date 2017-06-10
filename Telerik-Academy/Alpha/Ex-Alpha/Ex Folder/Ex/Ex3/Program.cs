@@ -14,8 +14,8 @@ namespace Ex
             //            var msg = "Fun exam right";
             var splitMsg = msg.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             var sb = new StringBuilder();
-
             bool flag = false;
+
             do
             {
                 for (int i = 0; i < splitMsg.Length; i++)
