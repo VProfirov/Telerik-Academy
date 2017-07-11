@@ -3,73 +3,43 @@
 namespace Task_1
 {
     using System.Numerics;
+    using System.Text;
     using System.Text.RegularExpressions;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-//            Console.WriteLine(int.MaxValue > Math.Pow(2,60));
-//            Console.WriteLine(long.MaxValue > (Math.Pow(2,60) * Math.Pow(2, 60) * Math.Pow(2, 60)));
-            BigInteger result = 1;
- 
-//            Console.WriteLine(Hint.HintView());
-            var encoding = new string[]
-                               {
-                                   "ocaml",
-                                   "haskell",
-                                   "scala",
-                                   "f#",
-                                   "lisp",
-                                   "rust",
-                                   "ml",
-                                   "clojure",
-                                   "erlang",
-                                   "standardml",
-                                   "racket",
-                                   "elm",
-                                   "mercury",
-                                   "commonlisp",
-                                   "scheme",
-                                   "curry"
-                               };
-            var input = Console.ReadLine().Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-            var inputInHex = new string[3];
+//            Console.WriteLine(Hint.HintView_v02_Horner());
 
-            // use string builder for memory efficiency Stringbuilder{(sb)}.Replace(oldV,newV)
-            for (int i = 0; i < input.Length; i++)
+            var encodedNumbers = Console.ReadLine().Split(new string[] { ", " }, StringSplitOptions.None);
+            var product = new BigInteger(1);
+
+            foreach (var encodedNumber in encodedNumbers)
             {
-                for (int j = 0; j < encoding.Length; j++)
-                {
-                    if (j>=0 && j <=9)
-                    {
-                        input[i] = input[i].Replace(encoding[j], j.ToString());
-                    }
+                var hexNumber = new StringBuilder(encodedNumber)
+                                                    .Replace("commonlisp", "D")
+                                                    .Replace("standardml", "9")
+                                                    .Replace("haskell", "1")
+                                                    .Replace("mercury", "C")
+                                                    .Replace("clojure", "7")
+                                                    .Replace("erlang", "8")
+                                                    .Replace("scheme", "E")
+                                                    .Replace("racket", "A")
+                                                    .Replace("curry", "F")
+                                                    .Replace("ocaml", "0")
+                                                    .Replace("scala", "2")
+                                                    .Replace("lisp", "4")
+                                                    .Replace("rust", "5")
+                                                    .Replace("elm", "B")
+                                                    .Replace("ml", "6")
+                                                    .Replace("f#", "3")
+                                                    .ToString();
 
-                    //  Replace is case-sensitive => x>=10 &&& <15 => A-F
-                    if (j >= 10 && j <= 15)
-                    {
-                        var h = Convert.ToString(j, 16).ToUpper();
-                        input[i] = input[i].Replace(encoding[j], h);
-                    }
-                }
+                product *= new BigInteger(Convert.ToInt64(hexNumber, 16));
             }
 
-            for (int i = 0; i < input.Length; i++)
-            {
-                var longVal = Convert.ToInt64(input[i], 16);
-                result *= longVal;
-            }
-
-            Console.WriteLine(result);
-            
-//            foreach (var i in input)
-//            {
-//                Console.WriteLine(i);
-//            }
+            Console.WriteLine(product);
         }
     }
 }
-/*How many digits does this numeral system have? Is there an appropriate built-in functionality?
-String.Replace can simplify things a lot, just be careful in what order you replace
-Think about the data types of the three numbers and the result - how much is 2^60 * 2^60 * 2^60?*/

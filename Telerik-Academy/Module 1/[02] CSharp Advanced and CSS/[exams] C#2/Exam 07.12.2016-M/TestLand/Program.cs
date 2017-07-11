@@ -6,11 +6,12 @@ namespace TestLand
     {
         static void Main(string[] args)
         {
-            int n = 11;
+            var hand = "1111111111111111111111111100000000000000000000000000";
+//            Console.WriteLine(hand.Length);
+            Console.WriteLine(hand);
+            Console.WriteLine(Convert.ToString(4503599560261632,2));
+            Console.WriteLine(Convert.ToString(long.MaxValue,2));
 
-            var h = Convert.ToString(n, 16).ToUpper();
-
-            Console.WriteLine(h);
         }
     }
 }
