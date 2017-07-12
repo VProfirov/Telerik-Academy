@@ -10,7 +10,7 @@ namespace TestLand
 //            Console.WriteLine(hand.Length);
             Console.WriteLine(hand);
             Console.WriteLine(Convert.ToString(4503599560261632,2));
-            Console.WriteLine(Convert.ToString(long.MaxValue,2));
+//            Console.WriteLine(Convert.ToString(long.MaxValue,2));
 
         }
     }
