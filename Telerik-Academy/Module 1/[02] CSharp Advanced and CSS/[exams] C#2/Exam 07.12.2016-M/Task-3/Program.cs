@@ -25,11 +25,14 @@ namespace Task_3
             var dotIndex = text.IndexOf(".", patternIndexInString);
             var questionMarkIndex = text.IndexOf("?", patternIndexInString);
 
-            //TODO: Problematic sectio -> punctuation definition
+            ////TODO: [#mistake1]Problematic sectio -> punctuation definition
             var punctuation = (dotIndex < questionMarkIndex && dotIndex >= 0 && questionMarkIndex >= 0)? "." : "?"; // use REGEX
             Console.WriteLine("Punctuatio: " + punctuation);
+            ////todo: solution : from the pattern to the first occurrence of if(.)else if(?)
 
             var subStrToCalc = string.Empty;
+            ////Todo: [#mistake2] +1 checking/computing/ of same value (punc)
+            ////Todo: [#mistake3] repetitive computational override of the same variables  ||=> solution: "Answer the question: what is the result?"
             if (punctuation == ".")
             {
                 for (int i = patternIndexInString; i >= 0; i--)
