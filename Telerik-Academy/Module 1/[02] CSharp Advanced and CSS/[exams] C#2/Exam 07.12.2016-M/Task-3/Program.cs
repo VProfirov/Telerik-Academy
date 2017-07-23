@@ -2,6 +2,7 @@
 
 namespace Task_3
 {
+    using System.Numerics;
     using System.Text;
     using System.Text.RegularExpressions;
 
@@ -9,29 +10,61 @@ namespace Task_3
     {
         static void Main(string[] args)
         {
-            var pattern = Console.ReadLine().ToUpper();
+            var pattern = Console.ReadLine();
             var count = int.Parse(Console.ReadLine());
             var sb = new StringBuilder();
             while (count-- > 0)
             {
-                sb.Append(Console.ReadLine());
+                sb.Append(Console.ReadLine() + " ");
             }
-            var text = sb.ToString().ToUpper();
-            Console.WriteLine(text);
-            var patternIndexInString = text.IndexOf(pattern);
-//            Console.WriteLine(Regex.IsMatch(text,@"[.|?]"));
-            var dot = text.IndexOf(".", patternIndexInString + pattern.Length - 1);
-            var questionMark = text.IndexOf("?", patternIndexInString + pattern.Length - 1);
-            var punctuation = dot > questionMark ? "." : "?"; // use REGEX
+            var text = sb.ToString().Trim();
+//            Console.WriteLine(text);
 
+            var patternIndexInString = text.IndexOf(pattern);
+
+            var dotIndex = text.IndexOf(".", patternIndexInString);
+            var questionMarkIndex = text.IndexOf("?", patternIndexInString);
+
+            //TODO: Problematic sectio -> punctuation definition
+            var punctuation = (dotIndex < questionMarkIndex && dotIndex >= 0 && questionMarkIndex >= 0)? "." : "?"; // use REGEX
+            Console.WriteLine("Punctuatio: " + punctuation);
+
+            var subStrToCalc = string.Empty;
             if (punctuation == ".")
             {
-                
+                for (int i = patternIndexInString; i >= 0; i--)
+                {
+                    //                    if (text[i] >= 'A' && text[i] <= 'Z')
+                    if (text[i] >= 65 && text[i] <= 90)
+                    {
+                        subStrToCalc = text.Remove(patternIndexInString);
+                        subStrToCalc = subStrToCalc.Substring(i);
+                        break;
+                    }
+                }
             }
-            else
+            else if (punctuation == "?")
             {
-                
+                subStrToCalc = text.Remove(questionMarkIndex);
+                Console.WriteLine(subStrToCalc);
+                subStrToCalc = subStrToCalc.Substring(patternIndexInString + pattern.Length);
+                Console.WriteLine(subStrToCalc);
+
+                // html from html5
             }
+
+            subStrToCalc = subStrToCalc.ToUpper();
+//            Console.WriteLine(subStrToCalc);
+            subStrToCalc = subStrToCalc.Replace(" ", string.Empty);////imperfect - use regex for all the types of empty spaces
+//            Console.WriteLine(subStrToCalc);
+
+            BigInteger result = 0;
+            foreach (var ch in subStrToCalc)
+            {
+                result += ch;
+            }
+
+            Console.WriteLine(result);
         }
     }
 }
