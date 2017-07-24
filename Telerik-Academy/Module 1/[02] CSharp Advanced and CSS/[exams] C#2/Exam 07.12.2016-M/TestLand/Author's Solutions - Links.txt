@@ -1,0 +1,9 @@
+﻿Условия и авторски решения на задачите от изпита по C# Advanced (декември 2016)
+
+На линковете долу можете да намерите авторските решения и условия на задачите от изпита по групи:
+
+7-и декември сутрин - https://github.com/TelerikAcademy/CSharp-Part-2/tree/master/Exams/2016-12-07/2016-12-07-Morning
+7-и декември вечер - https://github.com/TelerikAcademy/CSharp-Part-2/tree/master/Exams/2016-12-07/2016-12-07-Evening
+Автори на задачите: 1 - Константин, 2 - Константин, 3 - Евлоги, 4 - Стивън
+
+http://telerikacademy.com/Forum/Questions/204524/Условия-и-авторски-решения-на-задачите-от-изпита-по-CSharp-Advanced-декември-2016
