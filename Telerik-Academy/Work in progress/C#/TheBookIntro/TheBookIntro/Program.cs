@@ -6,9 +6,7 @@ namespace TheBookIntro
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Math.Pow(2,2));
-            Console.WriteLine(Math.Pow(2,-2));
-            Console.WriteLine(Math.Sqrt(2));
+            Console.WriteLine(4 % -5);
         }
     }
 }

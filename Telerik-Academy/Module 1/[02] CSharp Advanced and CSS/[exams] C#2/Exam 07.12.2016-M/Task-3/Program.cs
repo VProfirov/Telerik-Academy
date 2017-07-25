@@ -62,7 +62,10 @@
                     break;
                 }
 
-                // den & den-morphing
+                // left to right COL switchup => %
+//                snakeCurrentPosition = CheckForColLoop(snakeCurrentPosition,denMap);
+                snakeCurrentPosition = CheckForRightLeftLoop(snakeCurrentPosition, denMap);
+                // in den moving & den-morphing
                 switch (denMap[snakeCurrentPosition[0],snakeCurrentPosition[1]]) // out of range - 5
                 {
                     case ".": break;
@@ -82,7 +85,7 @@
 
             if (string.IsNullOrEmpty(message))
             {
-                message = string.Format("Snacky will be stuck in the den at [0,1]", snakeCurrentPosition[0], snakeCurrentPosition[1]);
+                message = string.Format("Snacky will be stuck in the den at [{0},{1}]", snakeCurrentPosition[0], snakeCurrentPosition[1]);
             }
 
             Console.WriteLine(message);
@@ -94,10 +97,29 @@
             {
                 case "d": position[0]++; break;
                 case "u": position[0]--; break;
-                case "r": position[1]++; break;
-                case "l": position[1]--; break;
+                case "r": position[1]++; break; // Math.Abs(position[1] % denMap.GetLength(1))
+                case "l": position[1]--; break; // left to right COL switchup => %
             }
             return position;
+        }
+
+        private static int[] CheckForColLoop(int[] snakeCurrentPosition, string[,] denMap)
+        {
+            snakeCurrentPosition[1] = Math.Abs(snakeCurrentPosition[1] % denMap.GetLength(1));
+            return snakeCurrentPosition;
+        }
+
+        private static int[] CheckForRightLeftLoop(int[] snakeCurrentPosition, string[,] denMap)
+        {
+            if (snakeCurrentPosition[1] < 0)
+            {
+                snakeCurrentPosition[1] = denMap.GetLength(1) - 1;
+            }
+            else if (snakeCurrentPosition[1] >= denMap.GetLength(1))
+            {
+                snakeCurrentPosition[1] = 0;
+            }
+            return snakeCurrentPosition;
         }
     }
 }
