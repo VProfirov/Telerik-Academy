@@ -62,9 +62,19 @@
                     break;
                 }
 
-                // left to right COL switchup => %
-//                snakeCurrentPosition = CheckForColLoop(snakeCurrentPosition,denMap);
+                // #AlgoStep #0 Edge Looping - YES - looking for
                 snakeCurrentPosition = CheckForRightLeftLoop(snakeCurrentPosition, denMap);
+
+                // TODO: Improve Documentation skills
+                ///<INFO>
+                /// <NOTE>: Edge Bouncing => the direction REVERSES for each move in a perticular direction-instruction </NOTE>>
+                /// <CODE: Pseudo (left {of left-edge} + left == right + right)> for position += 1 * isChange(-1)</Pseudo>
+                /// <NOTE>: Edge Bumping => the direction IS UNCHANGED, but CAN'T GO OVER THE EDGE</NOTE>
+                /// <CODE snakeCurrentPosition[1] = Math.Abs(snakeCurrentPosition[1] % denMap.GetLength(1));> for position++ </CODE>
+                /// <NOTE>: Edge Looping => goes from the other/opposite side, when the same direction persist at state of reaching the edge</NOTE>
+                /// <CODE if (snakeCurrentPosition[1] isLessThan 0){snakeCurrentPosition[1] = denMap.GetLength(1) - 1;}></CODE>
+                ///</INFO>
+
                 // in den moving & den-morphing
                 switch (denMap[snakeCurrentPosition[0],snakeCurrentPosition[1]]) // out of range - 5
                 {
@@ -97,20 +107,15 @@
             {
                 case "d": position[0]++; break;
                 case "u": position[0]--; break;
-                case "r": position[1]++; break; // Math.Abs(position[1] % denMap.GetLength(1))
-                case "l": position[1]--; break; // left to right COL switchup => %
+                case "r": position[1]++; break;
+                case "l": position[1]--; break; 
+
             }
             return position;
         }
-
-        private static int[] CheckForColLoop(int[] snakeCurrentPosition, string[,] denMap)
-        {
-            snakeCurrentPosition[1] = Math.Abs(snakeCurrentPosition[1] % denMap.GetLength(1));
-            return snakeCurrentPosition;
-        }
-
         private static int[] CheckForRightLeftLoop(int[] snakeCurrentPosition, string[,] denMap)
         {
+            // edge looping
             if (snakeCurrentPosition[1] < 0)
             {
                 snakeCurrentPosition[1] = denMap.GetLength(1) - 1;
