@@ -10,9 +10,9 @@
     {
         private static void Main(string[] args)
         {
-            var dimensions = Console.ReadLine();
-            var row = int.Parse(dimensions[0].ToString());
-            var col = int.Parse(dimensions[2].ToString());
+            var dimensions = Console.ReadLine().Split('x').Select(int.Parse).ToArray();
+            var row = dimensions[0];
+            var col = dimensions[1];
             var denMap = new string[row,col];
             //TODO: NOTE: denMap - might be better to be jagged-array!
 
@@ -81,7 +81,7 @@
 
                 }
             }
-            while (directions.Length > ++moveCount && shouldContinue); // movecount out of bound
+            while ((directions.Length > ++moveCount) && shouldContinue); // movecount out of bound
 
             if (string.IsNullOrEmpty(message))
             {
