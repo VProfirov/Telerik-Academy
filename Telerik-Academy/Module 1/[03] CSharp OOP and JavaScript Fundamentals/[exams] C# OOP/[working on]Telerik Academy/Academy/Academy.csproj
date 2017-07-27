@@ -90,6 +90,10 @@
     <Compile Include="Models\Users\Trainer.cs" />
     <Compile Include="Models\Utils\Contracts\ICourseResult.cs" />
     <Compile Include="Models\Utils\Contracts\ILectureResource.cs" />
+    <Compile Include="Models\Utils\Validation\CurriculumValidator.cs" />
+    <Compile Include="Models\Utils\Validation\ResourcesValidator.cs" />
+    <Compile Include="Models\Utils\Validation\UsersValidator.cs" />
+    <Compile Include="Models\Utils\Validation\Abstract\Validator.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
