@@ -15,6 +15,7 @@ namespace TheBookIntro
             //Case2("TheBookIntro.Track", "Dev");
 
             Console.WriteLine(typeof(Track));
+            Console.WriteLine();
         }
 
         public static void Case2(string en,string track)
