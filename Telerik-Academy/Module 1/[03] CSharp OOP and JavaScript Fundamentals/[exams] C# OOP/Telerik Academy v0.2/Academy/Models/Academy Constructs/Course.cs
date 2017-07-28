@@ -13,13 +13,14 @@ namespace Academy.Models.Academy_Constructs
     {
         private string _name;
         private int _lecturesPerWeek;
-        private DateTime _endingDate;
+//        private DateTime _endingDate;
+
         public Course(string name, string lecturesPerWeek, string startingDate)
         {
             this.Name = name;
             this.LecturesPerWeek = int.Parse(lecturesPerWeek);
             this.StartingDate = DateTime.Parse(startingDate);
-            this.EndingDate = StartingDate.AddDays(30);
+            this.EndingDate = this.StartingDate.AddDays(30);
         }
 
         public string Name
@@ -41,6 +42,7 @@ namespace Academy.Models.Academy_Constructs
                 this._lecturesPerWeek = value;
             }
         }
+
         public DateTime StartingDate { get; set; }
 
         public DateTime EndingDate { get; set; }

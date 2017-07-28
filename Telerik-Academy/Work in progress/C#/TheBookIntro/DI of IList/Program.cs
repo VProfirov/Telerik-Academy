@@ -11,8 +11,6 @@ namespace DI_of_IList
         {
             var trainer = new Trainer("Pesho","JS,.Net,Ruby");
 
-            
-
             trainer.Technologies.Add("added Tech");
             Console.WriteLine(trainer.Technologies);
 
