@@ -14,7 +14,7 @@ namespace Academy.Models.Academy_Constructs
         public Trainer(string username, string technologies)
         {
             this.Username = username;
-            this.Technologies = technologies.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            this.Technologies = technologies.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();////missing .ToList will couse Exception when/if the Property is tried to be accessed as List (which in this context it should use List)
         }
 
         public string Username
@@ -27,7 +27,7 @@ namespace Academy.Models.Academy_Constructs
             }
         }
 
-        public IList<string> Technologies { get; set; }
+        public IList<string> Technologies { get; set; } = new List<string>();
 
         public override string ToString()
         {

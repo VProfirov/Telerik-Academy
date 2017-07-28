@@ -13,21 +13,27 @@ namespace Academy.Models.Utils.Validation
 
     internal static class CurriculumValidator
     {
-        public const int CourseNameLength_MIN = 3;
-        public const int CourseNameLength_MAX = 45;
+        public const int CourseNameLengthMin = 3;
+        public const int CourseNameLengthMax = 45;
         public const string CourseNameErrorMessage = "The name of the course must be between {0} and {1} symbols!";
 
         public const string TrackEnumErrorMessage = "The provided track is not valid!";
 
+        public const int LecturesPerWeekMin = 1;
+        public const int LecturesPerWeekMax = 7;
+        public const string LecturesPerWeekErrorMessage = "The number of lectures per week must be between {0} and {1}!";
+
+
         internal static string CoursenameValidation(string coursename)
         {
-            StringValidation(coursename, CourseNameLength_MIN, CourseNameLength_MAX, CourseNameErrorMessage);
+            StringValidation(coursename, CourseNameLengthMin, CourseNameLengthMax, CourseNameErrorMessage);
             return coursename;
         }
 
-        internal static int LecturesPerWeekValidation(string lecturesPerWeek)
+        internal static int LecturesPerWeekValidation(int lecturesPerWeek)
         {
-            throw new NotImplementedException();
+            NumberValidation(lecturesPerWeek,LecturesPerWeekMin,LecturesPerWeekMax,LecturesPerWeekErrorMessage);
+            return lecturesPerWeek;
         }
 
         internal static Track TrackValidation(string track)

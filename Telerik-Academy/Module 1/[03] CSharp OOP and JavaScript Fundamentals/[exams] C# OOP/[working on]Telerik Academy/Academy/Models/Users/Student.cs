@@ -12,15 +12,14 @@ namespace Academy.Models.Users
     using static Utils.Validation.UsersValidator;
     using static Utils.Validation.CurriculumValidator;
 
-    class Student :IStudent
+    internal class Student : IStudent
     {
-        private Track track;
         private string username;
 
         public Student(string username, string track)
         {
-            Username = username;
-            Track = TrackValidation(track);
+            this.Username = username;
+            this.Track = TrackValidation(track);
         }
 
         public string Username

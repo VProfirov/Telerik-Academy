@@ -9,14 +9,14 @@ namespace Academy.Models.Users
     using Academy.Models.Contracts;
     using static Utils.Validation.UsersValidator;
 
-    class Trainer:ITrainer
+    internal class Trainer : ITrainer
     {
         private string username;
 
         public Trainer(string username, string technologies)
         {
-            Username = username;
-            Technologies = technologies.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries); 
+            this.Username = username;
+            this.Technologies = technologies.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList(); 
         }
 
         public string Username
@@ -25,7 +25,7 @@ namespace Academy.Models.Users
             set => this.username = UsernameValidation(value);
         }
 
-        public IList<string> Technologies { get; set; } = new List<string>();
+        public IList<string> Technologies { get; set; }
 
         public override string ToString()
         {
