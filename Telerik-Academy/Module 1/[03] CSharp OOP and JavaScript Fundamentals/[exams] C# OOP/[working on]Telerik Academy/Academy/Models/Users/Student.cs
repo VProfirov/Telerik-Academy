@@ -9,8 +9,9 @@ namespace Academy.Models.Users
     using Academy.Models.Contracts;
     using Academy.Models.Enums;
     using Academy.Models.Utils.Contracts;
-    using static Utils.Validation.UsersValidator;
+    using Academy.Models.Utils.Output;
     using static Utils.Validation.CurriculumValidator;
+    using static Utils.Validation.UsersValidator;
 
     internal class Student : IStudent
     {
@@ -34,8 +35,7 @@ namespace Academy.Models.Users
 
         public override string ToString()
         {
-            //TODO: impl - output class
-            throw new NotImplementedException("Create an Output Class");
+            return StringFormatOutput.StudentOutput(this);
         }
     }
 }

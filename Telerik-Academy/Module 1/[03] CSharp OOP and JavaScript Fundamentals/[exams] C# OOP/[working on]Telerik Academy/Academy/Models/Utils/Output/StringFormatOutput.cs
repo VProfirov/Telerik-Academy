@@ -18,8 +18,10 @@ namespace Academy.Models.Utils.Output
             sb.AppendLine("* Course:");
             sb.AppendLine($" - Name: {course.Name}");
             sb.AppendLine($" - Lectures per week: {course.LecturesPerWeek}");
-            sb.AppendLine($" - Starting date: {course.StartingDate}");
-            sb.AppendLine($" - Ending date: {course.EndingDate}");
+//            sb.AppendLine($" - Starting date: {course.StartingDate}");
+            sb.AppendLine(string.Format(" - Starting date: {0:yyyy-MM-dd hh:mm:ss tt}", course.StartingDate));
+//            sb.AppendLine($" - Ending date: {course.EndingDate}");
+            sb.AppendLine(string.Format(" - Ending date: {0:yyyy-MM-dd hh:mm:ss tt}", course.EndingDate));
             sb.AppendLine($" - Onsite students: {course.OnsiteStudents.Count}");
             sb.AppendLine($" - Online students: {course.OnlineStudents.Count}");
             sb.AppendLine(" - Lectures:");
@@ -76,6 +78,7 @@ namespace Academy.Models.Utils.Output
             sb.AppendLine("* Student:");
             sb.AppendLine($" - Username: {student.Username}");
             sb.AppendLine($" - Track: {student.Track}");
+            sb.AppendLine(" - Course results:");
 
             if (student.CourseResults.Count == 0)
             {
@@ -103,7 +106,7 @@ namespace Academy.Models.Utils.Output
             {
                 sb.Append($" {technology};");
             }
-            return sb.ToString().TrimEnd();
+            return sb.ToString().TrimEnd(';');
         }
 
         public static string ResourceOutput(ILectureResource lectureResource, params DateTime[] date)

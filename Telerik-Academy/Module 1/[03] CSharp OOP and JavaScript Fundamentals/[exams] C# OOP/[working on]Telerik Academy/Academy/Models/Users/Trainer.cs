@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Academy.Models.Users
 {
     using Academy.Models.Contracts;
+    using Academy.Models.Utils.Output;
     using static Utils.Validation.UsersValidator;
 
     internal class Trainer : ITrainer
@@ -29,8 +30,7 @@ namespace Academy.Models.Users
 
         public override string ToString()
         {
-            //TODO: impl - output class
-            throw new NotImplementedException("Create an Output Class");
+            return StringFormatOutput.TrainerOutput(this);
         }
     }
 }

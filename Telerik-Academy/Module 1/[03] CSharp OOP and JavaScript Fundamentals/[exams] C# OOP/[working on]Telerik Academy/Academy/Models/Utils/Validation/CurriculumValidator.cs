@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace Academy.Models.Utils.Validation
 {
     using System.CodeDom;
-
-    using static Academy.Models.Utils.Validation.Abstract.Validator;
     using Academy.Models.Enums;
+    using static Academy.Models.Utils.Validation.Abstract.Validator;
 
     internal static class CurriculumValidator
     {
@@ -32,7 +31,7 @@ namespace Academy.Models.Utils.Validation
 
         internal static int LecturesPerWeekValidation(int lecturesPerWeek)
         {
-            NumberValidation(lecturesPerWeek,LecturesPerWeekMin,LecturesPerWeekMax,LecturesPerWeekErrorMessage);
+            NumberValidation(lecturesPerWeek, LecturesPerWeekMin, LecturesPerWeekMax, LecturesPerWeekErrorMessage);
             return lecturesPerWeek;
         }
 

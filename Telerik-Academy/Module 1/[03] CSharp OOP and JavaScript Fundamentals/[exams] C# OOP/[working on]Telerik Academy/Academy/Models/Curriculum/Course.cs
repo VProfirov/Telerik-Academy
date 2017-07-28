@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace Academy.Models.Curriculum
 {
     using Academy.Models.Contracts;
+    using Academy.Models.Utils.Output;
     using static Utils.Validation.CurriculumValidator;
+
     internal class Course : ICourse
     {
         private string name;
-
         private int lecturesPerWeek;
 
         public Course(string name, string lecturesPerWeek, string startingDate)
@@ -31,7 +32,7 @@ namespace Academy.Models.Curriculum
         public int LecturesPerWeek
         {
             get => this.lecturesPerWeek;
-            set => LecturesPerWeekValidation(value);
+            set => this.lecturesPerWeek = LecturesPerWeekValidation(value);
         }
 
         public DateTime StartingDate { get; set; }
@@ -46,8 +47,7 @@ namespace Academy.Models.Curriculum
 
         public override string ToString()
         {
-            //TODO: impl - output class
-            throw new NotImplementedException("Create an Output Class");
+            return StringFormatOutput.CourseOutput(this);
         }
     }
 }
