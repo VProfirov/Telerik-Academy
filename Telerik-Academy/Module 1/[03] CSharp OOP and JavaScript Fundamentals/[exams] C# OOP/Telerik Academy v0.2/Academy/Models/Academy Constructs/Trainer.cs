@@ -27,7 +27,7 @@ namespace Academy.Models.Academy_Constructs
             }
         }
 
-        public IList<string> Technologies { get; set; } = new List<string>();
+        public IList<string> Technologies { get; set; }//// = new List<string>();
 
         public override string ToString()
         {

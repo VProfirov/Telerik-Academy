@@ -1,6 +1,6 @@
 ﻿using Academy.Models.Utils.Contracts;
 using System.Collections.Generic;
-using Academy.Models.Sections.Section_1.Utils;
+using Academy.Models.Enums;
 namespace Academy.Models.Contracts
 {
     public interface IStudent : IUser

@@ -22,8 +22,23 @@ namespace Academy.Models.Curriculum
         public CourseResult(ICourse course, string examPoints, string coursePoints)
         {
             this.course = course;
-            this.examPoints = CoursePointsValidation(coursePoints);
-            this.coursePoints = ExamPointsValidation(examPoints);
+            this.examPoints = ExamPointsValidation(coursePoints);
+            this.coursePoints = CoursePointsValidation(examPoints);
+
+            if (this.ExamPoints >= 65 || this.CoursePoints >= 75)
+            {
+                this.Grade = Grade.Excellent;
+            }
+            else if ((this.ExamPoints < 65 && this.ExamPoints >= 30) || (this.CoursePoints < 75 && this.CoursePoints >= 45))
+            {
+                this.Grade = Grade.Passed;
+            }
+            else
+            {
+                this.Grade = Grade.Failed;
+            }
+
+            // this.Grade (enum prop) VS this._grade (enum field)
         }
 
         public ICourse Course { get; }
@@ -32,24 +47,7 @@ namespace Academy.Models.Curriculum
 
         public float CoursePoints { get; }
 
-        public Grade Grade
-        {
-            get
-            {
-                if (this.ExamPoints >= 65 || this.CoursePoints >= 75)
-                {
-                    return Grade.Excellent;
-                }
-                else if ((this.ExamPoints < 65 && this.ExamPoints >= 30) || (this.CoursePoints < 75 && this.CoursePoints >= 45))
-                {
-                    return Grade.Passed;
-                }
-                else
-                {
-                    return Grade.Failed;
-                }
-            }
-        }
+        public Grade Grade { get; }
 
         public override string ToString()
         {
