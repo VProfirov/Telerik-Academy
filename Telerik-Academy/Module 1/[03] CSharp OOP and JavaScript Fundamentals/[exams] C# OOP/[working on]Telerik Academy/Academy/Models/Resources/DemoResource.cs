@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Academy.Models.Resources
 {
-    class DemoResource
+    using Academy.Models.Resources.Abstract;
+
+    internal class DemoResource : LectureResource
     {
+        public DemoResource(string name, string url)
+            : base(name, url)
+        {
+        }
     }
 }

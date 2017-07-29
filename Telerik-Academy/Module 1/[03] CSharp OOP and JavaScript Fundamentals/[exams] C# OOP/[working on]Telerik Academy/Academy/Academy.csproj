@@ -80,7 +80,7 @@
     <Compile Include="Models\Enums\Grade.cs" />
     <Compile Include="Models\Enums\Initiative.cs" />
     <Compile Include="Models\Enums\Track.cs" />
-    <Compile Include="Models\Resources\Abstract\Resource.cs" />
+    <Compile Include="Models\Resources\Abstract\LectureResource.cs" />
     <Compile Include="Models\Resources\DemoResource.cs" />
     <Compile Include="Models\Resources\HomeworkResource.cs" />
     <Compile Include="Models\Resources\PresentationResource.cs" />
@@ -91,6 +91,7 @@
     <Compile Include="Models\Utils\Contracts\ICourseResult.cs" />
     <Compile Include="Models\Utils\Contracts\ILectureResource.cs" />
     <Compile Include="Models\Utils\Output\StringFormatOutput.cs" />
+    <Compile Include="Models\Utils\Validation\CommandsValidation.cs" />
     <Compile Include="Models\Utils\Validation\CurriculumValidator.cs" />
     <Compile Include="Models\Utils\Validation\ResourcesValidator.cs" />
     <Compile Include="Models\Utils\Validation\UsersValidator.cs" />

@@ -6,7 +6,36 @@ using System.Threading.Tasks;
 
 namespace Academy.Models.Curriculum
 {
-    class Lecture
+    using Academy.Models.Contracts;
+    using Academy.Models.Utils.Output;
+    using static Utils.Validation.CurriculumValidator;
+
+    internal class Lecture : ILecture
     {
+        private string name;
+
+        public Lecture(string name, string date, ITrainer trainer)
+        {
+            this.Name = name;
+            this.Date = DateTime.Parse(date);
+            this.Trainer = trainer;
+        }
+
+        public string Name
+        {
+            get => this.name;
+            set => this.name = LectureNameValidation(value);
+        }
+
+        public DateTime Date { get; set; }
+
+        public ITrainer Trainer { get; set; }
+
+        public IList<ILectureResource> Resources { get; } = new List<ILectureResource>();
+
+        public override string ToString()
+        {
+            return StringFormatOutput.LectureOutput(this);
+        }
     }
 }

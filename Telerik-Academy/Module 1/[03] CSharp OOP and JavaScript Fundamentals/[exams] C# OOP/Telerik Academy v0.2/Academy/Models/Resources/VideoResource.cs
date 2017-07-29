@@ -9,7 +9,7 @@ namespace Academy.Models.Resources
 {
     class VideoResource:LectureResource
     {
-        public VideoResource(string name, string url,DateTime currentDate) : base(name, url)
+        public VideoResource(string name, string url, DateTime currentDate) : base(name, url)
         {
             this.UploadedOn = currentDate;
         }

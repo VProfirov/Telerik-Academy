@@ -16,7 +16,19 @@ namespace Academy.Models.Utils.Validation
         public const int CourseNameLengthMax = 45;
         public const string CourseNameErrorMessage = "The name of the course must be between {0} and {1} symbols!";
 
+        public const int CoursePointsMin = 0;
+        public const int CoursePointsMax = 125;
+        public const string CoursePointsErrorMessage = "Course result's course points should be between {0} and {1}!";
+
+        public const int ExamPointsMin = 0;
+        public const int ExamPointsMax = 1000;
+        public const string ExamPointsErrorMessage = "Course result's exam points should be between {0} and {1}!";
+        
         public const string TrackEnumErrorMessage = "The provided track is not valid!";
+
+        public const int LectureNameMinLength = 5;
+        public const int LectureNameMaxLength = 30;
+        public const string LectureNameErrorMessage = "Lecture's name should be between {0} and {1} symbols long!";
 
         public const int LecturesPerWeekMin = 1;
         public const int LecturesPerWeekMax = 7;
@@ -27,6 +39,27 @@ namespace Academy.Models.Utils.Validation
         {
             StringValidation(coursename, CourseNameLengthMin, CourseNameLengthMax, CourseNameErrorMessage);
             return coursename;
+        }
+        
+
+        internal static float CoursePointsValidation(string coursePoints)
+        {
+            var cP = float.Parse(coursePoints);
+            NumberValidation(cP, ExamPointsMin, ExamPointsMax, ExamPointsErrorMessage);
+            return cP;
+        }
+
+        internal static float ExamPointsValidation(string examPoints)
+        {
+            var exP = float.Parse(examPoints);
+            NumberValidation(exP, CoursePointsMin, CoursePointsMax,CoursePointsErrorMessage);
+            return exP;
+        }
+
+        internal static string LectureNameValidation(string lectureName)
+        {
+            StringValidation(lectureName, LectureNameMinLength, LectureNameMaxLength, LectureNameErrorMessage);
+            return lectureName;
         }
 
         internal static int LecturesPerWeekValidation(int lecturesPerWeek)

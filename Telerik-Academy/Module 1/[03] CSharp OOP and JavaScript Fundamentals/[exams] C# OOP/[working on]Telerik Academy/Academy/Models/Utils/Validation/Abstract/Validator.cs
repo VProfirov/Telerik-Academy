@@ -24,12 +24,5 @@
             if (value.Length < minLength || value.Length > maxLength || string.IsNullOrEmpty(value))
                 throw new ArgumentException(string.Format(errorMessage, minLength, maxLength));
         }
-
-        internal static void EmptyUserListValidation(IList<IUser> value,string errorMessage)
-        {
-            if (value.Count == 0)
-                throw new ArgumentException(errorMessage);
-        }
-        
     }
 }

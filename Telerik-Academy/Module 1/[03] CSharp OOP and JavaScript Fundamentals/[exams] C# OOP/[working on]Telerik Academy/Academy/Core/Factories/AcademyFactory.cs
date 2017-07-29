@@ -9,6 +9,7 @@ using System;
 namespace Academy.Core.Factories
 {
     using Academy.Models.Curriculum;
+    using Academy.Models.Resources;
     using Academy.Models.Users;
 
     public class AcademyFactory : IAcademyFactory
@@ -41,7 +42,7 @@ namespace Academy.Core.Factories
 
         public IStudent CreateStudent(string username, string track)
         {
-            return new Student(username,track);
+            return new Student(username, track);
         }
 
         public ITrainer CreateTrainer(string username, string technologies)
@@ -56,32 +57,29 @@ namespace Academy.Core.Factories
 
         public ILecture CreateLecture(string name, string date, ITrainer trainer)
         {
-            // TODO: Implement this
-            throw new NotImplementedException("Lecture class not attached to factory.");
+            return new Lecture(name, date, trainer);
         }
 
         public ILectureResource CreateLectureResource(string type, string name, string url)
         {
             // Use this instead of DateTime.Now if you want any points in BGCoder!!
             var currentDate = DateTimeProvider.Now;
+            ILectureResource lectureResource;
+            switch (type)
+            {
+                case "video": lectureResource = new VideoResource(name, url, currentDate); break;
+                case "presentation": lectureResource = new PresentationResource(name, url); break;
+                case "demo": lectureResource = new DemoResource(name, url); break;
+                case "homework": lectureResource = new HomeworkResource(name, url, currentDate); break;
+                default: throw new ArgumentException("Invalid lecture resource type");
+            }
 
-            //switch (type)
-            //{
-            //    case "video":
-            //    case "presentation": 
-            //    case "demo": 
-            //    case "homework": 
-            //    default: throw new ArgumentException("Invalid lecture resource type");
-            //}
-
-            // TODO: Implement this
-            throw new NotImplementedException("LectureResource classes not attached to factory.");
+            return lectureResource;
         }
 
         public ICourseResult CreateCourseResult(ICourse course, string examPoints, string coursePoints)
         {
-            // TODO: Implement this
-            throw new NotImplementedException("CourseResult class not attached to factory.");
+            return new CourseResult(course,examPoints,coursePoints);
         }
     }
 }

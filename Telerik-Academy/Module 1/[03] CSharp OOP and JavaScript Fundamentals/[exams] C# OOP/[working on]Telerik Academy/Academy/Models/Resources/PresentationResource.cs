@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Academy.Models.Resources
 {
-    class PresentationResource
+    using Academy.Models.Curriculum;
+    using Academy.Models.Resources.Abstract;
+
+    internal class PresentationResource : LectureResource
     {
+        public PresentationResource(string name, string url)
+            : base(name, url)
+        {
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Academy.Models.Resources
 {
     class HomeworkResource:LectureResource
     {
-        public HomeworkResource(string name, string url,DateTime currentDate) : base(name, url)
+        public HomeworkResource(string name, string url, DateTime currentDate) : base(name, url)
         {
             this.DueDate = currentDate.AddDays(7);
         }
