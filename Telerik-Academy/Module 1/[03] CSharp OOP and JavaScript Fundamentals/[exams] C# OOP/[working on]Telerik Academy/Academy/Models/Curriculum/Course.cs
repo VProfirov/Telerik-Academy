@@ -15,11 +15,11 @@ namespace Academy.Models.Curriculum
         private string name;
         private int lecturesPerWeek;
 
-        public Course(string name, string lecturesPerWeek, string startingDate)
+        public Course(string name, int lecturesPerWeek, DateTime startingDate)
         {
             this.Name = name;
-            this.LecturesPerWeek = int.Parse(lecturesPerWeek);
-            this.StartingDate = DateTime.Parse(startingDate);
+            this.LecturesPerWeek = lecturesPerWeek;
+            this.StartingDate = startingDate;
             this.EndingDate = this.StartingDate.AddDays(30);
         }
 
@@ -51,3 +51,4 @@ namespace Academy.Models.Curriculum
         }
     }
 }
+////TODO: Check for missing init-ing

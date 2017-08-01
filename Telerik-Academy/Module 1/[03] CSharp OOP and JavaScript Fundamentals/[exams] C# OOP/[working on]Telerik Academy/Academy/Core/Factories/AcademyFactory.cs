@@ -8,9 +8,12 @@ using System;
 
 namespace Academy.Core.Factories
 {
+    using System.Linq;
+
     using Academy.Models.Curriculum;
     using Academy.Models.Resources;
     using Academy.Models.Users;
+    using static Academy.Models.Utils.Validation.CurriculumValidator;
 
     public class AcademyFactory : IAcademyFactory
     {
@@ -42,21 +45,31 @@ namespace Academy.Core.Factories
 
         public IStudent CreateStudent(string username, string track)
         {
-            return new Student(username, track);
+            Track parsedTrackAsEnum;
+            Enum.TryParse(track, out parsedTrackAsEnum);
+            
+            return new Student(username, parsedTrackAsEnum);
         }
 
         public ITrainer CreateTrainer(string username, string technologies)
         {
-            return new Trainer(username, technologies);
+            var parsedTechnologies = technologies.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+            return new Trainer(username, parsedTechnologies);
         }
 
         public ICourse CreateCourse(string name, string lecturesPerWeek, string startingDate)
         {
-            return new Course(name, lecturesPerWeek, startingDate);
+            var parsedLecturesPerWeek = int.Parse(lecturesPerWeek);
+            var parsedStartingDate = DateTime.Parse(startingDate);
+
+////        Validation at object lvl VS factory lvl ?
+            return new Course(name, parsedLecturesPerWeek, parsedStartingDate);
         }
 
         public ILecture CreateLecture(string name, string date, ITrainer trainer)
         {
+            var parsedDate = DateTime.
             return new Lecture(name, date, trainer);
         }
 

@@ -14,10 +14,10 @@ namespace Academy.Models.Users
     {
         private string username;
 
-        public Trainer(string username, string technologies)
+        public Trainer(string username, IList<string> technologies)
         {
             this.Username = username;
-            this.Technologies = technologies.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList(); 
+            this.Technologies = technologies;
         }
 
         public string Username

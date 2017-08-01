@@ -17,10 +17,10 @@ namespace Academy.Models.Users
     {
         private string username;
 
-        public Student(string username, string track)
+        public Student(string username, Track track)
         {
             this.Username = username;
-            this.Track = TrackValidation(track);
+            this.Track = track;
         }
 
         public string Username
