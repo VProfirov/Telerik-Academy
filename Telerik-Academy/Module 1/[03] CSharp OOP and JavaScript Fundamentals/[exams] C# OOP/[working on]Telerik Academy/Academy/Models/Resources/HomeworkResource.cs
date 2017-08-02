@@ -14,7 +14,7 @@ namespace Academy.Models.Resources
         public HomeworkResource(string name, string url, DateTime currentDate)
             : base(name, url)
         {
-            this.DueDate = currentDate.AddDays(7);
+            this.DueDate = currentDate;
         }
 
         private DateTime DueDate { get; set; }

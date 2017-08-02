@@ -46,7 +46,7 @@ namespace Academy.Core.Factories
         public IStudent CreateStudent(string username, string track)
         {
             Track parsedTrackAsEnum;
-            Enum.TryParse(track, out parsedTrackAsEnum);
+            Enum.TryParse<Track>(track, out parsedTrackAsEnum);
             
             return new Student(username, parsedTrackAsEnum);
         }
@@ -70,6 +70,7 @@ namespace Academy.Core.Factories
         public ILecture CreateLecture(string name, string date, ITrainer trainer)
         {
             var parsedDate = DateTime.Parse(date);
+
             return new Lecture(name, parsedDate, trainer);
         }
 
@@ -83,7 +84,7 @@ namespace Academy.Core.Factories
                 case "video": lectureResource = new VideoResource(name, url, currentDate); break;
                 case "presentation": lectureResource = new PresentationResource(name, url); break;
                 case "demo": lectureResource = new DemoResource(name, url); break;
-                case "homework": lectureResource = new HomeworkResource(name, url, currentDate); break;
+                case "homework": lectureResource = new HomeworkResource(name, url, currentDate.AddDays(7)); break;
                 default: throw new ArgumentException("Invalid lecture resource type");
             }
 
