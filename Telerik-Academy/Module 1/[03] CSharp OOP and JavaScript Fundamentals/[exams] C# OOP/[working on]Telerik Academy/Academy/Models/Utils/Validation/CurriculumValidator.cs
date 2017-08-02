@@ -49,11 +49,25 @@ namespace Academy.Models.Utils.Validation
             return cP;
         }
 
+        // semantic overload
+        internal static float CoursePointsValidation(float coursePoints)
+        {
+            NumberValidation(coursePoints, ExamPointsMin, ExamPointsMax, ExamPointsErrorMessage);
+            return coursePoints;
+        } 
+
         internal static float ExamPointsValidation(string examPoints)
         {
             var exP = float.Parse(examPoints);
             NumberValidation(exP, CoursePointsMin, CoursePointsMax,CoursePointsErrorMessage);
             return exP;
+        }
+
+        // semantic overload
+        internal static float ExamPointsValidation(float examPoints)
+        {
+            NumberValidation(examPoints, CoursePointsMin, CoursePointsMax, CoursePointsErrorMessage);
+            return examPoints;
         }
 
         internal static string LectureNameValidation(string lectureName)

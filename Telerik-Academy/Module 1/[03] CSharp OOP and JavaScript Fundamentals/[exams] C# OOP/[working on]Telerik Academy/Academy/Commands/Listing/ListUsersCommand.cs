@@ -1,6 +1,7 @@
 ﻿namespace Academy.Commands.Listing
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
 
     using Academy.Commands.Contracts;
@@ -23,8 +24,9 @@
             var listUsers = new List<IUser>();
             listUsers.AddRange(this._engine.Trainers);
             listUsers.AddRange(this._engine.Students);
-
+            
             EmptyUserListValidation(listUsers);
+            //// or simpler : wrap the *sb* in if(listUsers.Any()) return $"**the error message"
 
             var sb = new StringBuilder();
             foreach (var user in listUsers)

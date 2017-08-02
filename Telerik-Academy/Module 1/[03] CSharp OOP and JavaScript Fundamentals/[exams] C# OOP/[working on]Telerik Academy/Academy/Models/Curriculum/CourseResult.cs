@@ -13,17 +13,13 @@ namespace Academy.Models.Curriculum
 
     using static Utils.Validation.CurriculumValidator;
 
-    internal class CourseResult: ICourseResult
+    internal class CourseResult : ICourseResult
     {
-        private ICourse course;
-        private float examPoints;
-        private float coursePoints;
-
-        public CourseResult(ICourse course, string examPoints, string coursePoints)
+        public CourseResult(ICourse course, float examPoints, float coursePoints)
         {
-            this.course = course;
-            this.examPoints = ExamPointsValidation(coursePoints);
-            this.coursePoints = CoursePointsValidation(examPoints);
+            this.Course = course;
+            this.ExamPoints = ExamPointsValidation(examPoints);
+            this.CoursePoints = CoursePointsValidation(coursePoints);
 
             if (this.ExamPoints >= 65 || this.CoursePoints >= 75)
             {
@@ -38,7 +34,7 @@ namespace Academy.Models.Curriculum
                 this.Grade = Grade.Failed;
             }
 
-            // this.Grade (enum prop) VS this._grade (enum field)
+            // (autoProp VS error: Grade{get=> this._grade}) => this.Grade - field init using auto-gen props
         }
 
         public ICourse Course { get; }

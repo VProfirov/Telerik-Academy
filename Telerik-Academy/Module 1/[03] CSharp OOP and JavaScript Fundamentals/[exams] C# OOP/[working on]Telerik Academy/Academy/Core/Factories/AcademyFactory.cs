@@ -93,7 +93,9 @@ namespace Academy.Core.Factories
 
         public ICourseResult CreateCourseResult(ICourse course, string examPoints, string coursePoints)
         {
-            return new CourseResult(course,examPoints,coursePoints);
+            var parsedExamPoints = float.Parse(examPoints);
+            var parsedCoursePoints = float.Parse(coursePoints);
+            return new CourseResult(course, parsedExamPoints, parsedCoursePoints);
         }
     }
 }
