@@ -28,7 +28,7 @@ namespace Academy.Models.Curriculum
             if (this.ExamPoints >= 65 || this.CoursePoints >= 75)
             {
                 this.Grade = Grade.Excellent;
-            }
+            }////Todo: examPoints 65 vs 60 ?
             else if ((this.ExamPoints < 65 && this.ExamPoints >= 30) || (this.CoursePoints < 75 && this.CoursePoints >= 45))
             {
                 this.Grade = Grade.Passed;
