@@ -14,10 +14,10 @@ namespace Academy.Models.Curriculum
     {
         private string name;
 
-        public Lecture(string name, string date, ITrainer trainer)
+        public Lecture(string name, DateTime date, ITrainer trainer)
         {
             this.Name = name;
-            this.Date = DateTime.Parse(date);
+            this.Date = date;
             this.Trainer = trainer;
         }
 

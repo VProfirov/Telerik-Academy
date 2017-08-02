@@ -69,8 +69,8 @@ namespace Academy.Core.Factories
 
         public ILecture CreateLecture(string name, string date, ITrainer trainer)
         {
-            var parsedDate = DateTime.
-            return new Lecture(name, date, trainer);
+            var parsedDate = DateTime.Parse(date);
+            return new Lecture(name, parsedDate, trainer);
         }
 
         public ILectureResource CreateLectureResource(string type, string name, string url)
