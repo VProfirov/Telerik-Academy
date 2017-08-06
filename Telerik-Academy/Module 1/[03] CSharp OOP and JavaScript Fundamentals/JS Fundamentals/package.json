@@ -1,0 +1,15 @@
+{
+  "name": "js-fundamentals",
+  "version": "1.0.0",
+  "description": "1st local node_module config",
+  "main": "nm-start.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Vas",
+  "license": "ISC",
+  "keywords": [],
+  "devDependencies": {
+    "mocha": "^3.5.0"
+  }
+}
