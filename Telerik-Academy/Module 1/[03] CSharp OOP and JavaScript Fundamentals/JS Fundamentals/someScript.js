@@ -12,7 +12,7 @@ function solve() {
         get price() { return this._price; }
     }
 
-    class CellPhone extends Product() {
+    class Phone extends Product {
         constructor(manufacturer, type, price, charger) {
             super(manufacturer, type, price);
             this._charger = charger;
@@ -22,15 +22,16 @@ function solve() {
 
     return {
         cellPhone(charger, manufacturer, type, price) {
-            return new CellPhone(charger, manufacturer, type, price);
+            return new Phone(charger, manufacturer, type, price);
         },
-        prodcut(manufacturer, type, price) {
-            return new Product(manufacturer, type, price)
-        }
+        // prodcut(manufacturer, type, price) {
+        //     return new Product(manufacturer, type, price)
+        // }
 
     };
 }
 
-// let solution = solve();
-// let cellphone1 = solution.cellphone("some Charger", "Manufacturer", "type", "100$");
-// console.log(cellphone1);
+let result = solve();
+let cell = result.cellPhone("some Charger", "Manufacturer", "type", "100$");
+// console.log(cell);
+console.log(cell.charger);
