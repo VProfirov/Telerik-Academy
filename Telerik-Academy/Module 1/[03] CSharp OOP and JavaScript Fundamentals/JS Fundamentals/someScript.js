@@ -1,12 +1,4 @@
 function solve() {
-    // const validation = {
-    //     ValidateString(str) {
-    //         if (typeof(str) != "string") {
-    //             throw Error("Invalid string");
-    //         }
-    //         return str;
-    //     }
-    // };
 
     class Product {
         constructor(manufacturer, type, price) {
@@ -31,9 +23,12 @@ function solve() {
     return {
         cellPhone(charger, manufacturer, type, price) {
             return new CellPhone(charger, manufacturer, type, price);
+        },
+        prodcut(manufacturer, type, price) {
+            return new Product(manufacturer, type, price)
         }
-        // cellphone: new CellPhone(charger, manufacturer, type, price)
-    }
+
+    };
 }
 
 // let solution = solve();
