@@ -24,14 +24,16 @@ function solve() {
         cellPhone(charger, manufacturer, type, price) {
             return new Phone(charger, manufacturer, type, price);
         },
-        // prodcut(manufacturer, type, price) {
-        //     return new Product(manufacturer, type, price)
-        // }
+        someProdcut(manufacturer, type, price) {
+            return new Product(manufacturer, type, price)
+        }
 
     };
 }
 
 let result = solve();
 let cell = result.cellPhone("some Charger", "Manufacturer", "type", "100$");
-// console.log(cell);
+let pr = result.someProdcut("Manufacturer", "type", "100$");
+console.log(cell);
+console.log(pr);
 console.log(cell.charger);
