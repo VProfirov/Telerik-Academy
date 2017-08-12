@@ -24,7 +24,7 @@ function solve() {
         cellPhone(charger, manufacturer, type, price) {
             return new Phone(charger, manufacturer, type, price);
         },
-        someProdcut(manufacturer, type, price) {
+        someProduct(manufacturer, type, price) {
             return new Product(manufacturer, type, price)
         }
 
@@ -33,7 +33,7 @@ function solve() {
 
 let result = solve();
 let cell = result.cellPhone("some Charger", "Manufacturer", "type", "100$");
-let pr = result.someProdcut("Manufacturer", "type", "100$");
+let pr = result.someProduct("Manufacturer", "type", "100$");
 console.log(cell);
 console.log(pr);
 console.log(cell.charger);
