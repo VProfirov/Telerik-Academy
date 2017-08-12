@@ -4,48 +4,24 @@ using System.Text;
 
 namespace Generics
 {
+    using static Generics.BasicGenerics;
     class Program
     {
         static void Main(string[] args)
         {
-            Animal<Cat> dog = new Animal<Cat>();
-            Console.WriteLine(dog.Name);
-        }
+            var basicGenDog = new AnimalShelter<Animal<Dog>>();
 
-        public class AnimalShelter<T>
-        {
-            public IList<T> AnimaList { get; set; } = new List<T>();
-        }
+            var doglist = new List<Animal<Dog>>();
+            doglist.Add(new Animal<Dog>());
+            doglist.Add(new Animal<Dog>("Pesho",2));
 
-        public class Animal<T>
-        {
-            public Animal():this("Sharo",0)
+            basicGenDog.AnimaList = doglist;
+
+            foreach (var dog in basicGenDog.AnimaList)
             {
-            }
-            public Animal(string name, int age)
-            {
-                this.Name = name;
-                this.Age = age;
-            }
-
-            public int Age { get; set; }
-
-            public string Name { get; set; }
-        }
-
-        public class Dog
-        {
-            public override string ToString()
-            {
-                return $"Bou";
-            }
-        }
-
-        public class Cat
-        {
-            public override string ToString()
-            {
-                return $"Mauuu";
+                Console.WriteLine(dog.Name);
+                Console.WriteLine(dog.Age);
+                Console.WriteLine(dog);
             }
         }
     }
