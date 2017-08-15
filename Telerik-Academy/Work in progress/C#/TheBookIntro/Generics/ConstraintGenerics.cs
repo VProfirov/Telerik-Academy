@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    class ConstraintGenerics
+    class ConstraintGenerics<T,U> where 
     {
     }
 }

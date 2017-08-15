@@ -37,5 +37,14 @@ namespace Generics
 
             Console.WriteLine(shelter.Length());
         }
+
+        public static void ComplexGenerics_Gen()
+        {
+            var cg = new ComplexGeneric<Dog>();
+            string ass = "ass";
+            string dick = "dick";
+            cg.Swap(ref ass, ref dick);
+            Console.WriteLine(dick);
+        }
     }
 }

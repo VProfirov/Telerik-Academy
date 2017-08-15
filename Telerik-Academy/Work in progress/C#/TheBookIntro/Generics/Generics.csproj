@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComplexGeneric.cs" />
+    <Compile Include="ConstraintGenerics.cs" />
     <Compile Include="Shelter.cs" />
     <Compile Include="BrokenBasicGenerics.cs" />
     <Compile Include="Gen.cs" />
