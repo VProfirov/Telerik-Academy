@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Generics
 {
-    class BasicGenerics
+    class BrokenBasicGenerics
     {
         public class AnimalShelter<T>
         {
