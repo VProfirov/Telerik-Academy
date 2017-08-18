@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Generics
+namespace Lambda
 {
-//    class ConstraintGenerics<T,U> where 
-//    {
-//    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
 }
