@@ -14,6 +14,9 @@ namespace Lambda
                 .Count(x => x.Length == 3);
 
             Console.WriteLine(count);
+
+            Func<int, string> wordCount;
+            Action<string> printTxt;
         }
     }
 }
