@@ -10,6 +10,10 @@ namespace Lambda
     {
         static void Main(string[] args)
         {
+            var count = "heiii aba daba aba".Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                .Count(x => x.Length == 3);
+
+            Console.WriteLine(count);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace ExtensionMethods
     {
         public static int WordCount(this string text)
         {
-            return text.Split(new char[]{' '},StringSplitOptions.RemoveEmptyEntries).Count();
+            return text.Split(new char[]{' '},StringSplitOptions.RemoveEmptyEntries).Length;
         }
         
         public static int LocalFunction(int num)

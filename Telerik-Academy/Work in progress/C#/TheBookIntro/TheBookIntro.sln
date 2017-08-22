@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "Extensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambda", "Lambda\Lambda.csproj", "{04CA2B24-715E-4141-9447-7DAB17C90BEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonyTypes", "AnonyTypes\AnonyTypes.csproj", "{E5458324-C0A6-41F7-9098-7605811001B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{04CA2B24-715E-4141-9447-7DAB17C90BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04CA2B24-715E-4141-9447-7DAB17C90BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04CA2B24-715E-4141-9447-7DAB17C90BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5458324-C0A6-41F7-9098-7605811001B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5458324-C0A6-41F7-9098-7605811001B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5458324-C0A6-41F7-9098-7605811001B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5458324-C0A6-41F7-9098-7605811001B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
