@@ -9,7 +9,6 @@ namespace ExtensionMethods
         {
             int v = 2;
             
-            
             int Add(int a, int b)
             {
                 return a + b;
