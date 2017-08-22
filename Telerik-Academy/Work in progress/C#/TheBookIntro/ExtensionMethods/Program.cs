@@ -3,36 +3,46 @@ using System.Collections.Generic;
 using System.Text;
 namespace ExtensionMethods
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int v = 2;
-            
-            int Add(int a, int b)
-            {
-                return a + b;
-            }
+    using System.Linq;
 
-            Console.WriteLine("The number is " + Add(1,2));
+    public interface ITopology
+    {
+    }
+
+    public static class InterfaceExtensions
+    {
+        public static void CountNodes(this ITopology topology)
+        {
+            // ...
         }
     }
 
-    public static class MyExtensions
+    public static class TypeExtensions
     {
         public static int WordCount(this string text)
         {
-            return 0;
+            return text.Split(new char[]{' '},StringSplitOptions.RemoveEmptyEntries).Count();
         }
-
-        public static int NumMethod(int num)
+        
+        public static int LocalFunction(int num)
         {
-            int SomeInMethod()
+            //poor example
+            int SomeInMethod(int someN)
             {
-                return 0;
+                return num + someN;
             }
 
-            return SomeInMethod();
+            return SomeInMethod(5);
+        }
+    }
+    
+    public class Program
+    {
+        public static void Main()
+        {
+            var someText = "Helloo bananas baaaaa na na";
+            var count = someText.WordCount();
+            Console.WriteLine(count);
         }
     }
 }
