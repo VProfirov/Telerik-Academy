@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambda", "Lambda\Lambda.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonyTypes", "AnonyTypes\AnonyTypes.csproj", "{E5458324-C0A6-41F7-9098-7605811001B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Predicate Delegates", "Predicate Delegates\Predicate Delegates.csproj", "{DA3EA0E7-835D-4F2E-B94A-A5895F23814C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{E5458324-C0A6-41F7-9098-7605811001B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5458324-C0A6-41F7-9098-7605811001B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5458324-C0A6-41F7-9098-7605811001B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA3EA0E7-835D-4F2E-B94A-A5895F23814C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA3EA0E7-835D-4F2E-B94A-A5895F23814C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA3EA0E7-835D-4F2E-B94A-A5895F23814C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA3EA0E7-835D-4F2E-B94A-A5895F23814C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
