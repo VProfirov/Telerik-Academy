@@ -9,7 +9,7 @@
             this.builder = builder;
         }
 
-        //The different ways of preparation - order - etc
+        //The different ways of preparation - order - etc ... => by using a form of factory method taking a type (dynamic type => dinamic factory ...)
             // NOT what they will have - that is job of the different sandwiches(products)
         public void BuildSandwich()
         {

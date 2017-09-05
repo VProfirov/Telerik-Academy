@@ -37,6 +37,8 @@ namespace Builder
             sandwichMaker2.BuildSandwich();
             var sandwich2 = sandwichMaker2.GetSandwich();
             sandwich2.Display();
+
+            //this in a way can be put in a Factory 
         }
     }
 }
