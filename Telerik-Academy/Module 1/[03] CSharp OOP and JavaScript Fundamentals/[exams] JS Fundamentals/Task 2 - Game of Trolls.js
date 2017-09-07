@@ -90,9 +90,10 @@ function solve(args) {
 
         } else if (cmd === 'lay trap') {
             board[Princess.r][Princess.c] = true;
-        } else {
-            throw Error('Command related Problem');
         }
+        // else {
+        //     throw Error('Command related Problem');
+        // }
     }
     //Output
 
@@ -102,9 +103,10 @@ function solve(args) {
     } else if (escaped()) {
         console.log(`Lsjtujzbo is saved! ${Wboup.r} ${Wboup.c} ${Nbslbub.r} ${Nbslbub.c}`);
         return;
-    } else {
-        throw Error('Problem with the Output');
     }
+    // else {
+    //     throw Error('Problem with the Output');
+    // }
 }
 
 let input = [
