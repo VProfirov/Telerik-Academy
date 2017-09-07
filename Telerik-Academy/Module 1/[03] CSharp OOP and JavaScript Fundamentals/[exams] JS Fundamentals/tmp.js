@@ -17,7 +17,7 @@ matrix.push(["1", "2"]);
 // }
 
 
-////GG - Printed by row by row
+// //GG - Printed by row by row
 // for (var row = 0; row < matrix.length; row++) {
 //     var columns = "";
 //     console.log("Row " + row);
@@ -25,14 +25,15 @@ matrix.push(["1", "2"]);
 //         // all columns for row 
 //         columns += matrix[row][col];
 //     }
-////Printing an entire row
+//     //Printing an entire row
 //     console.log(columns);
 // }
 
-var cube = [];
-cube.push(["1", "2"], ["3", "4"]);
-cube.push(["1", "2"], ["3", "4"]);
-cube.push(["1", "2"], ["3", "4"]);
+//==> up to here cube init
+// var cube = [];
+// cube.push(["1", "2"], ["3", "4"]);
+// cube.push(["1", "2"], ["3", "4"]);
+// cube.push(["1", "2"], ["3", "4"]);
 
 //experiment 1
 // for (var col = 0; col < cube[col].length; col++) {
@@ -71,16 +72,19 @@ cube.push(["1", "2"], ["3", "4"]);
 // 12
 // Row 3
 
-let seq = "";
-for (var z = 0; z < cube.length; z++) {
-    ////in sequence 12 | 34 -> Z
-    // var seq = "";
-    for (var y = 0; y < cube[y].length; y++) {
-        for (var x = 0; x < cube[y][x].length; x++) {
-            seq += cube[z][y][x];
-        }
-        console.log(seq);
+//==> up to here
+// let seq = "";
+// for (var z = 0; z < cube.length; z++) {
+//     ////in sequence 12 | 34 -> Z
+//     // var seq = "";
+//     for (var y = 0; y < cube[y].length; y++) {
+//         for (var x = 0; x < cube[y][x].length; x++) {
+//             seq += cube[z][y][x];
+//         }
+//         console.log(seq);
 
-    }
+//     }
 
-}
+// }
+
+// let cub3 //x.push([1,2]) x1.push([3,4]) z.push([x,x1])
