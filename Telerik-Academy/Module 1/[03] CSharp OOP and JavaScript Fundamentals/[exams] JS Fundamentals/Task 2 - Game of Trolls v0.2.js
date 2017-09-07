@@ -56,12 +56,21 @@ function solve() {
                 unit.r = nextR;
                 unit.c = nextC;
 
+                if (isTrollsTogether() && (unit != princess)) {
+                    troll_1.trapped = false;
+                    troll_2.trapped = false;
+                } else if (unit != princess) {
+                    unit.trapped = true;
+                }
             }
-
         } else if (cmd == 'lay a trap') {
             field[princess.r][princess.c] = true;
+            continue;
         } else {
             throw Error('Commands Problem');
         }
+
+        //checks
+        if (isCaught()) {} else if (isEscaped()) {}
     }
 }

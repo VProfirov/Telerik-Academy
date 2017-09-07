@@ -94,16 +94,19 @@ function solve(args) {
         // else {
         //     throw Error('Command related Problem');
         // }
+
+        //FIXME: Some problem around the condition of exit
+        if (caught()) {
+            console.log(`The trolls caught Lsjtujzbo at ${Princess.r} ${Princess.c}`);
+            return; // return > break => return ends the function VS break ends the loop (if(!loop) ends func)
+        } else if (escaped()) {
+            console.log(`Lsjtujzbo is saved! ${Wboup.r} ${Wboup.c} ${Nbslbub.r} ${Nbslbub.c}`);
+            return;
+        }
     }
     //Output
 
-    if (caught()) {
-        console.log(`The trolls caught Lsjtujzbo at ${Princess.r} ${Princess.c}`);
-        return; // return > break => return ends the function VS break ends the loop (if(!loop) ends func)
-    } else if (escaped()) {
-        console.log(`Lsjtujzbo is saved! ${Wboup.r} ${Wboup.c} ${Nbslbub.r} ${Nbslbub.c}`);
-        return;
-    }
+
     // else {
     //     throw Error('Problem with the Output');
     // }
