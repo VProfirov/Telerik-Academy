@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practices", "Practices", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder 0.01", "Builder 0.01\Builder 0.01.csproj", "{6E26FE4C-6469-4F73-B204-2A74CCB481AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder 0.02 - Subway Order", "Builder 0.02\Builder 0.02 - Subway Order.csproj", "{6E02BFD0-0C73-45B2-9809-B462953DFB94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder 0.02 - Subway Order", "Builder 0.02\Builder 0.02 - Subway Order.csproj", "{6E02BFD0-0C73-45B2-9809-B462953DFB94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCContainer(Demo)", "IoCContainer(Demo)\IoCContainer(Demo).csproj", "{868D264F-7BE6-408C-8F1C-63DBCB2AB9E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{6E02BFD0-0C73-45B2-9809-B462953DFB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E02BFD0-0C73-45B2-9809-B462953DFB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E02BFD0-0C73-45B2-9809-B462953DFB94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{868D264F-7BE6-408C-8F1C-63DBCB2AB9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{868D264F-7BE6-408C-8F1C-63DBCB2AB9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{868D264F-7BE6-408C-8F1C-63DBCB2AB9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{868D264F-7BE6-408C-8F1C-63DBCB2AB9E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
