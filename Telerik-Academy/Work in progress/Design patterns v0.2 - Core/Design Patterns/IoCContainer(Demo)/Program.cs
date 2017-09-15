@@ -33,6 +33,7 @@ namespace IoCContainer_Demo_
     public class Resolver
     {
         private Dictionary<Type,Type> dependancyMap = new Dictionary<Type, Type>();
+        //seves as syntactic sugar
         public T Resolve<T>()
         {
             return (T)Resolve(typeof(T));
@@ -106,7 +107,7 @@ namespace IoCContainer_Demo_
     {
         private readonly ICreditCard creditCard;
 
-        public Shopper(ICreditCard crC)
+        public Shopper(ICreditCard crC)//manual injection
         {
             creditCard = crC;
         }
