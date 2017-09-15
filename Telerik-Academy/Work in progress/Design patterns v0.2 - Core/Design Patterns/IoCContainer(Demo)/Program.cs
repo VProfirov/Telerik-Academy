@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 
 namespace IoCContainer_Demo_
 {
@@ -7,19 +12,68 @@ namespace IoCContainer_Demo_
     {
         static void Main(string[] args)
         {
-//            ICreditCard creditCard = new MasterCard();
-//            ICreditCard creditCard2 = new Visa();
-//            var shopper = new Shopper(creditCard2);
+            //            ICreditCard creditCard = new MasterCard();
+            //            ICreditCard creditCard2 = new Visa();
+            //            var shopper = new Shopper(creditCard2);
 
-            Reslover resolver = new Reslover();
-            var shopper = new Shopper(resolver.ResolveCreditCard());
+//            RandomReslover resolver = new RandomReslover();
+//            var shopper = new Shopper(resolver.ResolveCreditCard());
+            
+            var resolver = new Resolver();
+            resolver.Register<Shopper,Shopper>();
+//            resolver.Register<ICreditCard,MasterCard>();
+            resolver.Register<ICreditCard,Visa>();
+            var shopper = resolver.Resolve<Shopper>();
             shopper.Charge();
 
             //make a IoC container : 15min ioc
         }
     }
 
-    internal class Reslover
+    public class Resolver
+    {
+        private Dictionary<Type,Type> dependancyMap = new Dictionary<Type, Type>();
+        public T Resolve<T>()
+        {
+            return (T)Resolve(typeof(T));
+        }
+
+        private object Resolve(Type typeToResolve)
+        {
+            Type resolvedType = null;
+            try
+            {
+                resolvedType = dependancyMap[typeToResolve];
+            }
+            catch 
+            {
+                throw new ArgumentException($"Can't resolve the type {typeToResolve}");
+            }
+
+            var firstConstructor = resolvedType.GetConstructors().First();
+            var constructorParameters = firstConstructor.GetParameters();
+//            if (!constructorParameters.Any())
+            if(constructorParameters.Length == 0)
+            {
+                return Activator.CreateInstance(resolvedType);
+            }
+
+            IList<object> parameters = new List<object>();
+            foreach (var parameterToResolve in constructorParameters)
+            {
+                parameters.Add(Resolve(parameterToResolve.ParameterType));//?Resolve call: why ?
+            }
+            return firstConstructor.Invoke(parameters.ToArray());
+        }
+
+        public void Register<TFrom,TTo>()
+        {
+            dependancyMap.Add(typeof(TFrom),typeof(TTo));
+        }
+    }
+
+
+    internal class RandomReslover
     {
         public ICreditCard ResolveCreditCard()
         {
