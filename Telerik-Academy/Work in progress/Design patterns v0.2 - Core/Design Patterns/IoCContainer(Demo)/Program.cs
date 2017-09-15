@@ -62,6 +62,7 @@ namespace IoCContainer_Demo_
             foreach (var parameterToResolve in constructorParameters)
             {
                 parameters.Add(Resolve(parameterToResolve.ParameterType));//?Resolve call: why ?
+                //NOTE: It chains out a tree recursively that ends "Activating" (Acrivator.CreateInstance(resolvedType) the sub types with no params and then up the chain use the params with that defaulted objects-params)
             }
             return firstConstructor.Invoke(parameters.ToArray());
         }
