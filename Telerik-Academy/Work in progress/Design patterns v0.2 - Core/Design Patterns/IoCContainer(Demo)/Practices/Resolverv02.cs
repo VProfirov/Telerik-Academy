@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IoCContainer_Demo_
+namespace IoCContainer_Demo_.Practices
 {
     public class Resolverv02
     {
