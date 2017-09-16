@@ -2,7 +2,7 @@
 
 namespace Builder_0._03
 {
-    public class Samsung_Galaxy_8:MobilePhoneBuilder
+    public class SamsungGalaxy8Builder:MobilePhoneBuilder
     {
         public override void InstallOS()
         {

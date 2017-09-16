@@ -6,7 +6,12 @@ namespace Builder_0._03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //            var phoneMaker = new MobilePhoneMaker(new iPhoneXBuilder());
+            var phoneMaker = new MobilePhoneMaker(new SamsungGalaxy8Builder());
+
+            phoneMaker.BuildMobilePhone();
+            var phone = phoneMaker.GetMobilePhone();
+            phone.Display();
         }
     }
 }
