@@ -8,8 +8,16 @@ namespace UnityIoC_Demo_
         static void Main(string[] args)
         {
             var container = new UnityContainer();
+//            container.RegisterType<ICreditCard, Visa>(new TransientLifetimeManager()); //==()
+            container.RegisterType<ICreditCard, MasterCard>(new ContainerControlledLifetimeManager());
+            var shopper = container.Resolve<Shopper>();
+            shopper.Charge();
+            Console.WriteLine(shopper.ChargesForCurrentCard);
 
-            container.RegisterType<ICreditCard, MasterCard>();
+            var shopper2 = container.Resolve<Shopper>();
+            shopper2.Charge();
+            Console.WriteLine(shopper.ChargesForCurrentCard);
+
         }
     }
 

@@ -21,7 +21,7 @@ namespace IoCContainer_Demo_
             
             var resolver = new Resolver();
             resolver.Register<Shopper,Shopper>();
-//            resolver.Register<ICreditCard,MasterCard>();
+            resolver.Register<ICreditCard,MasterCard>();
             resolver.Register<ICreditCard,Visa>();
             var shopper = resolver.Resolve<Shopper>();
             shopper.Charge();
