@@ -9,7 +9,11 @@ namespace UnityIoC_Demo_
         {
             var container = new UnityContainer();
 //            container.RegisterType<ICreditCard, Visa>(new TransientLifetimeManager()); //==()
-            container.RegisterType<ICreditCard, MasterCard>(new ContainerControlledLifetimeManager());
+//            container.RegisterType<ICreditCard, MasterCard>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ICreditCard, MasterCard>();
+            container.RegisterType<ICreditCard, Visa>();
+            container.RegisterType<ICreditCard, MasterCard>();
+
             var shopper = container.Resolve<Shopper>();
             shopper.Charge();
             Console.WriteLine(shopper.ChargesForCurrentCard);
