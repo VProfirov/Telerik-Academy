@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace InheritanceMethods
 {
@@ -8,7 +9,30 @@ namespace InheritanceMethods
         {
             //method signature hiding ; virtual ; override : in deep inheritance
 
-            //case examples : http://www.c-sharpcorner.com/UploadFile/8911c4/different-between-method-overriding-method-hiding-new-keyw/
+            BaseClass b = new DerivedClass();
+
+            b.M();
+            //bc-dc:=> BC-M : virt/virt/over
+            //bc-dc:=> BC-M : virt/ new virt /over
+            //bc-dc:=> BC-M : _/ new virt /over
+
+            //Sc-dc:=> DC-M : _/virt/over
+
+            // XX <=:=>      virt/ new|_ /over
         }
+    }
+
+    public class BaseClass
+    {
+        public virtual void M() => Console.WriteLine("BaseClass-Method");
+    }
+
+    public class SubClass:BaseClass
+    {
+        public  new virtual void M() => Console.WriteLine("SubClass-Method");
+    }
+    public class DerivedClass:SubClass
+    {
+        public override void M() => Console.WriteLine("DerivedClass-Method");
     }
 }

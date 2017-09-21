@@ -13,8 +13,8 @@ namespace InheritanceFileds
             b.b = "changed BB";
             Console.WriteLine(b.b + "<== change B");
             b = new C();
-            (b as C).Print((b as C).c);
-            (b as C).Print((b as C).b);
+            b.Print((b as C).c);
+            b.Print((b as C).b);
         }
         
     }
