@@ -7,7 +7,10 @@ namespace MethodsAndScopes
         public string str = "hi";
         static void Main(string[] args)
         {
-            
+            var st = "args";
+            var s = "args";
+
+
         }
 
         public void StrCall(string s /*, string str : conflict of same var name declaration in a scope */)

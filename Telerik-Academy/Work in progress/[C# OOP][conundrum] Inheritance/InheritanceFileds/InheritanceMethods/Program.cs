@@ -17,6 +17,7 @@ namespace InheritanceMethods
             //bc-dc:=> BC-M : _/ new virt /over
 
             //Sc-dc:=> DC-M : _/virt/over
+            //Sc-dc:=> DC-M : virt/virt/over
 
             // XX <=:=>      virt/ new|_ /over
         }
