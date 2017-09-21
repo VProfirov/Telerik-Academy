@@ -74,4 +74,18 @@ namespace InheritanceProperties
             }
         }
     }
+
+
+    abstract class Aunt
+    {
+        protected int MyInt;
+    }
+
+    class Niece : Aunt
+    {
+        public Niece()
+        {
+            MyInt = 1;
+        }
+    }
 }
