@@ -12,7 +12,7 @@ namespace Sandwiches_L
             var sandwich = shop.GetSandwich();
             sandwich.Display();
 
-            Console.WriteLine("Director --|> Builder <|-- Concrete Bulder <|---- Sandwich");
+            Console.WriteLine("Director <*>--- Builder <|--- Concrete Bulder <|---- Sandwich");
         }
     }
 }
