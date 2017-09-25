@@ -75,11 +75,11 @@ namespace Singleton
     }
 
     // New Lazy => .Net 4 and up, C#6 and up
-    public sealed class Singleton
+    public sealed class NewLazySingleton
     {
-        private static readonly Lazy<Singleton> lazy = new Lazy<Singleton>();
-        private Singleton() { }
+        private static readonly Lazy<NewLazySingleton> lazy = new Lazy<NewLazySingleton>();
+        private NewLazySingleton() { }
 
-        public static Singleton Instance => lazy.Value;
+        public static NewLazySingleton Instance => lazy.Value;
     }
 }
