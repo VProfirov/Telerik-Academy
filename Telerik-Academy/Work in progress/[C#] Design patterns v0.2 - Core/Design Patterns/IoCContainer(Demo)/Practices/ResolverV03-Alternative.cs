@@ -20,7 +20,6 @@ namespace IoCContainer_Demo_.Practices
             try
             {
                 resolvedType = defaultDependencyMap[typeToResolve];
-                var wtf = alternativesDependencyMap.ContainsKey(typeToResolve.Name);
                 if (alternativesDependencyMap.ContainsKey(typeToResolve.Name))
                 {
                     Alternate();
@@ -76,16 +75,11 @@ namespace IoCContainer_Demo_.Practices
         {
             Console.WriteLine("Currently you are using the default(first registered) injection that can be used to resolve");
             Console.WriteLine("Do you want to swap it? (Y/N)");
-            var answer = Console.ReadLine();
+//            var answer = Console.ReadLine();
+            var answer = "y";
 
             if (answer.ToLower() == "y")
             {
-                Console.WriteLine($"Swapping {defaultDependencyMap[resolvedType].Name} for:");
-                foreach (var alternative in alternativesDependencyMap)
-                {
-                    Console.WriteLine(alternative.Value.ToString());
-                }
-
                 try
                 {
                     Swapper();
@@ -98,14 +92,23 @@ namespace IoCContainer_Demo_.Practices
 
                 void Swapper()
                 {
+                    Console.WriteLine($"Swapping {resolvedType.Name} for:");
+                    foreach (var alternative in alternativesDependencyMap)
+                    {
+                        Console.WriteLine(alternative.Value.Name);
+                    }
+
                     Console.Write("Chose one: ");
+
+                    #region ProblematicArea
+                    //TFrom problem
                     var swap = Console.ReadLine();
-                    var typeToSwap = Type.GetType(swap);
+                    var typeToSwap = Type.GetType(" IoCContainer_Demo_." + swap);
                     var temp = alternativesDependencyMap[swap];
 
                     alternativesDependencyMap[swap] = defaultDependencyMap[typeToSwap];
                     defaultDependencyMap[typeToSwap] = temp;
-
+                    #endregion
                 }
             }
         }
