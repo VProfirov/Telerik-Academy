@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
+using IoCContainer_Demo_.Practices;
 
 namespace IoCContainer_Demo_
 {
@@ -16,17 +13,33 @@ namespace IoCContainer_Demo_
             //            ICreditCard creditCard2 = new Visa();
             //            var shopper = new Shopper(creditCard2);
 
-//            RandomReslover resolver = new RandomReslover();
-//            var shopper = new Shopper(resolver.ResolveCreditCard());
-            
-            var resolver = new Resolver();
-            resolver.Register<Shopper,Shopper>();
-            resolver.Register<ICreditCard,MasterCard>();
-            resolver.Register<ICreditCard,Visa>();
-            var shopper = resolver.Resolve<Shopper>();
-            shopper.Charge();
+            //            RandomReslover resolver = new RandomReslover();
+            //            var shopper = new Shopper(resolver.ResolveCreditCard());
+
+            #region TutImplUse
+            //
+            //            var resolver = new Resolver();
+            //            resolver.Register<Shopper, Shopper>();
+            //            resolver.Register<ICreditCard, MasterCard>();
+            //            //            resolver.Register<ICreditCard,Visa>();
+            //            var shopper = resolver.Resolve<Shopper>();
+            //            shopper.Charge();
 
             //make a IoC container : 15min ioc
+
+            #endregion
+
+            #region MyAlternativeContainer
+
+            var resolver = new ResolverV03();
+            resolver.RegisterType<Shopper>();
+
+            resolver.RegisterInjection<ICreditCard, MasterCard>();
+            resolver.RegisterInjection<ICreditCard, Visa>();
+
+            var shopper = resolver.Resolve<Shopper>();
+            shopper.Charge();
+            #endregion
         }
     }
 

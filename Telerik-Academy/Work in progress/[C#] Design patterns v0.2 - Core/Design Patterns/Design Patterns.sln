@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder 0.03", "Builder 0.0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing Stuff", "Testing Stuff", "{193848E1-F435-4197-AFC6-DB8071F2B7BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder 0.04 - Sandwiches-L", "Builder 0.04 - Sandwiches-L\Builder 0.04 - Sandwiches-L.csproj", "{6E97FF3D-E447-4A48-BFBA-C32B095F5557}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder 0.04 - Sandwiches-L", "Builder 0.04 - Sandwiches-L\Builder 0.04 - Sandwiches-L.csproj", "{6E97FF3D-E447-4A48-BFBA-C32B095F5557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryFinaly", "TryFinaly\TryFinaly.csproj", "{6B31F762-A54D-40B9-AE87-DABC0B470676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{6E97FF3D-E447-4A48-BFBA-C32B095F5557}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E97FF3D-E447-4A48-BFBA-C32B095F5557}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E97FF3D-E447-4A48-BFBA-C32B095F5557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B31F762-A54D-40B9-AE87-DABC0B470676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B31F762-A54D-40B9-AE87-DABC0B470676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B31F762-A54D-40B9-AE87-DABC0B470676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B31F762-A54D-40B9-AE87-DABC0B470676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{6E02BFD0-0C73-45B2-9809-B462953DFB94} = {AD54023B-787C-4665-A073-5E206AF932DD}
 		{0D17EF4B-E9B5-4262-862E-A1A96759248B} = {AD54023B-787C-4665-A073-5E206AF932DD}
 		{6E97FF3D-E447-4A48-BFBA-C32B095F5557} = {AD54023B-787C-4665-A073-5E206AF932DD}
+		{6B31F762-A54D-40B9-AE87-DABC0B470676} = {193848E1-F435-4197-AFC6-DB8071F2B7BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C8B57CE-9AED-40CE-AF95-21066E5F3072}
