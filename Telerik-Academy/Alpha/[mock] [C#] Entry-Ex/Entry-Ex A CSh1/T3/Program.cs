@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace Entry_Ex_A_CSh1
+namespace T3
 {
-    public class Speeds_Task3
+    class Program
     {
-        public static void Solution_T3()
+        static void Main(string[] args)
         {
             var countOfCars = int.Parse(Console.ReadLine());
             var carSpeeds = new List<int>();
