@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
 
-namespace Entry_Ex_A_CSh1
+namespace T2
 {
-    public class MergingAndSquashing_Task2
+    class Program
     {
-        public static void Solution_T2()
+        static void Main(string[] args)
         {
             var counter = int.Parse(Console.ReadLine());
             var data = new int[counter];
@@ -16,9 +14,9 @@ namespace Entry_Ex_A_CSh1
             }
 
             var line1 = Merging(data);
-            Console.WriteLine(string.Join(" ",line1));
+            Console.WriteLine(string.Join(" ", line1));
             var line2 = Squashing(data);
-            Console.WriteLine(string.Join(" ",line2));
+            Console.WriteLine(string.Join(" ", line2));
         }
 
         public static int[] Merging(int[] data)
