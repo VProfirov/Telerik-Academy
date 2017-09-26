@@ -11,14 +11,18 @@ namespace T1
         {
             var input = Console.ReadLine();
             string resultStrNumber = "";
+            string strNumber = "";
             var outputSB = new StringBuilder();
 
             while (input != "end")
             {
-                var data = input.Split(new char[]{' ',',' },StringSplitOptions.RemoveEmptyEntries);
+                var data = input.Split(new char[]{' ',',','.' },StringSplitOptions.RemoveEmptyEntries);
                 var command = data[0];
                 //                var strNumber = string.Concat(data.TakeLast(data.Length - 1));
-                var strNumber = string.Concat(ExtractNumbers(data));
+                if (data.Length > 1)
+                {
+                    strNumber = string.Concat(ExtractNumbers(data));
+                }
                 switch (command)
                 {
                     case "set":
@@ -28,13 +32,19 @@ namespace T1
                         resultStrNumber = string.Concat(strNumber, resultStrNumber);
                         break;
                     case "front-remove":
-                        resultStrNumber = resultStrNumber.Substring(1);
+                        if (resultStrNumber.Length > 0)
+                        {
+                            resultStrNumber = resultStrNumber.Remove(0, 1);
+                        }
                         break;
                     case "back-add":
                         resultStrNumber = string.Concat(resultStrNumber, strNumber);
                         break;
                     case "back-remove":
-                        resultStrNumber = resultStrNumber.Remove(resultStrNumber.Length - 1);
+                        if (resultStrNumber.Length > 0)
+                        {
+                            resultStrNumber = resultStrNumber.Remove(resultStrNumber.Length - 1);
+                        }
                         break;
                     case "reverse":
 //                        resultStrNumber = string.Concat(resultStrNumber.Reverse());

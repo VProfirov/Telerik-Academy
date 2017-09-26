@@ -22,13 +22,19 @@ namespace Entry_Ex_A_CSh1
                         strNumber = data[1] + strNumber;
                         break;
                     case "front-remove":
-                        strNumber = strNumber.Substring(1);
+                        if (strNumber.Length > 0)
+                        {
+                            strNumber = strNumber.Remove(0, 1);
+                        }
                         break;
                     case "back-add":
                         strNumber = strNumber + data[1];
                         break;
                     case "back-remove":
-                        strNumber = strNumber.Remove(strNumber.Length - 1);
+                        if (strNumber.Length > 0)
+                        {
+                            strNumber = strNumber.Remove(strNumber.Length - 1);
+                        }
                         break;
                     case "reverse":
                         strNumber = string.Concat(strNumber.Reverse());
