@@ -1,7 +1,7 @@
 function solve(arg) {
     let number = Number(arg[0]);
     let avg = 5;
-    let result = Math.ceil(number / avg);
+    let result = Math.round(number / avg);
     console.log(result);
 }
 solve(["17"]);
