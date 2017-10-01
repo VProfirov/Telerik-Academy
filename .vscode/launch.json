@@ -1,6 +1,17 @@
 {
     "version": "0.2.0",
-    "configurations": [
+    "configurations": [{
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Node.js Program",
+            "program": "${workspaceRoot}/${relativeFile}"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Node.js Program",
+            "port": 5858
+        },
         {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
