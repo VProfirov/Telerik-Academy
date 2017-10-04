@@ -1,6 +1,6 @@
 function solve(arg) {
     let number = Number(arg[0]);
-    let avg = 5;
+    let avg = (2 + 5 + 7) / 3;
     let result = Math.round(number / avg);
     console.log(result);
 }

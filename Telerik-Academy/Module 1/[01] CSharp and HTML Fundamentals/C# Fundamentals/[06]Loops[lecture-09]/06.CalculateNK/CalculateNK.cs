@@ -34,7 +34,7 @@ namespace CalculateNK
                 /* If looked deeply in factorial function formula, we will understand
                 * why is not necessarily calculate N! and K! separately.
                 * N!=N*(N-1)*(N-2)*...*1 and K!=K*(K-1)*(K-2)*...1;
-                * If N>K K! is Subset of N!, that's mean:
+                * If N>K K! is Subset of N!, that means:
                 * N!= N*(N-1)*(N-2)*...*K*(K-1)*(K-2)*...*1;
                 * Division of N! by K! means:
                 * RESULT = N*(N-1)*(N-2)*...(K+1);
