@@ -1,4 +1,7 @@
 ﻿using System;
+using AbstractFactory.Banking.Banks;
+using AbstractFactory.Banking.Banks.ConcreteBanks;
+using AbstractFactory.Users;
 
 namespace AbstractFactory
 {
@@ -6,7 +9,8 @@ namespace AbstractFactory
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var regularFactory = new RegularProductsFactory() as IBankingFactory;
+            var client = new Client(regularFactory);
         }
     }
 }

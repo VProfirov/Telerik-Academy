@@ -1,27 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace QuickCheck
+namespace QuickCheck_AIProp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var loan = new Loan();
-//            loan.Balance = 20;
-            loan.Draw(50);
-            Console.WriteLine(loan.Balance);
+            var dic = new Dictionary<string, int>();
+            dic.Add("five",5);
+
+            Console.WriteLine(dic["five"]);
         }
     }
 
-    class Loan
-    {
-//                public decimal Balance { get; set; } = 500;
-                public decimal Balance { get; private set; } = 500;
-        //        public decimal Balance { get;} = 500;
-
-        public void Draw(decimal amount)
-        {
-            Balance -= amount;
-        }
-    }
+   
 }
