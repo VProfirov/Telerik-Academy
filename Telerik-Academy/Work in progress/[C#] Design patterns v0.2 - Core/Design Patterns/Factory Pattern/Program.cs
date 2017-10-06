@@ -6,7 +6,7 @@ namespace Factory_Pattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Implement Simple Factory with Reflection");
         }
     }
 }

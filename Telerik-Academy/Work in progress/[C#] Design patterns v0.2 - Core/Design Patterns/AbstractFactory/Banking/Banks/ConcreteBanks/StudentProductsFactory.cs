@@ -2,16 +2,16 @@
 
 namespace AbstractFactory.Banking.Banks.ConcreteBanks
 {
-    public class BNB:IBankFactory
+    public class StudentProductsFactory:IBankingFactory
     {
         public IBankingProduct CreateLoan()
         {
-            throw new System.NotImplementedException();
+            return new StudentLoan();
         }
 
         public IBankingProduct CreateCredit()
         {
-            throw new System.NotImplementedException();
+            return new StudentCredit();
         }
     }
 }

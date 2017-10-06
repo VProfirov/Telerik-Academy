@@ -4,7 +4,7 @@ using AbstractFactory.Banking.BankingProducts.Contracts;
 
 namespace AbstractFactory.Banking.Banks
 {
-    public interface IBankFactory
+    public interface IBankingFactory
     {
         IBankingProduct CreateLoan();
         IBankingProduct CreateCredit();

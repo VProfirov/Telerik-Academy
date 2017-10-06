@@ -1,17 +1,13 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace AbstractFactory.Banking.BankingProducts.Contracts
 {
     using AbstractFactory.Banking.BankingProducts.Process;
 
-    public class AbstractLoan: IBankingProduct
+    public abstract class AbstractLoan: IBankingProduct
     {
-        public AbstractLoan()
-        {
-            Balance = 2000;
-        }
-
-        public decimal Balance { get; } //TODO el problemo : set??+
+        public decimal Balance { get; private set; } = 2000;
         public void Deposit(decimal amount)
         {
             amount = CashTransaction.ValidateTransaction(amount);

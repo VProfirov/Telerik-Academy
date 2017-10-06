@@ -7,14 +7,9 @@ namespace AbstractFactory.Banking.BankingProducts.Contracts
 {
     public class AbstractCredit:IBankingProduct
     {
-//        static AbstractCredit()
-//        {
-//            Balance = 500;
-//        }
+        public decimal Balance { get; private set; } = 500;
 
-        public decimal Balance { get; } = 500;//TODO el problemo : set??+
-
-        private decimal BalanceLimit = 5000;
+        public decimal BalanceLimit { get; private set; } = 5000;
 
         public void Deposit(decimal amount)
         {
@@ -38,6 +33,7 @@ namespace AbstractFactory.Banking.BankingProducts.Contracts
                     Balance += 200;
                     BalanceLimit += 200;
                 }
+                //Continue Drawing...
                 return 0;
             }
         }
