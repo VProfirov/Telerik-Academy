@@ -7,10 +7,8 @@ namespace Exam15min
         static void Main(string[] args)
         {
 //            T1.Solution();
-//            T2.Solution(); //secure check
+            T2.Solution(); //secure checked
 //            T3.Solution();
-            
-            T0.Solution();
 
         }
     }
