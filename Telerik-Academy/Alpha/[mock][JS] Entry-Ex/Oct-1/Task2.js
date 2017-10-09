@@ -1,30 +1,23 @@
 function solve(args) {
-    let n = +args[0];
-    let sum = 0,
-        c = 0,
-        b = 0,
-        h = 0;
+    let chicken = 7;
+    let human = 5;
+    let bear = 2;
+    let legs = Number(args[0]);
+    let counter = 0;
 
-    for (c = 0; c <= n / 7; c += 1) {
-
-        for (h = 0; h <= (n - 7 * c) / 5; h += 1) {
-
-            if ((n - 7 * c - h * 5) % 2 !== 0) {
-                if (c * 7 + h * 5 === n) {
-                    sum += 1;
-                }
-            } else {
-                sum += 1;
+    let mostHumanLegs, mostBearLegs;
+    let mostChickLegs = Math.floor(legs / chicken);
+    for (mostChickLegs; mostChickLegs >= 0; mostChickLegs--) {
+        mostHumanLegs = legs - mostChickLegs * chicken;
+        mostHumanLegs = Math.floor(mostHumanLegs / human);
+        for (mostHumanLegs; mostHumanLegs >= 0; mostHumanLegs--) {
+            mostBearLegs = legs - (mostChickLegs * chicken + mostHumanLegs * human)
+            mostBearLegs = Math.floor(mostBearLegs / bear);
+            if ((mostChickLegs * chicken + mostHumanLegs * human + mostBearLegs * bear) == legs) {
+                counter++;
             }
         }
     }
-    console.log(sum);
+    console.log(counter);
 }
 solve(["17"]);
-// solve(["17 2 3"]);
-
-// {
-//     console.log(typeof(number) + " is " + number);
-//     let n = arg[0].split(" ").map(Number);
-//     for (let i of n) { console.log(i + " " + typeof(i)); }
-// }
