@@ -59,7 +59,11 @@ const input = [
     "icecream 2",
     "cake 5.1",
     "beer 1.2",
-    "5",
+    "5", /**NB! :D each line is a list => sum the items in A list (stdout) */
+    /** 2 main problems from kid: 
+     * tasks seems boring => task not read completely and with understanding, a.k. high chance something is missed
+     ** something missed <=> something is complex looking
+     * thought from the COMPLEX towards SIMPLE*/
     "2 beer, 3 orange juice",
     "milk, cake",
     "icecream, 2 cake",
