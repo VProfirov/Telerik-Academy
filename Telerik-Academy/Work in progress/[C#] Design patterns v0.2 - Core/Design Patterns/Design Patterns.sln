@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Builder\Builder.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factory Pattern", "Factory Pattern\Factory Pattern.csproj", "{6CEA1763-D28A-44AB-8BB7-F1BC54D3CA07}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practices", "Practices", "{AD54023B-787C-4665-A073-5E206AF932DD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[Practices]", "[Practices]", "{AD54023B-787C-4665-A073-5E206AF932DD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder 0.01", "Builder 0.01\Builder 0.01.csproj", "{6E26FE4C-6469-4F73-B204-2A74CCB481AA}"
 EndProject
@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityIoC(Demo)", "UnityIoC(
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder 0.03", "Builder 0.03\Builder 0.03.csproj", "{0D17EF4B-E9B5-4262-862E-A1A96759248B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing Stuff", "Testing Stuff", "{193848E1-F435-4197-AFC6-DB8071F2B7BC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[Testing Stuff]", "[Testing Stuff]", "{193848E1-F435-4197-AFC6-DB8071F2B7BC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder 0.04 - Sandwiches-L", "Builder 0.04 - Sandwiches-L\Builder 0.04 - Sandwiches-L.csproj", "{6E97FF3D-E447-4A48-BFBA-C32B095F5557}"
 EndProject
@@ -45,7 +45,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCheck AIProp", "QuickC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structural", "Structural", "{01D494E8-79AE-4A5D-8C05-4292040D4750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{89753AF1-7C5B-44A5-84C9-F848D3953FE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "Adapter\Adapter.csproj", "{89753AF1-7C5B-44A5-84C9-F848D3953FE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral", "Behavioral", "{733E9CCC-642B-4D56-A9A7-346B9D98A3C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{A9F63E46-BE6C-42E1-B61D-5E427356A83F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +129,10 @@ Global
 		{89753AF1-7C5B-44A5-84C9-F848D3953FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89753AF1-7C5B-44A5-84C9-F848D3953FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89753AF1-7C5B-44A5-84C9-F848D3953FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F63E46-BE6C-42E1-B61D-5E427356A83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F63E46-BE6C-42E1-B61D-5E427356A83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F63E46-BE6C-42E1-B61D-5E427356A83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F63E46-BE6C-42E1-B61D-5E427356A83F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +154,7 @@ Global
 		{E6772F51-47F4-4331-86B7-136D1E78626D} = {193848E1-F435-4197-AFC6-DB8071F2B7BC}
 		{C1455495-F700-4FC4-8B21-1B82B285B631} = {193848E1-F435-4197-AFC6-DB8071F2B7BC}
 		{89753AF1-7C5B-44A5-84C9-F848D3953FE3} = {01D494E8-79AE-4A5D-8C05-4292040D4750}
+		{A9F63E46-BE6C-42E1-B61D-5E427356A83F} = {01D494E8-79AE-4A5D-8C05-4292040D4750}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C8B57CE-9AED-40CE-AF95-21066E5F3072}
