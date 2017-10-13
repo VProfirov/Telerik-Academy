@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalogue>
+  <album>
+    <name>Meteor</name>
+    <artist>Linking Park</artist>
+    <year>2000</year>
+    <producer>LP</producer>
+    <price>10</price>
+    <songs>
+      <title>Don't Stay</title>
+      <duration>3:08</duration>
+      <title>Hit The Floor</title>
+      <duration>2:44</duration>
+      <title>Faint</title>
+      <duration>2:42</duration>
+    </songs>
+  </album>
+  <album>
+    <name>Gattaca OST</name>
+    <artist>Michael Nyman</artist>
+    <year>1997</year>
+    <producer>Have no idea</producer>
+    <price>30</price>
+    <songs>
+      <title>The Marrow</title>
+      <duration>3:15</duration>
+      <title>The Arrival</title>
+      <duration>3:00</duration>
+      <title>Traces</title>
+      <duration>1:01</duration>
+    </songs>
+  </album>
+  <album>
+    <name>NFS</name>
+    <artist>Many</artist>
+    <year>0001</year>
+    <producer>Gamers</producer>
+    <price>45.5</price>
+    <songs>
+      <title>Destruction</title>
+      <duration>3:04</duration>
+      <title>Make The Crowd</title>
+      <duration>2:50</duration>
+    </songs>
+  </album>
+</catalogue>

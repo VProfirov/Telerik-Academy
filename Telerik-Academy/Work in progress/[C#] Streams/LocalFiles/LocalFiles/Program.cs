@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace LocalFiles
 {
@@ -6,7 +7,34 @@ namespace LocalFiles
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            void SR()
+            {
+                string line = string.Empty;
+                using (var sr = new StreamReader("TextFile.txt"))
+                {
+                    line = sr.ReadLine();
+                    line += " is read";
+
+                }
+
+                using (var sw = new StreamWriter("TextFile.txt"))
+                {
+                    sw.WriteLine(line);
+                }
+            }
+
+            var lineR = string.Empty;
+            using (TextReader reader = File.OpenText("TextFile.txt"))
+            {
+                lineR = reader.ReadToEnd();
+                lineR = lineR.Trim();
+                Console.WriteLine(lineR);
+            }
+            using (TextWriter writer = File.CreateText("TextFile.txt"))
+            {
+                writer.WriteLine("hubahuba");
+                Console.WriteLine(lineR);
+            }
         }
     }
 }
