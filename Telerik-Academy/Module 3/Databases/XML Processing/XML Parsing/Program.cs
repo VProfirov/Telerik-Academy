@@ -8,7 +8,8 @@ namespace XML_Parsing
     {
         static string GetXml()
         {
-            var file = File.
+            TextReader reader = File.OpenText(@"..\catalog.xml");
+            return reader.ReadToEnd();
         }
 
         static void Main()
