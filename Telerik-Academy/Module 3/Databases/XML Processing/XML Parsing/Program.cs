@@ -6,39 +6,19 @@ namespace XML_Parsing
 {
     class Program
     {
-        static string GetXml()
+        public static void Main(string[] args)
         {
-            TextReader reader = File.OpenText(@"..\catalog.xml");
-            return reader.ReadToEnd();
-        }
-
-        static void Main()
-        {
-            var xml = GetXml();
-            var doc = new XmlDocument();
-//            doc.LoadXml(xml);
-            doc.Load(File.OpenRead(@"..\catalog.xml"));
-            var root = doc.DocumentElement;
-//            Console.WriteLine(root.Name);
-            
-            PrintChild(root,"");
-        }
-
-        static void PrintChild(XmlNode node,string indent)
-        {
-            var attrs = string.Empty;
-            if (node.Attributes != null)
+            using (var reader = XmlReader.Create("../catalog.xml"))
             {
-                foreach (XmlElement attr in node)
+                while (reader.Read())
                 {
-                    attrs += attr.Name + ": " + attr.Value + ", ";
+                    reader.Read();
+                    if (reader.IsStartElement() && reader.Name == "title")
+                    {
+                        reader.Read();
+                        Console.WriteLine(reader.Value);
+                    }
                 }
-            }
-            
-            Console.WriteLine(indent + node.Name + "(" + attrs + ")");
-            foreach (XmlNode child in node)
-            {
-                PrintChild(child, indent + "--");
             }
         }
     }
