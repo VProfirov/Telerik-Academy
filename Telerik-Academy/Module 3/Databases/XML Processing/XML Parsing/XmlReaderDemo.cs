@@ -10,16 +10,16 @@ namespace XML_Parsing
         {
             using (var node = XmlReader.Create("../catalog.xml"))
             {
-                Album album = AlbumReader(node);
+                Album album = ReadNextAlbum(node);
                 while (album != null)
                 {
                     Console.WriteLine(album);
-                    album = AlbumReader(node);
+                    album = ReadNextAlbum(node);
                 }
             }
         }
 
-        private static Album AlbumReader(XmlReader node)
+        private static Album ReadNextAlbum(XmlReader node)
         {
             var album = new Album();
             var isIdRead = false;
