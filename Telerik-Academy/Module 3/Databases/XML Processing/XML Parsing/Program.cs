@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Xml;
+using XML_Parsing.Classes;
 
 namespace XML_Parsing
 {
@@ -8,18 +9,8 @@ namespace XML_Parsing
     {
         public static void Main(string[] args)
         {
-            using (var reader = XmlReader.Create("../catalog.xml"))
-            {
-                while (reader.Read())
-                {
-                    reader.Read();
-                    if (reader.IsStartElement() && reader.Name == "title")
-                    {
-                        reader.Read();
-                        Console.WriteLine(reader.Value);
-                    }
-                }
-            }
+//            XmlWriterDemo.Demo();
+            XmlReaderDemo.Demo();
         }
     }
 }

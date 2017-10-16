@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<catalogue>
-  <album>
+<catalog>
+  <album id ="1">
     <name>Meteor</name>
     <artist>Linking Park</artist>
     <year>2000</year>
     <producer>LP</producer>
     <price>10</price>
     <songs>
-      <title>Don't Stay</title>
+      <title id="1">Don't Stay</title>
       <duration>3:08</duration>
-      <title>Hit The Floor</title>
+      <title id="2">Hit The Floor</title>
       <duration>2:44</duration>
-      <title>Faint</title>
+      <title id="3">Faint</title>
       <duration>2:42</duration>
     </songs>
   </album>
-  <album>
+  <album id ="2">
     <name>Gattaca OST</name>
     <artist>Michael Nyman</artist>
     <year>1997</year>
@@ -30,7 +30,7 @@
       <duration>1:01</duration>
     </songs>
   </album>
-  <album>
+  <album id="3">
     <name>NFS</name>
     <artist>Many</artist>
     <year>0001</year>
@@ -43,4 +43,4 @@
       <duration>2:50</duration>
     </songs>
   </album>
-</catalogue>
+</catalog>

@@ -4,7 +4,7 @@ using System.Xml;
 
 namespace XML_Parsing
 {
-    public class BasicXmlLoading
+    public class XmlLoadingDemo
     {
         static string GetXml()
         {
@@ -13,7 +13,7 @@ namespace XML_Parsing
             return reader.ReadToEnd();
         }
 
-        static void Solution()
+        public static void Demo()
         {
             var xml = GetXml();
             var doc = new XmlDocument();
