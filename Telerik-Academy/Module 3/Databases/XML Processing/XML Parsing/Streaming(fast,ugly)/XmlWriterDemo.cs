@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
-
-namespace XML_Parsing
+using XML_Parsing.Classes;
+namespace XML
 {
     public class XmlWriterDemo
     {
@@ -26,9 +26,14 @@ namespace XML_Parsing
                     Id = 3,
                     Title = "The Ring",
                     Author = "The Bitch from the screen"
+                }, new Book()
+                {
+                    Id = 6666,
+                    Title = "5",
+                    Author = "5"
                 }
             };
-            using (var writer = XmlWriter.Create("../catalog.xml"))
+            using (var writer = XmlWriter.Create("../books.xml"))
             {
                 writer.WriteStartDocument();
 
@@ -41,6 +46,7 @@ namespace XML_Parsing
 
                 writer.WriteEndDocument();
             }
+            
         }
 
         private static void WriteNextBook(XmlWriter writer, Book book)
@@ -54,12 +60,5 @@ namespace XML_Parsing
 
             writer.WriteEndElement();
         }
-    }
-
-    public class Book
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
     }
 }

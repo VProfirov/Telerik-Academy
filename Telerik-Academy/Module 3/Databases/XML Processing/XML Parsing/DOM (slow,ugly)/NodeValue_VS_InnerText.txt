@@ -1,0 +1,5 @@
+﻿Stack : https://stackoverflow.com/questions/7877609/xmlnode-value-vs-innertext
+MSDN : https://msdn.microsoft.com/en-us/library/system.xml.xmlnode.value(v=VS.110).aspx
+W3School: https://www.w3schools.com/XML/dom_nodetype.asp
+
+TheDOM : https://dom.spec.whatwg.org/

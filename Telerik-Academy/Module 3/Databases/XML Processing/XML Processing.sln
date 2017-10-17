@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework", "Homework", "{BDD63052-FA07-479C-BD9B-AB9521C12CDF}"
 	ProjectSection(SolutionItems) = preProject
+		books.xml = books.xml
 		catalog.xml = catalog.xml
+		library.xml = library.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temp", "Temp", "{4FBD4ACD-4B84-4144-BB45-DDF86757C2A8}"
@@ -16,7 +18,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temp", "Temp", "{4FBD4ACD-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions XML Parsing", "Solutions XML Parsing", "{FF0DABF0-9604-4B82-AA83-3BCAB09F0639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XML Parsing", "XML Parsing\XML Parsing.csproj", "{15DC2B04-479E-4A6E-9A61-B7E25905B141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XML Parsing", "XML Parsing\XML Parsing.csproj", "{15DC2B04-479E-4A6E-9A61-B7E25905B141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSDN_Demo_Runner", "MSDN_Demo_Runner\MSDN_Demo_Runner.csproj", "{4A41F0B5-9E77-4A83-901B-ED5B55BBBD38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +32,10 @@ Global
 		{15DC2B04-479E-4A6E-9A61-B7E25905B141}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15DC2B04-479E-4A6E-9A61-B7E25905B141}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15DC2B04-479E-4A6E-9A61-B7E25905B141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A41F0B5-9E77-4A83-901B-ED5B55BBBD38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A41F0B5-9E77-4A83-901B-ED5B55BBBD38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A41F0B5-9E77-4A83-901B-ED5B55BBBD38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A41F0B5-9E77-4A83-901B-ED5B55BBBD38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 using System.Xml;
 using XML_Parsing.Classes;
 
-namespace XML_Parsing
+namespace XML
 {
     public class XmlReaderDemo
     {

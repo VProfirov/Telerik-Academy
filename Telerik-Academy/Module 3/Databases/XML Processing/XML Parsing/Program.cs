@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Xml;
+using XML;
 using XML_Parsing.Classes;
 
 namespace XML_Parsing
@@ -9,8 +10,12 @@ namespace XML_Parsing
     {
         public static void Main(string[] args)
         {
-//            XmlWriterDemo.Demo();
-            XmlReaderDemo.Demo();
+            //DOM
+//            XmlLoadingDemo.Demo();
+//            DOMParser.Demo();
+
+            XmlWriterDemo.Demo();
+//            XmlReaderDemo.Demo();
         }
     }
 }

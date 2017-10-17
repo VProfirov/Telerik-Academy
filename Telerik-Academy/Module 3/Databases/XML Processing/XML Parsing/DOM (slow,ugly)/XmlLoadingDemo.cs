@@ -2,7 +2,7 @@
 using System.IO;
 using System.Xml;
 
-namespace XML_Parsing
+namespace XML
 {
     public class XmlLoadingDemo
     {
@@ -30,8 +30,13 @@ namespace XML_Parsing
             var attrs = string.Empty;
             if (node.Attributes != null)
             {
-                foreach (XmlElement attr in node)
+                // NotWorking
+                //                foreach (XmlElement attr in node)
+                //                foreach (XmlText attr in node
+                
+                foreach (XmlNode attr in node)
                 {
+                    Console.WriteLine(attr.ToString()); // inner heirchy
                     attrs += attr.Name + ": " + attr.Value + ", ";
                 }
             }

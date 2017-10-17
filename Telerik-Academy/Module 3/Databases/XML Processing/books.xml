@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<books>
+  <book id="1">
+    <title>The fn Ring</title><author>FFF Tolkein</author>
+  </book>
+  <book id="2">
+    <title>Walking Dead</title><author>The Dead Author</author>
+  </book>
+  <book id="3">
+    <title>The Ring</title><author>The Bitch from the screen</author>
+  </book>
+  <book id="6666">
+    <title>5</title><author>5</author>
+  </book>
+</books>
