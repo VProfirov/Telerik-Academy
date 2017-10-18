@@ -5,7 +5,9 @@
     xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
-  <catalogue>
+  <xs:element name="catalog">
+    
+  </xs:element>
     <album>
       <name>Meteor</name>
       <artist>Linking Park</artist>
