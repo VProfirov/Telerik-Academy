@@ -1,1 +1,4 @@
-print("hi")
+import Math
+
+class SolvingMathTask
+    def Solution
