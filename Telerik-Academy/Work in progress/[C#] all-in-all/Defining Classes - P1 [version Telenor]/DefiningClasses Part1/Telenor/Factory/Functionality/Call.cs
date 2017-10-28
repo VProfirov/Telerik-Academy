@@ -17,6 +17,7 @@
         {
             MadeCall(phoneNumber);
         }
+        // ctor + method => making a call and making it a conference by +MadeCall...
         public void MadeCall(string phoneNumber)
         {
             var isMatch = Regex
