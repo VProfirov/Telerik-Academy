@@ -9,6 +9,9 @@ namespace TryFinaly
         static void Main(string[] args)
         {
             Type type = Type.GetType("IoCContainer_Demo_.Visa");
+//            TryCatch();
+//            Dic();
+            Dictionary_Props_init.Dic();
         }
 
         public static void TryCatch()
@@ -37,8 +40,10 @@ namespace TryFinaly
             var dic = new Dictionary<string, int>();
 
             dic.TryAdd("i", 5);
+//            Console.WriteLine(dic["i"]);
+
             string b = null;
-            //            dic.TryAdd(b, 6);
+//                        dic.TryAdd(b, 6);
         }
     }
 }
