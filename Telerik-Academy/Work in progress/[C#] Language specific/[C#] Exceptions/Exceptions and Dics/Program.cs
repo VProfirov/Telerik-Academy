@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using IoCContainer_Demo_;
-namespace TryFinaly
+
+namespace Exceptions_and_Dics
 {
     class Program
     {
         static void Main(string[] args)
         {
             Type type = Type.GetType("IoCContainer_Demo_.Visa");
-//            TryCatch();
-//            Dic();
-            Dictionary_Props_init.Dic();
+            //            TryCatch();
+            //            Dic();
         }
 
         public static void TryCatch()
@@ -40,10 +38,19 @@ namespace TryFinaly
             var dic = new Dictionary<string, int>();
 
             dic.TryAdd("i", 5);
-//            Console.WriteLine(dic["i"]);
+            //            Console.WriteLine(dic["i"]);
 
             string b = null;
-//                        dic.TryAdd(b, 6);
+            //                        dic.TryAdd(b, 6);
+
+            dic.Add("five", 5);
+            dic["t"] = 2;
+            //                        Console.WriteLine(dic["t"]);
+
+            foreach (var d in dic)
+            {
+                Console.WriteLine(d);
+            }
         }
     }
 }

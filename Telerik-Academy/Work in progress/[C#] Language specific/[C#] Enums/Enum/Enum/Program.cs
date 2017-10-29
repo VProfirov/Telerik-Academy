@@ -13,18 +13,16 @@ namespace Design_Patterns
 
     public class Sandwich //internal : prompts errors
     {
-//        public MeatType MeatType { get; set; }
-//        public Mustard Mustard { get; set; }
-//        public CheeseType CheeseType { get; set; }
-//
-//        public EnumIn PropEnumIn { get; set; }
+        //        public MeatType MeatType { get; set; }
+        //        public Mustard Mustard { get; set; }
+        //        public CheeseType CheeseType { get; set; }
+        //
+        //        public EnumIn PropEnumIn { get; set; }
 
         protected enum EnumIn
         {
             s, q, a
         }
-
-
     }
 
     internal enum MeatType
