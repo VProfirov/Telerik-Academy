@@ -1,4 +1,1 @@
-import Math
-
-class SolvingMathTask
-    def Solution
+print("hello pypy")
