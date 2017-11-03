@@ -1,6 +1,26 @@
-function greeter(person) {
-    return "Hello, " + person.firstName + " " + person.lastName + " at " + person.age;
+var animals = [
+    { species: 'Lion', name: 'King' },
+    { species: 'Whale', name: 'Fail' }
+];
+
+for (var i = 0; i < animals.length; i++) {
+    (function(i) {
+        this.print = function() {
+            console.log('#' + i + ' ' + this.species +
+                ': ' + this.name);
+        }
+        this.print();
+    }).call(animals[i], i);
 }
-// let user = {firstName:"Vas",lastName:"Pro",age:15};
-var user = { firstName: "Vas", lastName: "Pro", age: 15 };
-console.log(greeter(user));
+
+// function solve(args) {
+//     args.forEach(function(element) {
+//         element += 1;
+//     }, this);
+
+
+// }
+
+// solve([
+//     "asd", 5, "333"
+// ]);
