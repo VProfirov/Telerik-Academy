@@ -22,6 +22,11 @@ namespace Task_2
              * LINE 1 => (52 cards hand possible)? "Full deck"   : "Wa wa!"
              * LINE 2 => (cardCount !% 2) ?=> ascendingOrder..join(" ")
              * */
+
+            /* TODO: STATES
+             * 4 type of cards -> c d h s
+             * a type is of 0-12 cards -> 2-10-J-A
+             */
         }
     }
 }
