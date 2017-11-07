@@ -8,9 +8,13 @@ namespace Task_2
     {
         static void Main(string[] args)
         {
-            /* TODO: CONDITIONS: 
+            // 0.Constraints(have in mind) --> 1.INPUT -> 2.OUTPUT -> 3.COMPUTE
+
+            /* TODO: CONSTRAINTS: 
              * - **N** will always be in the range of [2..100000]
              * - in 70 % of the tests **N * *will be below **50 * */
+
+            // TODO: INPUT
             var inputCounter = int.Parse(Console.ReadLine());
             var handsOfCards = new long[inputCounter];
 
