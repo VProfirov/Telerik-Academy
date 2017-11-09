@@ -6,7 +6,11 @@ namespace Task_3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            char step = '\u0000';
+            Console.WriteLine(step);
+            switch (step)
+            {
+            }
         }
     }
 }
