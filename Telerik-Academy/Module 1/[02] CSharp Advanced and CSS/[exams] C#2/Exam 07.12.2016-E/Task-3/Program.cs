@@ -7,14 +7,16 @@ namespace Task_3
     {
         static void Main(string[] args)
         {
-            var dimensions = Console.ReadLine().Split('x').Select(int.Parse) as int[];
+            var dimensions = Console.ReadLine().Split('x').Select(int.Parse).ToArray(); // as int[] null error
             var matrix = new char[dimensions[0]][];
 
-            for (int i = 0; i < matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 matrix[i] = Console.ReadLine().ToCharArray();
             }
             var directions = Console.ReadLine().Split(',').Aggregate((previous,current) => previous + current).ToCharArray();
+            var position = matrix[0].Contains(); //.Where(x => x == 'e');
+            Console.WriteLine(position);
             var move = string.Empty;
             foreach (var direction in directions)
             {
