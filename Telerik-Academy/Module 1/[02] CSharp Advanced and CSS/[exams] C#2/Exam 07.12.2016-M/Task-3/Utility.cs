@@ -23,6 +23,6 @@ namespace Task_3
                 }
                 Console.WriteLine();
             }
-    }
+        }
     }
 }

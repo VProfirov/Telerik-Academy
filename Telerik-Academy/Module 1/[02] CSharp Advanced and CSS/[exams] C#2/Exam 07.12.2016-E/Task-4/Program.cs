@@ -27,7 +27,7 @@ namespace Task_4
             void Tracker()
             {
                 long target = exB1;
-                long mask = 1;
+                long m = 1;
                 for (int i = 0; i < 52; i++)
                 {
                     var start = Convert.ToString(target, 2);
@@ -35,7 +35,7 @@ namespace Task_4
                     var cutter = start.Remove(start.Length - 1 - i);
                     Console.WriteLine($"cutter: {cutter}");
 
-                    long result = (target & (mask << i)) >> i;
+                    long result = (target & (m << i)) >> i;
                     Console.WriteLine($"result: {result} at position {i}");
                     // breaks for each BEYOND the border of the number :: border <-> added 0s
                 }
