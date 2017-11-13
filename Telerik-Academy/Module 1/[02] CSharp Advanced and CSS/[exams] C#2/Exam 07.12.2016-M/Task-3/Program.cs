@@ -13,7 +13,7 @@
             var dimensions = Console.ReadLine().Split('x').Select(int.Parse).ToArray();
             var row = dimensions[0];
             var col = dimensions[1];
-            var denMap = new string[row,col];
+            var denMap = new string[row,col];//**REF
             //TODO: NOTE: denMap - might be better to be jagged-array!
 
             for (int r = 0; r < row; r++)
@@ -29,7 +29,7 @@
 
 ////            Utility.ConsolePrint(directions,denMap);
 
-            int[] startPosition = { 0, 0 };
+            int[] startPosition = { 0, 0 };//**REF-chain:sp0
             for (int c = 0; c < col; c++)
             {
                 if (denMap[0, c] == "s") startPosition[1] = c;
@@ -38,7 +38,7 @@
             var message = string.Empty;
             var snakeLength = 3;
             var moveCount = 0;
-            var snakeCurrentPosition = startPosition;
+            var snakeCurrentPosition = startPosition;//**?REF:sp0
             var shouldContinue = true;
             do
             {
