@@ -30,51 +30,57 @@ public class MatrixThree
     {
         int size = int.Parse(Console.ReadLine());
         int[,] matrix = new int[size, size];
-        int counter = 1;
-        int counterTwo = 16;
+        int indexter1stHalf = 1;
+        int indexter2ndHalf = size * size;
         int up = 0;
         for (int row = matrix.GetLength(0) - 1; row > -1; row--)
         {
-            int currentRow = row;
+            //start to end
+            int currentRow = row; // end row
             int currentCol = 0;
-            matrix[currentRow, currentCol] = counter;
-            counter++;
-            while (true)
+
+            //positioning statements - start of diagonal
+            matrix[currentRow, currentCol] = indexter1stHalf;
+            indexter1stHalf++;
+            while (true) // diagonal
             {
+                #region DownwardDiagonal conitunation
                 currentRow = currentRow + 1;
                 currentCol = currentCol + 1;
-                if (currentCol < 0 || currentRow < 0 || currentCol > size - 1 || currentRow > size - 1)
+                #endregion
+                if (currentCol < 0 || currentRow < 0 || currentCol > size - 1 || currentRow > size - 1) //boundry check 
+                // TODO: Re-Define - Dynamic programming (we can compute the possible boundry conditions to reduce computation) 
+                // TODO : currentCol > size - 1 || currentRow > size - 1
                 {
                     break;
                 }
 
-                matrix[currentRow, currentCol] = counter;
-                counter++;
+                matrix[currentRow, currentCol] = indexter1stHalf;
+                indexter1stHalf++;
             }
-
-            currentRow = up;
+            //end to start
+            currentRow = up; // start row
             currentCol = size - 1;
             if (currentCol > 0)
             {
-                matrix[currentRow, currentCol] = counterTwo;
-                counterTwo--;
+                matrix[currentRow, currentCol] = indexter2ndHalf;
+                indexter2ndHalf--;
                 while (true)
                 {
                     currentRow = currentRow - 1;
                     currentCol = currentCol - 1;
-                    if (currentCol < 0 || currentRow < 0 || currentCol > size - 1 || currentRow > size - 1)
+                    if (currentCol < 0 || currentRow < 0 || currentCol > size - 1 || currentRow > size - 1) 
+                        //TODO: writer out of boundry condition: currentCol > size - 1 || currentRow > size - 1 
                     {
                         break;
                     }
 
-                    matrix[currentRow, currentCol] = counterTwo;
-                    counterTwo--;
+                    matrix[currentRow, currentCol] = indexter2ndHalf;
+                    indexter2ndHalf--;
                 }
             }
-
             up++;
         }
-
         PrintMatrix(matrix);
     }
 }
