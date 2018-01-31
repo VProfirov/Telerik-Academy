@@ -6,7 +6,8 @@ namespace MobilePhone
     {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            var gsm = new GSM.GSM("HTC M7", "HTC");
+            Console.WriteLine((object) GSM.GSM.iPhone4S);
         }
     }
 }
