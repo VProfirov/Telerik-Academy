@@ -5,7 +5,7 @@ using System.Text;
 namespace MobilePhone.GSM_Test
 {
     using GSM;
-    public static class PseudoTest
+    public static class PseudoTestGSM
     {
         private static List<GSM> gsmArr = new List<GSM>()
         {
