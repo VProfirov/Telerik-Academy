@@ -2,7 +2,7 @@
 
 namespace MobilePhone.GSM
 {
-    class Display
+    public class Display
     {
         private readonly int? size;
         private readonly int? numberOfColors;

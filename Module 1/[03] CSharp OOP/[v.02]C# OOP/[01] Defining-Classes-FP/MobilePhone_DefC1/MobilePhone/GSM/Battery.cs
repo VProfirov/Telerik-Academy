@@ -2,7 +2,7 @@
 
 namespace MobilePhone.GSM
 {
-    class Battery
+    public class Battery
     {
         private readonly string model;
         private TimeSpan? hours_idle;

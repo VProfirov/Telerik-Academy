@@ -3,7 +3,7 @@ using System.Text;
 
 namespace MobilePhone.GSM
 {
-    class GSM
+    public class GSM
     {
         private static GSM iPhone_4S = new GSM("iPhone4S", "Apple");
 
