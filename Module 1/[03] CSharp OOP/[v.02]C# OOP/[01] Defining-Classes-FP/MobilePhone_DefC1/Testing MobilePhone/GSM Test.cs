@@ -5,16 +5,19 @@ using Xunit;
 namespace Testing_MobilePhone
 {
     using MobilePhone.GSM;
-    public class UnitTest1
+    public class GSM_Test
     {
+        public List<GSM> gsmArr = new List<GSM>()
+        {
+            new GSM("htc m9","HTC"),
+            new GSM("Samsung Galaxy S7","Samsung"),
+            new GSM("Nexus One","Google")
+        };
         [Fact]
         public void GSMs_InfoDisplay()
         {
             //arrange  act assert
-            var gsmArr = new List<GSM>();
-            gsmArr.Add(new GSM("htc m9", "HTC"));
-            gsmArr.Add(new GSM("Samsung Galaxy S7", "Samsung"));
-            gsmArr.Add(new GSM("Nexus One", "Google"));
+            
 
             foreach (var gsm in gsmArr)
             {
@@ -30,10 +33,6 @@ namespace Testing_MobilePhone
         public void GSMs_Static_iPhone4s()
         {
             //arrange  act assert
-            var gsmArr = new List<GSM>();
-            gsmArr.Add(new GSM("htc m9","HTC"));
-            gsmArr.Add(new GSM("Samsung Galaxy S7","Samsung"));
-            gsmArr.Add(new GSM("Nexus One","Google"));
 
             Console.WriteLine(GSM.iPhone4S);
 

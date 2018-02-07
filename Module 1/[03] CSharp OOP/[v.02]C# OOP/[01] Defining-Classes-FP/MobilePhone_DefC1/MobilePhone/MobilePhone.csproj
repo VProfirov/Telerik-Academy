@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="GSM Test\" />
     <Folder Include="Call Hisory Test\" />
   </ItemGroup>
 
