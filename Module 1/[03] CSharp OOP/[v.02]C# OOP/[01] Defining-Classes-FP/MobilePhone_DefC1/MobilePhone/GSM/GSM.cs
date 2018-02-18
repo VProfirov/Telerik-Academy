@@ -71,5 +71,29 @@ namespace MobilePhone.GSM
             sb.AppendLine($"Display characteristics: {displayCharacteristics}");
             return sb.ToString();
         }
+
+        #region calls
+
+        public void AddCalls()
+        {
+        }
+
+        public void DeleteCalls()
+        {
+        }
+
+        public void ClearCallHistory()
+        {
+        }
+
+        public void CallPrice()
+        {
+            /*
+             * Add a method that calculates the total price of the calls in the call history.
+             * Assume the price per minute is fixed and is provided as a parameter.
+             */
+        }
+
+        #endregion
     }
 }
