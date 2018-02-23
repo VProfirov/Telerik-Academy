@@ -1,25 +1,39 @@
-function solve(args) {
-    let stairs = [];
-    stairs[0] = [args[0]];
-    stairs[1] = [args[1], args[2]];
-    let layersCount = args[3];
-
-
+function solve(params) {
+    let stairs = [params[0], params[1], params[2]];
+    let layers = params[3];
+    stairs.length = TrNSq(layers);
+    stairsFiller(stairs);
     // console.log(stairs);
-    printer(stairs);
+    printer(stairs, layers);
 
-    function printer(obj) {
-        for (let i = 0; i < obj.length; i++) {
-            let print = obj[i].join(" ");
-            console.log(print);
+    function stairsFiller(stairs) {
+        for (let i = 3; i < stairs.length; i++) {
+            stairs[i] = stairs[i - 1] + stairs[i - 2] + stairs[i - 3];
         }
     }
 
-    function builder() {
+    function TrNSq(num) {
+        let result = num * (num + 1) / 2;
+        return result;
+    }
 
+    function printer(stairs, layers) {
+        let position = 0;
+        let sizeOfStep = 1;
+        for (let layer = 0; layer < layers; layer++) {
+            let print = "";
+            for (let i = position; i < position + sizeOfStep; i++) {
+                print += stairs[i] + " ";
+            }
+            console.log(print.trim());
+
+            position += sizeOfStep; //FIXME:
+            sizeOfStep++;
+        }
     }
 }
 
 solve(
-    [2, 1, 5, 3]
+    // [2, 1, 5, 3]
+    [3, -2, -1, 4]
 );
