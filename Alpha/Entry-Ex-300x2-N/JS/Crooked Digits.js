@@ -9,7 +9,6 @@ function solve(args) {
             numberPositive += target;
         }
     }
-    var s = numberPositive;
     if (numberPositive > 9) {
         let result = digitizing(numberPositive);
         console.log(result);
