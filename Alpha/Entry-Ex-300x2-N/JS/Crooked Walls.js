@@ -1,5 +1,24 @@
-function solve(params) {
-    let arr = params.split(' ').map(Number);
+const getGets = (arr) => {
+    let index = 0;
+
+    return () => {
+        const toReturn = arr[index];
+        index += 1;
+        return toReturn;
+    };
+};
+const test = [
+    // [2, 7, 4, 12, 6, 4, 4]
+    // "2 7 4 12 6 4 4"
+    "-7 2 4 13 6 -12 8"
+];
+const gets = this.gets || getGets(test);
+const print = this.print || console.log;
+solve(gets);
+
+function solve(getParams) {
+    let arg = getParams();
+    let arr = arg.split(' ').map(Number);
     // console.log(arr);
     let distance = 0;
     let sumEvenDistances = 0;
@@ -11,11 +30,5 @@ function solve(params) {
         }
     }
     // console.log(distances);
-    console.log(sumEvenDistances);
+    print(sumEvenDistances);
 }
-
-solve(
-    // [2, 7, 4, 12, 6, 4, 4]
-    // "2 7 4 12 6 4 4"
-    "-7 2 4 13 6 -12 8"
-);
