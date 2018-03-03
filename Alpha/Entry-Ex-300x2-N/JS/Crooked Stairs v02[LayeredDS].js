@@ -17,46 +17,59 @@ const print = this.print || console.log;
 solve(gets);
 
 function solve(getParams) {
-    let args = [];
+    let params = [];
     for (let i = 0; i < 4; i++) {
-        args.push(Number(getParams()));
+        params.push(Number(getParams()));
     }
 
-    let b1 = Number(args[0]);
-    let b2 = Number(args[1]);
-    let b3 = Number(args[2]);
-    let layers = Number(args[3]);
+    let bricks = [params[0], params[1], params[2]];
+    let layers = params[3];
+    bricks.length = TrNSq(layers);
+    bricksFiller(bricks);
+    // console.log(bricks);
+    builder(bricks, layers);
 
-    let triangle = [];
-    triangle[0] = [b1];
-    triangle[1] = [b2, b3];
+    function bricksFiller(bricks) {
+        for (let i = 3; i < bricks.length; i++) {
+            if (bricks[i - 1] >= Number.MAX_SAFE_INTEGER) {
 
-    let holder = [b1, b2, b3];
-    for (let i = 2; i < layers; i++) {
-        let bricksInLayerCounter = i + 1;
-        triangle[i] = [];
-        for (let brick = 0; brick < bricksInLayerCounter; brick++) {
-            triangle[i].push(HolderSum(holder)); //check
-            // triangle[i].push(holder.sum());//check
-            holder = HolderReSum(holder);
+            } else {
+                bricks[i] = bricks[i - 1] + bricks[i - 2] + bricks[i - 3];
+            }
         }
     }
 
-    for (let line of triangle) {
-        let sb = line.join(" ") + "\n";
-        console.log(sb.trim());
+    function TrNSq(num) {
+        let result = num * (num + 1) / 2;
+        return result;
     }
 
-    function HolderReSum(holder) {
-        let sum = HolderSum(holder);
-        holder[0] = holder[1];
-        holder[1] = holder[2];
-        holder[2] = sum;
-        return holder;
+    function builder(bricks, layers) {
+        let position = 0;
+        let sizeOfStep = 1;
+        for (let layer = 0; layer < layers; layer++) {
+            let buildingFloor = "";
+            for (let i = position; i < position + sizeOfStep; i++) {
+                buildingFloor += bricks[i] + " ";
+            }
+            print(buildingFloor.trim());
+            position += sizeOfStep;
+            sizeOfStep++;
+        }
     }
 
-    function HolderSum(holder) {
-        let sum = holder[0] + holder[1] + holder[2];
-        return sum;
+    function addition(a, b, acc = '', carry = 0) {
+        if (!(a.length || b.length || carry)) return acc.replace(/^0+/, '');
+
+        carry = carry + (~~a.pop() + ~~b.pop());
+        acc = carry % 10 + acc;
+        carry = carry > 9;
+
+        return addition(a, b, acc, carry);
+    }
+
+    function sumStrings(a, b) {
+        if (a === '0' && b === '0') return '0';
+        return addition(a.split(''), b.split(''));
     }
 }
