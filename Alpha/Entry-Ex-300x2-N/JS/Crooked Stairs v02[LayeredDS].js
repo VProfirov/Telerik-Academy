@@ -15,11 +15,12 @@ const test = [
 const gets = this.gets || getGets(test);
 const print = this.print || console.log;
 solve(gets);
+quit(0);
 
 function solve(getParams) {
     let params = [];
     for (let i = 0; i < 4; i++) {
-        params.push(Number(getParams()));
+        params.push(parseFloat(getParams()));
     }
 
     let bricks = [params[0], params[1], params[2]];
@@ -31,10 +32,9 @@ function solve(getParams) {
 
     function bricksFiller(bricks) {
         for (let i = 3; i < bricks.length; i++) {
-            if (bricks[i - 1] >= Number.MAX_SAFE_INTEGER) {
-
-            } else {
-                bricks[i] = bricks[i - 1] + bricks[i - 2] + bricks[i - 3];
+            bricks[i] = bricks[i - 1] + bricks[i - 2] + bricks[i - 3];
+            if (!Number.isSafeInteger(bricks[i])) {
+                bricks[i] = sumStrings(bricks[i - 1].toString(), sumStrings(bricks[i - 2].toString(), bricks[i - 3].toString()));
             }
         }
     }

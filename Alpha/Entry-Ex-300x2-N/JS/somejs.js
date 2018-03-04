@@ -37,3 +37,13 @@ function sumStrings(a, b) {
     if (a === '0' && b === '0') return '0';
     return addition(a.split(''), b.split(''));
 }
+console.log("-----------TEST--------");
+let result = sumStrings("2050408267460910", "3771288769122467");
+console.log(result);
+let finalResult = sumStrings(result, "6936481483134870");
+console.log(finalResult);
+
+console.log("-----------");
+console.log(Number.MAX_SAFE_INTEGER < Number.MAX_VALUE);
+console.log(typeof("123123129391293192322" | 1));
+console.log(typeof("12758178519718247" | 1));
