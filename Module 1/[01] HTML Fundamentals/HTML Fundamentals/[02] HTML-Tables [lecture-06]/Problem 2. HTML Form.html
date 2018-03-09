@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<!-- method="get" action="#"   for the inputs is placed in the FORM tag-->
+	<!-- method="get" action="#"   for the inputs is placed in the FORM tag but use POST-->
 	<form method="get" action="#">
 		<!-- possible addin examples : placeholder; autocomplete; ...  -->
 		<label for="mn">Member name :</label>
@@ -29,7 +29,9 @@
 		<!-- NB: click coordinates are send as well -->
 		<input type="image" src="img/submit-button.jpg" alt="submit" id="sumbit-image-button">
 		<!-- -> the next example gives more css and other flexibility
-		<button type="submit"><img src="someimage.jpg" alt="someimg"></button> -->
+		<button type="submit"><img src="someimage.jpg" alt="someimg"></button> -->	
+		<button type="submit" class="image-button"><img src="img/submit-button.jpg" alt="someimg" class=""></button>	
+		<div class="thediv_img"><img src="img/submit-button.jpg" alt="someimg" class="div_img"></div>
 	</form>
 </body>
 

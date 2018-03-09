@@ -11,10 +11,11 @@
         <p>Preceding Text</p>
         <section>
             <!--ol[type="I"]>(li>(ol[type="a"]>li+li))+(li>(ol[type="1"]>li+(li>ul[type="circle"]>li+li>(ul[type="disc"]>li+li)+li)+li)+(li>ul[type="disc"]>li+li+li))-->
+            <!-- emmet has bug with this -->
             <h1 hidden="hidden">Long List</h1>
             <!-- semanticly correct:
-          1st: "section" needs a heading element to be semanticly correct
-          2nd: we use "section", because is semanticly correct, because of the preceding text
+          1st: "section" needs a heading element to be semantically correct
+          2nd: we use "section", because is semantically correct, because of the preceding text
           3th: we hide it because it is out of the realisation target for our project -->
             <ol type="I">
                 <li>List Item 1
@@ -32,7 +33,7 @@
                                 <li>Nested Item 2.2.2</li>
                                 <!-- Next is example of empty li element taking the next ol/ul-->
                                 <li style="list-style: none; display: inline">
-                                    <!-- Note that because the ul/ol are block element, it will priint the empty li and start the new ul/ol on a new line -->
+                                    <!-- Note that because the ul/ol are block element, it will print the empty li and start the new ul/ol on a new line -->
                                     <ul type="square">
                                         <li>Nested Item 2.2.2.1</li>
                                         <li>Nested Item 2.2.2.2</li>
@@ -58,6 +59,6 @@
 
 </html>
 <!-- footnote:
-TODO:Use CSS instead of type properties and for the selection assign appropiate classes
+TODO:Use CSS instead of type properties and for the selection assign appropriate classes
 TODO: add w3c markup validation or manually validate your code (HTML, CSS) [validator.w3.org]
 Note: This is simple example and a walk-through the logic of creating a consistent semantic structure-->

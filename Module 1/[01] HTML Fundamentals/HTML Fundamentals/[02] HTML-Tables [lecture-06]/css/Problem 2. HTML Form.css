@@ -1,0 +1,22 @@
+input[type='image']{
+    border: 1px solid orange;    
+}
+.image-button{
+    border: none;
+    padding: 0;    
+    background: pink;
+    border: 1px solid red;
+}
+.image-button img{
+    border: 1px solid blue;
+}
+
+.thediv_img{
+    padding: 0;
+    border: 1px solid blue;
+    display: inline-block
+}
+
+.div_img{
+    border: 1px solid red;
+}
