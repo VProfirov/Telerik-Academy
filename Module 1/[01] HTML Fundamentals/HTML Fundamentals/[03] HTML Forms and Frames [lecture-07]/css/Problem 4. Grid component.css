@@ -11,8 +11,9 @@ table {
 #table-footer {
 	background-color: lightgrey;
 }
-/* something os wrong - for the right aligned */
 
-#right-aligned-element {
-	text-align: right;
+#right-aligned {
+	/* text-align: right; :: not a text, it is a span*/
+	float: right;
+	margin-right: 1%
 }
