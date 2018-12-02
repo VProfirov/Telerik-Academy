@@ -27,18 +27,14 @@ namespace BitsExchange_A
             Console.WriteLine(Convert.ToString(number, 2).PadLeft(32, '0'));
             #endregion
 
-            // TODO: Specify moving & index VS count (NB! we start counting from 0). We count from 0 => 0,1,2,3 left to right. So, to explain: we start [0], >1> [1], >1> [2], >1>[3] now we are at 3.
+            
              // To sumup, last index[31], total count[32] => 31 + 1[index 0]
             int fakeBitOneMove = 3;
             int fakeBitTwoMove = 24;
 
             for (int i = 0; i < 3; i++)
             {
-               //TODO:fix expl (check; extract; change)
-               // TAKES the bit at position using & and 1 (if 0&1 => 0, if 1&1=>1)
-                // opposit to CHANGING :
-                    // change to 0 =>  & 0 (if 0&0 => 0, if 1&0=>0)
-                    // change to 1 =>  | 1 (if 0|1 => 1, if 1|1=>1)
+           
                 long maskOne = (number & (1 << fakeBitOneMove)) >> fakeBitOneMove;
 
                 // (takes the bit from the number (sets bit to position)) returns to start with the bit

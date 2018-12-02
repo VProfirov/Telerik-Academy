@@ -32,7 +32,7 @@ namespace FallingRocks
         static string resultColor = "Gray";
         static int minFps = 15, maxFps = 40;
         static Random randomGenerator = new Random();
-
+        private int someint = 5;
         static void PrintAtPosition(int x, int y, string s, string color)
         {
             Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color);
@@ -67,6 +67,7 @@ namespace FallingRocks
             PrintAtPosition(0, 0, "Speed: " + (int)(fps - minFps) + " Result: " + (int)result, resultColor);
         }
 
+        #region Rocks
         // Rocks
         static void GetRock(int i)
         {
@@ -79,6 +80,7 @@ namespace FallingRocks
 
         static void MoveRockTop(int i)
         {
+            //TODO: What is the purpose here? - A: To re-init rocks
             GetRock(i);
             rocks[i, 1] = 0;
         }
@@ -117,6 +119,7 @@ namespace FallingRocks
         {
             for (int i = 0; i < rocks.GetLength(0); i++) DrawRock(i);
         }
+        #endregion
 
         // Player
         static void CenterPlayer()

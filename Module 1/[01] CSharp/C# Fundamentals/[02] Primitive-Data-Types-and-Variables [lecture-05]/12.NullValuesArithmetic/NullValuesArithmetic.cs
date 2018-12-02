@@ -23,7 +23,7 @@ namespace NullValuesArithmetic
             // add a number
             Console.WriteLine(nullVauleInt + 12);
             nullVauleInt = 5;
-            Console.WriteLine(nullVauleInt.GetValueOrDefault());
+            Console.WriteLine(nullVauleInt.GetValueOrDefault()); // if null, return default(0)
         }
     }
 }

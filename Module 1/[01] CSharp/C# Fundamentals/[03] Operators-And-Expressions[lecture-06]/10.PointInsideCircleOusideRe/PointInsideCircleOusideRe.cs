@@ -33,10 +33,10 @@ namespace PointInsideCircleOusideRe
             x = Double.Parse(Console.ReadLine());
             Console.Write("Please enter point y = ");
             y = Double.Parse(Console.ReadLine());
-            bool inside = ((x - circleX) * (x - circleX)) + ((y - circleY) * (y - circleY)) <= (r * r);
+            bool insideCircle = ((x - circleX) * (x - circleX)) + ((y - circleY) * (y - circleY)) <= (r * r);
             bool rectXout = (x >= 5) && (x <= -1);
             bool rectYout = (y >= -1) && (y <= 1);
-            if ((rectXout == false && rectYout == false) && inside == true)
+            if ((rectXout && rectYout) && insideCircle)
             {
                 Console.WriteLine("Yes");
                 Console.WriteLine("Point is inside Circle and Outside Rectangle");
