@@ -12,25 +12,48 @@ The input is entered as long. The output should be a variable of type string. Do
 namespace DecimalToBinaryNumber
 {
     using System;
+    using System.Linq;
+    using System.Text;
 
     class DecimalToBinaryNumber
     {
         static void Main()
         {
             Console.Write("Enter your decimal number: ");
-            long dec = long.Parse(Console.ReadLine());
+            long longInt = long.Parse(Console.ReadLine());
 
+            Console.WriteLine(DecimalToStringWithStringBuilder(longInt));
+            Console.WriteLine(DecimalToBinaryWithConcat(longInt));
+        }
+
+        static string DecimalToStringWithStringBuilder(long decimalNumber)
+        {
+            var binary = new StringBuilder();
+            long rest;
+
+            while (decimalNumber > 0)
+            {
+                rest = decimalNumber % 2;
+                decimalNumber /= 2;
+                binary.Append(rest);
+            }
+
+            //TODO: Something better?
+            return binary.ToString().Reverse().ToString();
+        }
+
+        static string DecimalToBinaryWithConcat(long decimalNumber)
+        {
             long rest;
             string binary = string.Empty;
 
-            while (dec > 0)
+            while (decimalNumber > 0)
             {
-                rest = dec % 2;
-                dec /= 2;
+                rest = decimalNumber % 2;
+                decimalNumber /= 2;
                 binary = rest.ToString() + binary;
             }
-
-            Console.WriteLine(binary);
+            return binary;
         }
     }
 }
