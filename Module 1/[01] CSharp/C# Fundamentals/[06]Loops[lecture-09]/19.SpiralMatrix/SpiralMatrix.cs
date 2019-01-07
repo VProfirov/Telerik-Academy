@@ -22,11 +22,12 @@ namespace SpiralMatrix
             int row = 0;
             int col = 0;
             string direction = "right";
-            int maxRotations = n * n;
+            int allSteps = n * n;
 
-            for (int i = 1; i <= maxRotations; i++)
+            for (int i = 1; i <= allSteps; i++)
             {
-                ////out of the bounderies check ()&&( ouside || not filled)
+                //// needChangeCourse := same current trajectory ()&&( outsideStep || not filled)
+                // needChangeCourse => newCourse
                 if (direction == "right" && (col > n - 1 || matrix[row, col] != 0))
                 {
                     direction = "down";
@@ -55,6 +56,7 @@ namespace SpiralMatrix
 
                 matrix[row, col] = i;
 
+                // Move on Trajectory
                 if (direction == "right")
                 {
                     col++;
