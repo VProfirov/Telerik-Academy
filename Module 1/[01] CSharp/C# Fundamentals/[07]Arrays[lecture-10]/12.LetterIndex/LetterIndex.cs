@@ -14,6 +14,8 @@ namespace LetterIndex
     {
         public static void Main()
         {
+
+            // HIGHLY SUBOPTIMAL SOLUTION TO PROBLEM RATIO...&... O(N^2) lexical matching, while that do not use THE SIMPLEST SOLUTION paradigm
             int[] letterIndexes = new int[53];
 
             // Lowercase

@@ -18,7 +18,7 @@ namespace Mode
 
             Dictionary<int, int> mostFrequnet = new Dictionary<int, int>();
             int bestElement = 0;
-            int bestFrequnecy = int.MinValue;
+            int bestFrequnecy = 0;
             for (int i = 0; i < myArray.Length; i++)
             {
                 // Exercise 4
