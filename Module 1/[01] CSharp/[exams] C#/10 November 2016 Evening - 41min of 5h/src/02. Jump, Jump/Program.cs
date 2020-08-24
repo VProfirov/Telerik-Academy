@@ -30,7 +30,6 @@ namespace _02.Jump__Jump
                     Console.WriteLine("Too drunk to go on after {0}!", i);
                     break;
                 }
-                
 
                 if (i < 0 || i > pattern.Length - 1)
                 {
