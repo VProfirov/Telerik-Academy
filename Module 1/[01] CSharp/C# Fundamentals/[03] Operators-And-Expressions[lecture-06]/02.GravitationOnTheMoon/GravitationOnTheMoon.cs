@@ -35,7 +35,7 @@ namespace GravitationOnTheMoon
             }
             else
             {
-                Console.WriteLine("Enter a valid integer for a weight of the man ! Try again.");
+                Console.WriteLine("Enter a valid number(Double Single Point number)for a weight of the man ! Try again.");
                 Main();
             }
 

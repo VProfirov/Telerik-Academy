@@ -52,8 +52,8 @@ namespace PrimeNumberCheck
                 }
             }
 
-            //if the counter is (counter >= 2) it will mark all input numbers as primie (dividable by 1 and MORE then itself)
-            //if the counter is (counter <= 2) it will mark number 1 as primie, which is not
+            //if the counter is (counter >= 2) it will mark all input numbers as prime (dividable by 1 and MORE then itself)
+            //if the counter is (counter <= 2) it will mark number 1 as prime, which is not
             if (counter == 2)
             {
                 Console.WriteLine(true);
@@ -77,6 +77,9 @@ namespace PrimeNumberCheck
             int divider = 2;
             int maxDivider = (int)Math.Sqrt(number);
             bool isPrime = true;
+            // TODO: missing handler for negative numbers; 1 and 0! (There is such in the testing data (-3) 
+            // NOTE: NB! in the Task there is mistake saying "given positive integer n<=100" the testing data is correct
+            // NOTE: n will be -100 >= n <= 100
             while (isPrime && (divider <= maxDivider))
             {
                 if (number % divider == 0)

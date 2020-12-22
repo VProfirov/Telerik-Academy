@@ -23,6 +23,9 @@ namespace ThirdDigitSeven
         {
             int number = int.Parse(Console.ReadLine());
 
+            /*NOTE: ultimately the integer approach is limiting the checking due to some arithmetic constraints around '1',
+                    thus making the solution wrong(the 3rd position should be checked and logged for number dif. than 7) */
+            //NB! : Do positional single character checks always string based since they are just a lookup of an index!
             int containerOfThird;
             //moving to 3th position
             containerOfThird = number / 100;

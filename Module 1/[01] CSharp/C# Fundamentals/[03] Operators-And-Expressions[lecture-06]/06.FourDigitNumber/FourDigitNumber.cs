@@ -26,24 +26,18 @@ namespace FourDigitNumber
             int fourthDigit;
             int thirdDigit;
             int secondDigit;
-            int firstdigit;
+            int firstDigit;
 
             fourthDigit = numberABCD % 10;
             thirdDigit = (numberABCD / 10) % 10;
             secondDigit = (numberABCD / 100) % 10;
-            firstdigit = (numberABCD / 1000) % 10;
+            firstDigit = (numberABCD / 1000) % 10;
 
-            Console.WriteLine("The sum of the digits is : {0}", (fourthDigit+thirdDigit+secondDigit+firstdigit));
+            Console.WriteLine("The sum of the digits is : {0}", (fourthDigit+thirdDigit+secondDigit+firstDigit));
 
-            // not necessary conversion
-            string first = firstdigit.ToString();
-            string second = secondDigit.ToString();
-            string third = thirdDigit.ToString();
-            string fourth = fourthDigit.ToString();
-
-            Console.WriteLine("The digits in reversed order: {3}{2}{1}{0}", first, second, third, fourth);
-            Console.WriteLine("Last digit in first position: {3}{0}{1}{2}", first, second, third, fourth);
-            Console.WriteLine("The second and third digits exchanged: {0}{2}{1}{3}", first, second, third, fourth);            
+            Console.WriteLine($"The digits in reversed order: {fourthDigit}{thirdDigit}{secondDigit}{firstDigit}");
+            Console.WriteLine($"Last digit in first position: {fourthDigit}{firstDigit}{secondDigit}{thirdDigit}");
+            Console.WriteLine($"The second and third digit swapped: {firstDigit}{thirdDigit}{secondDigit}{fourthDigit}");
         }
     }
 }
