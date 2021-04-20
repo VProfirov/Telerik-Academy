@@ -25,6 +25,14 @@ namespace PointInsideCircleOusideRe
     {
         static void Main()
         {
+            // The solutions work correctly! Focus on: AllCases**
+            // NOTE: Further refactoring is needed - this is a 1st run and not a lot of exp in the area existed beforehand.
+            AllCasesForPointRelatedToCircleAndRectangle_Solution();
+            IsInsideCircleOutsideRectangle_Solution();
+        }
+
+        static void IsInsideCircleOutsideRectangle_Solution()
+        {
             double x, y;
             double r = 1.5;
             double circleX = 1;
@@ -34,9 +42,9 @@ namespace PointInsideCircleOusideRe
             Console.Write("Please enter point y = ");
             y = Double.Parse(Console.ReadLine());
             bool insideCircle = ((x - circleX) * (x - circleX)) + ((y - circleY) * (y - circleY)) <= (r * r);
-            bool rectXout = (x >= 5) && (x <= -1);
-            bool rectYout = (y >= -1) && (y <= 1);
-            if ((rectXout && rectYout) && insideCircle)
+            bool rectXout = (x < -1) || (x > 5);
+            bool rectYout = (y > 1) || (y < -1);
+            if (insideCircle && (rectXout || rectYout))
             {
                 Console.WriteLine("Yes");
                 Console.WriteLine("Point is inside Circle and Outside Rectangle");
@@ -47,14 +55,12 @@ namespace PointInsideCircleOusideRe
                 Console.WriteLine("Point doesn't match condition inside Circle and Outside Rectangle");
             }
         }
-    }
 
-    // Use in Main() : AllCasesForPointInsideCircleOutsideRectangle.Solution();
-    public class AllCasesForPointInsideCircleOutsideRectangle
-    {
-        static void Solution()
+        static void AllCasesForPointRelatedToCircleAndRectangle_Solution()
         {
+            Console.Write("Please enter point x = ");
             double x = double.Parse(Console.ReadLine());
+            Console.Write("Please enter point y = ");
             double y = double.Parse(Console.ReadLine());
             double rr = ((x - 1) * (x - 1)) + ((y - 1) * (y - 1));
             double r = Math.Sqrt(rr);
@@ -83,7 +89,6 @@ namespace PointInsideCircleOusideRe
                 }
             }
 
-            // It is possible to use only 4 single "if" conditions
         }
     }
 }
